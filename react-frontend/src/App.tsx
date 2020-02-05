@@ -1,10 +1,7 @@
 import React from 'react';
-//import logo from './logo.svg';
-//import { withStyles } from '@material-ui/core/styles';
 import './App.css';
-//import AppBar from './AppBar'
-import Nav from './Nav';
-//import Hook from './Hook'
+import AppBar from './components/AppBar'
+import Tabs from './components/Tabs';
 import bgImage from './bg.jpg'
 
 // const styles = {
@@ -40,11 +37,12 @@ import bgImage from './bg.jpg'
 
 const App: React.FC = () => {
   return (
-    <div>
-      <img className="bgImage" src={bgImage} alt="bgImage"/>
-      <Nav />
-    </div>
-    );
+    <React.Fragment>
+      <AppBar />
+      <img className="bgImage" src={bgImage} alt="bgImage" />
+      <Tabs />
+    </React.Fragment>
+  );
 }
 
 export default App;

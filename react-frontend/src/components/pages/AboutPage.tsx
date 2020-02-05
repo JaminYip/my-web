@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles({
   root: {
     width: '100%',
-    maxWidth: 800,
+    maxWidth: 500,
   },
 });
 
@@ -14,15 +14,11 @@ export default function Types() {
 
   return (
     <div className={classes.root}>
-      <Typography variant="h2" component="h2" gutterBottom>
-        About.
+      <Typography variant="h1" component="h2" gutterBottom>
+        h1. Heading
       </Typography>
-      <Typography variant="body1" gutterBottom>
-        Webアプリケーションを専門に歴6年のエンジニアです。<br />
-        主にバックエンドにおけるシステムの設計・開発・保守まで担当。<br />
-        2012年よりアルバイトにてiOSアプリ(iPhone及びiPad)開発を始める。<br />
-        2014年から独立系SIer企業にWebアプリケーションをメインに開発の業務を行う。<br />
-        使用言語はPython,Java,C#
+      <Typography variant="h2" gutterBottom>
+        h2. Heading
       </Typography>
       <Typography variant="h3" gutterBottom>
         h3. Heading

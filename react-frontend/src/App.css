@@ -16,8 +16,6 @@
   pointer-events: none;
 }
 
-
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -37,8 +35,6 @@
     align-items: center;
     padding: 40px;
 }
-
-
 
 .App-link {
   color: #61dafb;
