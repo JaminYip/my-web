@@ -51,10 +51,7 @@ const linkAttr = {
 
 export default function CustomizedAppBar() {
   const classes = useStyles();
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 200,}
-  );
+  const trigger = useScrollTrigger({disableHysteresis: true,});
 
   return (
     <React.Fragment>
