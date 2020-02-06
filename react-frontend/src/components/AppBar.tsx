@@ -6,7 +6,7 @@ import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Slide from '@material-ui/core/Slide';
 import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
-import JaminYipAvatar from '../images/JaminYip.jpg'
+import AvatarImage from '../images/avatar.jpg'
 import GitHubIcon from '@material-ui/icons/GitHub';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import { makeStyles } from '@material-ui/core/styles';
@@ -49,18 +49,21 @@ const linkAttr = {
   rel: 'noopener noreferrer',
 }
 
-export default function CustomizedTabsAppBar() {
+export default function CustomizedAppBar() {
   const classes = useStyles();
-  const trigger = useScrollTrigger();
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 200,}
+  );
 
   return (
     <React.Fragment>
       <CssBaseline />
-      <Slide appear={true} direction="down" in={!trigger} timeout={{enter:600, exit:600,}}>
+      <Slide appear={false} direction="down" in={!trigger} timeout={{enter:400, exit:400,}}>
       <AppBar position="sticky" color="default" elevation={5} className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
           <Typography variant="overline" className={classes.toolbarTitle}>
-            <Avatar alt="JaminYip" src={JaminYipAvatar} className={classes.avatar} />JaminYip's Portfolio
+            <Avatar alt="AvatarImage" src={AvatarImage} className={classes.avatar} />JaminYip's Portfolio
           </Typography>
           <nav>
              <a href="https://github.com/JaminYip" {...linkAttr} className={classes.link}>

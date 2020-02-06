@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import AppBar from './components/AppBar'
+import AppBar from './components/AppBar';
+import HomeImage from './components/HomeImage';
 import Tabs from './components/Tabs';
-import bgImage from './bg.jpg'
 
 // const styles = {
 //     app: {
@@ -39,7 +39,7 @@ const App: React.FC = () => {
   return (
     <React.Fragment>
       <AppBar />
-      <img className="bgImage" src={bgImage} alt="bgImage" />
+      <HomeImage />
       <Tabs />
     </React.Fragment>
   );

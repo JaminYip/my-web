@@ -9,23 +9,25 @@ import FormatListBulletedOutlinedIcon from '@material-ui/icons/FormatListBullete
 import { makeStyles } from '@material-ui/core/styles';
 import GetPage from './pages/GetPage'
 
-const tabsStyles = makeStyles({
-  root: {
+const useStyles = makeStyles({
+  containerRoot: {
+    position: 'sticky',
+    top: '0px',
+    backgroundColor: '#fafafa',
+  },
+  tabsRoot: {
     boxShadow: 'inset 0 1px 0 0 #efefef',
     overflow: 'visible',
   },
-  fixed: {
+  tabsFixed: {
     overflow: 'visible !important',
   },
-  indicator: {
+  tabsIndicator: {
     height: 1,
     transform: 'translateY(-51px)',
     backgroundColor: '#262626',
   },
-});
-
-const tabItemStyles = makeStyles({
-  root: {
+  tabItemsRoot: {
     lineHeight: 'inherit',
     minHeight: 53,
     //minWidth: 0,
@@ -41,7 +43,7 @@ const tabItemStyles = makeStyles({
     //  minWidth: 0,
     //},
   },
-  wrapper: {
+  tabItemsWrapper: {
     flexDirection: 'row',
     letterSpacing: '1px',
     textTransform: 'uppercase',
@@ -52,28 +54,18 @@ const tabItemStyles = makeStyles({
   },
 });
 
-const containerStyles = makeStyles({
-  root: {
-    position: 'sticky',
-    top: '0px',
-    backgroundColor: '#fafafa',
-  },
-});
-
 export default function CustomizedTabs() {
   const [tabIndex, setTabIndex] = React.useState(0);
-  const tabs = tabsStyles();
-  const tabItems = tabItemStyles();
-  const container = containerStyles();
+  const classes = useStyles();
 
   return (
     <React.Fragment>
-    <Container maxWidth="lg" classes={container}>
+    <Container maxWidth="lg" className={classes.containerRoot}>
     <Tabs
       classes={{
-        root: tabs.root,
-        fixed: tabs.fixed,
-        indicator: tabs.indicator,
+        root: classes.tabsRoot,
+        fixed: classes.tabsFixed,
+        indicator: classes.tabsIndicator,
       }}
       value={tabIndex}
       onChange={(e, index) => setTabIndex(index)}
@@ -81,23 +73,23 @@ export default function CustomizedTabs() {
     >
       <Tab
         classes={{
-          root: tabItems.root,
-          wrapper: tabItems.wrapper,
+          root: classes.tabItemsRoot,
+          wrapper: classes.tabItemsWrapper,
         }} label={'About'} icon={<InfoOutlinedIcon />} />
       <Tab
         classes={{
-          root: tabItems.root,
-          wrapper: tabItems.wrapper,
+          root: classes.tabItemsRoot,
+          wrapper: classes.tabItemsWrapper,
         }} label={'Skills'} icon={<SettingsOutlinedIcon />} />
       <Tab
         classes={{
-          root: tabItems.root,
-          wrapper: tabItems.wrapper,
+          root: classes.tabItemsRoot,
+          wrapper: classes.tabItemsWrapper,
         }} label={'History'} icon={<BookmarkBorderOutlined />} />
       <Tab
         classes={{
-          root: tabItems.root,
-          wrapper: tabItems.wrapper,
+          root: classes.tabItemsRoot,
+          wrapper: classes.tabItemsWrapper,
         }} label={'Works'} icon={<FormatListBulletedOutlinedIcon />} />
     </Tabs>
     </Container>
