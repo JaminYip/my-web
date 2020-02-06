@@ -25,7 +25,7 @@ const useStyles = makeStyles({
   tabsIndicator: {
     height: 1,
     transform: 'translateY(-51px)',
-    backgroundColor: '#262626',
+    backgroundColor: '#d10073',
   },
   tabItemsRoot: {
     lineHeight: 'inherit',
@@ -68,7 +68,13 @@ export default function CustomizedTabs() {
         indicator: classes.tabsIndicator,
       }}
       value={tabIndex}
-      onChange={(e, index) => setTabIndex(index)}
+      onChange={
+        (e, index) => {
+          setTabIndex(index);
+          //window.scrollTo(0, ?);
+        }
+      }
+      variant = {'fullWidth'}
       centered
     >
       <Tab
