@@ -1,8 +1,8 @@
-import React from 'react';
-import './App.css';
-import AppBar from './components/AppBar';
-import HomeImage from './components/HomeImage';
-import Tabs from './components/Tabs';
+import React from "react";
+import "./App.css";
+import AppBar from "./components/AppBar";
+import HomeImage from "./components/HomeImage";
+import Tabs from "./components/Tabs";
 
 // const styles = {
 //     app: {
@@ -43,6 +43,6 @@ const App: React.FC = () => {
       <Tabs />
     </React.Fragment>
   );
-}
+};
 
 export default App;
