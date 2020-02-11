@@ -6,55 +6,49 @@ import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import SettingsOutlinedIcon from "@material-ui/icons/SettingsOutlined";
 import BookmarkBorderOutlined from "@material-ui/icons/BookmarkBorderOutlined";
 import FormatListBulletedOutlinedIcon from "@material-ui/icons/FormatListBulletedOutlined";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, createStyles } from "@material-ui/core/styles";
 import GetPage from "./pages/GetPage";
 
-const useStyles = makeStyles({
-  containerRoot: {
-    position: "sticky",
-    top: "0px",
-    backgroundColor: "#fafafa"
-  },
-  tabsRoot: {
-    boxShadow: "inset 0 1px 0 0 #efefef",
-    overflow: "visible"
-  },
-  tabsFixed: {
-    overflow: "visible !important"
-  },
-  tabsIndicator: {
-    height: 1,
-    transform: "translateY(-51px)",
-    backgroundColor: "#d10073"
-  },
-  tabItemsRoot: {
-    lineHeight: "inherit",
-    minHeight: 53,
-    //minWidth: 0,
-    fontSize: 11,
-    opacity: 0.4,
-    "&:not(:last-child)": {
-      //marginRight: 60,
-      //[breakpoints.up('sm')]: {
-      //  marginRight: 60,
-      //},
+const useStyles = makeStyles(() =>
+  createStyles({
+    containerRoot: {
+      position: "sticky",
+      top: "0px",
+      backgroundColor: "#fafafa",
+      zIndex: 1
+    },
+    tabsRoot: {
+      boxShadow: "inset 0 1px 0 0 #efefef",
+      overflow: "visible"
+    },
+    tabsFixed: {
+      overflow: "visible !important"
+    },
+    tabsIndicator: {
+      height: 1,
+      transform: "translateY(-51px)",
+      backgroundColor: "#d10073"
+    },
+    tabItemsRoot: {
+      lineHeight: "inherit",
+      minHeight: 53,
+      fontSize: 11,
+      opacity: 0.4
+    },
+    tabItemsWrapper: {
+      flexDirection: "row",
+      letterSpacing: "1px",
+      textTransform: "uppercase",
+      "& svg, .material-icons": {
+        fontSize: 13,
+        margin: 5
+      }
     }
-    //[breakpoints.up('md')]: {
-    //  minWidth: 0,
-    //},
-  },
-  tabItemsWrapper: {
-    flexDirection: "row",
-    letterSpacing: "1px",
-    textTransform: "uppercase",
-    "& svg, .material-icons": {
-      fontSize: 13,
-      margin: 5
-    }
-  }
-});
+  })
+);
 
-const scrollToRef = ref => window.scrollTo({top: ref.current.offsetTop, left: 0, behavior: 'smooth'});
+const scrollToRef = (ref: any) =>
+  window.scrollTo({ top: ref.current.offsetTop, left: 0, behavior: "smooth" });
 
 export default function CustomizedTabs() {
   const [tabIndex, setTabIndex] = React.useState(0);
@@ -64,7 +58,7 @@ export default function CustomizedTabs() {
 
   return (
     <div ref={myRef}>
-      <Container maxWidth="lg" className={classes.containerRoot} id="test">
+      <Container className={classes.containerRoot}>
         <Tabs
           classes={{
             root: classes.tabsRoot,

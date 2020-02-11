@@ -1,9 +1,12 @@
 import React from "react";
+import Container from "@material-ui/core/Container";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
+import { makeStyles, createStyles } from "@material-ui/core/styles";
 import AboutPage from "./AboutPage";
+import SkillsPage from "./SkillsPage";
 import HistoryPage from "./HistoryPage";
+import WorksPage from "./WorksPage";
 
 enum Page {
   About,
@@ -12,35 +15,44 @@ enum Page {
   Works
 }
 
-export default function GetPage(props) {
+interface Props {
+  pageIndex: number;
+}
+
+const useStyles = makeStyles(() =>
+  createStyles({
+    root: {
+      backgroundColor: "#ffffff"
+    }
+  })
+);
+
+export default function GetPage(props: Props) {
+  const classes = useStyles();
+
   return (
-    <React.Fragment>
+    <Container>
       <CssBaseline />
-      <Container maxWidth="md">
-        <Typography
-          component="div"
-          style={{
-            backgroundColor: "#ffffff",
-            color: "#555555",
-            height: "100vh"
-          }}
-        >
-          {(function() {
-            switch (props.pageIndex) {
-              case Page.About:
-                return <AboutPage />;
-              case Page.Skills:
-                return <div>Skills</div>;
-              case Page.History:
-                return <HistoryPage />;
-              case Page.Works:
-                return <div>Works</div>;
-              default:
-                return <React.Fragment />;
-            }
-          })()}
-        </Typography>
-      </Container>
-    </React.Fragment>
+      <Typography
+        component="div"
+        color="textSecondary"
+        className={classes.root}
+      >
+        {(function() {
+          switch (props.pageIndex) {
+            case Page.About:
+              return <AboutPage />;
+            case Page.Skills:
+              return <SkillsPage />;
+            case Page.History:
+              return <HistoryPage />;
+            case Page.Works:
+              return <WorksPage />;
+            default:
+              return <React.Fragment />;
+          }
+        })()}
+      </Typography>
+    </Container>
   );
 }
