@@ -1,95 +1,61 @@
 import React from "react";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-import Avatar from "@material-ui/core/Avatar";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import ListItemText from "@material-ui/core/ListItemText";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import Dialog from "@material-ui/core/Dialog";
-import PersonIcon from "@material-ui/icons/Person";
-import AddIcon from "@material-ui/icons/Add";
 import Typography from "@material-ui/core/Typography";
-import { blue } from "@material-ui/core/colors";
-import DescriptionOutlinedIcon from "@material-ui/icons/DescriptionOutlined";
+import Box from "@material-ui/core/Box";
 
-const emails = ["username@gmail.com", "user02@gmail.com"];
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    avatar: {
-      backgroundColor: blue[100],
-      color: blue[600]
-    },
-    button: {
-      margin: theme.spacing(1.0),
-      fontSize: 9
-    }
-  })
-);
-
-export interface SimpleDialogProps {
-  open: boolean;
-  selectedValue: string;
-  onClose: (value: string) => void;
-}
-
-function SimpleDialog(props: SimpleDialogProps) {
-  const classes = useStyles();
-  const { onClose, selectedValue, open } = props;
-
-  const handleClose = () => {
-    onClose(selectedValue);
-  };
-
-  const handleListItemClick = (value: string) => {
-    onClose(value);
-  };
-
+export default function EnergyWebServiceDetail() {
   return (
-    <Dialog
-      onClose={handleClose}
-      aria-labelledby="simple-dialog-title"
-      open={open}
-    >
-      <DialogTitle id="simple-dialog-title">
-        being prepared
+    <React.Fragment>
+      <DialogTitle>
+        <Typography color="textSecondary">
+          <Box fontSize="subtitle2.fontSize">
+            エネルギー会社ウェブサービス開発
+          </Box>
+        </Typography>
       </DialogTitle>
-    </Dialog>
-  );
-}
-
-export default function EnergyWebServiceDetailButton() {
-  const [open, setOpen] = React.useState(false);
-  const [selectedValue, setSelectedValue] = React.useState(emails[1]);
-  const classes = useStyles();
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = (value: string) => {
-    setOpen(false);
-    setSelectedValue(value);
-  };
-
-  return (
-    <div>
-      <Button
-        variant="outlined"
-        size="small"
-        onClick={handleClickOpen}
-        disableFocusRipple
-        className={classes.button}
-        startIcon={<DescriptionOutlinedIcon style={{ fontSize: 12 }} />}
-      >
-        DETAIL
-      </Button>
-      <SimpleDialog
-        selectedValue={selectedValue}
-        open={open}
-        onClose={handleClose}
-      />
-    </div>
+      <DialogContent dividers>
+        <DialogContentText>
+          <Typography>
+            <Box fontSize="overline.fontSize">【業務内容】</Box>
+          </Typography>
+          <Typography gutterBottom>
+            <Box color="text.primary" fontSize="caption.fontSize">
+              エネルギー会社契約者向けアプリやウェブサービスのバックエンドの開発兼チームリーダーを担当。Python-FlaskによるAPI開発、OSSライブラリ導入(ReportLab)、ミドルウェア導入(Apache
+              Kafka)、ログローテーション機能実装、パフォーマンスチューニング(Nginx、uWSGI、MongoDB)。
+            </Box>
+          </Typography>
+          <Typography>
+            <Box fontSize="overline.fontSize">
+              【言語(FW)/DB/インフラ/ツール,その他】
+            </Box>
+          </Typography>
+          <Typography gutterBottom>
+            <Box color="text.primary" fontSize="caption.fontSize">
+              Python3.6(Flask1.0.2)
+              <br />
+              MySQL5.7、MongoDB3.4、Redis3.2
+              <br />
+              AWS(VPC/EC2/ELB/RDS/S3)
+              <br />
+              Linux(CentOS7)、Nginx、uWSGI、API Gateway(Konga)、Apache
+              Kafka、ReportLab、MongoDB Compass、Medis、Postman、WinSCP、Tera
+              Term、Sourcetree、Github、Backlog、Symphony
+            </Box>
+          </Typography>
+          <Typography>
+            <Box fontSize="overline.fontSize">【習得技術】</Box>
+          </Typography>
+          <Typography>
+            <Box color="text.primary" fontSize="caption.fontSize">
+              Python(Flask)によるバックエンド開発は初体験であったが、これまでバックエンド開発の経験を生かして短期間でキャッチアップし、OSSライブラリやミドルウェアの技術調査・導入することにより知識も実践レベルで習得できた。
+              <br />
+              また、チームリーダーを勤めることにより、顧客や他チームとの調整、作業メンバーの進捗管理を経験することによってマネジメント能力を高めることができた。
+            </Box>
+          </Typography>
+        </DialogContentText>
+      </DialogContent>
+    </React.Fragment>
   );
 }

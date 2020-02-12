@@ -6,7 +6,7 @@ import Box from "@material-ui/core/Box";
 interface Props {
   title: string;
   subheader: string;
-  backgroundColorHex: string;
+  backgroundHex: string;
   styles: any;
 }
 
@@ -27,7 +27,7 @@ export default function HistoryCommonCardHeader(prop: Props) {
           </Box>
         </Typography>
       }
-      style={{ backgroundColor: prop.backgroundColorHex }}
+      style={{ background: prop.backgroundHex }}
     />
   );
 }

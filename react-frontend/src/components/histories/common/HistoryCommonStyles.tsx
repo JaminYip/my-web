@@ -24,6 +24,23 @@ const useStyles = makeStyles((theme: Theme) =>
       marginTop: "15px",
       marginBottom: "-15px",
       borderBottom: `1px solid ${theme.palette.divider}`
+    },
+    buttonDetail: {
+      background: "#888888",
+      color: "#ffffff",
+      filter: "drop-shadow(2px 2px 2px rgba(0,0,0,0.4))",
+      border: 0,
+      fontSize: 9,
+      margin: theme.spacing(1.0),
+      "&:hover": {
+        background: "#ffffff",
+        color: "#888888",
+        opacity: 1
+      }
+    },
+    buttonDialogClose: {
+      color: "#888888",
+      fontSize: 12
     }
   })
 );

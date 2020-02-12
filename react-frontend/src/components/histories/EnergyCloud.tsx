@@ -3,18 +3,20 @@ import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import HistoryCommonCardHeader from "./common/HistoryCommonCardHeader";
 import HistoryCommonCardContent from "./common/HistoryCommonCardContent";
+import HistoryCommonDetail from "./common/HistoryCommonDetail";
 import HistoryCommonStyles from "./common/HistoryCommonStyles";
-import EnergyCloudDetail from "./EnergyCloudDetail";
+import Constant from "./common/Constant";
 
 export default function EnergyCloud() {
   const classes = HistoryCommonStyles();
+  const constant = Constant();
 
   return (
     <Card variant="outlined" className={classes.card}>
       <HistoryCommonCardHeader
         title={"エネルギー会社基幹業務クラウドシステム開発"}
         subheader={"January 2017 -"}
-        backgroundColorHex={"#726056"}
+        backgroundHex={"linear-gradient(45deg, #726056 30%, #6a6360 90%)"}
         styles={classes}
       />
       <HistoryCommonCardContent
@@ -26,7 +28,7 @@ export default function EnergyCloud() {
         styles={classes}
       />
       <CardActions>
-        <EnergyCloudDetail />
+        <HistoryCommonDetail history={constant.HistoryKey.energyCloud} />
       </CardActions>
     </Card>
   );

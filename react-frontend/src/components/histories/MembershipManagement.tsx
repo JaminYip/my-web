@@ -3,18 +3,20 @@ import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import HistoryCommonCardHeader from "./common/HistoryCommonCardHeader";
 import HistoryCommonCardContent from "./common/HistoryCommonCardContent";
+import HistoryCommonDetail from "./common/HistoryCommonDetail";
 import HistoryCommonStyles from "./common/HistoryCommonStyles";
-import MembershipManagementDetail from "./MembershipManagementDetail";
+import Constant from "./common/Constant";
 
 export default function MembershipManagement() {
   const classes = HistoryCommonStyles();
+  const constant = Constant();
 
   return (
     <Card variant="outlined" className={classes.card}>
       <HistoryCommonCardHeader
         title={"会員情報照会システム開発"}
         subheader={"April 2016 - December 2016"}
-        backgroundColorHex={"#21aca5"}
+        backgroundHex={"linear-gradient(45deg, #21aca5 30%, #748882 90%)"}
         styles={classes}
       />
       <HistoryCommonCardContent
@@ -24,7 +26,9 @@ export default function MembershipManagement() {
         styles={classes}
       />
       <CardActions>
-        <MembershipManagementDetail />
+        <HistoryCommonDetail
+          history={constant.HistoryKey.membershipManagement}
+        />
       </CardActions>
     </Card>
   );
