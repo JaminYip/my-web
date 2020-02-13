@@ -5,7 +5,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 
-export default function EnergyWebServiceDetail() {
+export default function FinanceCRMDetail() {
   return (
     <React.Fragment>
       <DialogTitle>
@@ -22,8 +22,18 @@ export default function EnergyWebServiceDetail() {
           </Typography>
           <Typography gutterBottom>
             <Box color="text.primary" fontSize="caption.fontSize">
-              エネルギー会社契約者向けアプリやウェブサービスのバックエンドの開発兼チームリーダーを担当。Python-FlaskによるAPI開発、OSSライブラリ導入(ReportLab)、ミドルウェア導入(Apache
-              Kafka)、ログローテーション機能実装、本番環境リリース作業、パフォーマンスチューニング(Nginx、uWSGI、MongoDB)。
+              ①証券会社向けSalesforce営業支援iPadアプリのテスターを担当。
+              <br />
+              →バグの原因調査及び修正。
+              <br />
+              ②証券会社向け顧客情報管理システムのフロントエンド及びバックエンドの開発を担当。
+              <br />
+              →WEB画面作成(JavaScript、HTML5、CSS)、非同期処理実装(Ajax)、ビジネスロジックの実装(C#.NET)、排他制御処理実装。
+              <br />
+              ③TMAP(金融向けCRMシステム)のフロンドエンド及びバックエンドの開発を担当
+              <br />
+              →WEB画面作成(JavaScript、HTML5、CSS)、ビジネスロジックの実装(C#.NET)、外部API連携機能実装。
+              <br />
             </Box>
           </Typography>
           <Typography>
@@ -31,9 +41,13 @@ export default function EnergyWebServiceDetail() {
           </Typography>
           <Typography gutterBottom>
             <Box color="text.primary" fontSize="caption.fontSize">
-              バックエンド開発兼チームリーダー
+              ①テスター
               <br />
-              用件定義〜テスト
+              →テスト
+              <br />
+              ②③フロンドエンド・バックエンド開発
+              <br />
+              →設計〜テスト
             </Box>
           </Typography>
           <Typography>
@@ -43,16 +57,12 @@ export default function EnergyWebServiceDetail() {
           </Typography>
           <Typography gutterBottom>
             <Box color="text.primary" fontSize="caption.fontSize">
-              Python3.6(Flask1.0.2)
+              C#(.NET4.5)
               <br />
-              MySQL5.7、MongoDB3.4、Redis3.2
+              MySQL、Oracle11g
               <br />
-              AWS(VPC/EC2/ELB/RDS/S3)
-              <br />
-              Linux(CentOS7)、Nginx、uWSGI、API Gateway(Konga)、Apache
-              Kafka、ReportLab、Pycharm、MongoDB Compass、Medis、A5:SQL
-              Mk-2、Postman、WinSCP、Tera
-              Term、Sourcetree、Github、Backlog、Symphony
+              Visual Studio、jQuery、MySQL Workbench、SI Object
+              Browser、Jmeter、SVN
             </Box>
           </Typography>
           <Typography>
@@ -60,9 +70,7 @@ export default function EnergyWebServiceDetail() {
           </Typography>
           <Typography>
             <Box color="text.primary" fontSize="caption.fontSize">
-              Python(Flask)によるバックエンド開発は初体験であったが、これまでバックエンド開発の経験を生かして短期間でキャッチアップし、OSSライブラリやミドルウェアの技術調査・導入することにより知識も実践レベルで習得できた。
-              <br />
-              チームリーダーを勤めることにより、顧客や他チームとの調整、作業メンバーの進捗管理を経験することによってマネジメント能力を高めることができた。
+              C#.NET、JavaScript、HTML5によるWebアプリケーション開発は初体験であったが、大量のコーデイングをこなすことによりプログラミングスキルが飛躍的に伸びることができ、クラスの概念を意識しつつオブジェクト指向プログラミングスキルの向上を図ることができた。また、機能設計～テストまでの工程を携わることができ、開発の流れを体得することができた。
             </Box>
           </Typography>
         </DialogContentText>

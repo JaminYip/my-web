@@ -2,9 +2,14 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import Dialog, { DialogProps } from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
-import DescriptionOutlinedIcon from "@material-ui/icons/DescriptionOutlined";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import HistoryCommonStyles from "./HistoryCommonStyles";
 import EnergyWebServiceDetail from "../EnergyWebServiceDetail";
+import EnergyCloudDetail from "../EnergyCloudDetail";
+import FinanceCRMDetail from "../FinanceCRMDetail";
+import POSDetail from "../POSDetail";
+import StockManagementDetail from "../StockManagementDetail";
+import MembershipManagementDetail from "../MembershipManagementDetail";
 import Constant from "./Constant";
 
 interface Props {
@@ -34,9 +39,9 @@ export default function HistoryCommonDetail(prop: Props) {
         onClick={handleClickOpen("paper")}
         disableFocusRipple
         className={classes.buttonDetail}
-        startIcon={<DescriptionOutlinedIcon style={{ fontSize: 12 }} />}
+        endIcon={<ExpandMoreIcon style={{ fontSize: 12 }} />}
       >
-        DETAIL
+        See More
       </Button>
       <Dialog
         open={open}
@@ -49,15 +54,15 @@ export default function HistoryCommonDetail(prop: Props) {
             case constant.HistoryKey.energyWebService:
               return <EnergyWebServiceDetail />;
             case constant.HistoryKey.energyCloud:
-              return <React.Fragment />;
+              return <EnergyCloudDetail />;
             case constant.HistoryKey.membershipManagement:
-              return <React.Fragment />;
+              return <MembershipManagementDetail />;
             case constant.HistoryKey.financeCRM:
-              return <React.Fragment />;
+              return <FinanceCRMDetail />;
             case constant.HistoryKey.pos:
-              return <React.Fragment />;
+              return <POSDetail />;
             case constant.HistoryKey.stockManagement:
-              return <React.Fragment />;
+              return <StockManagementDetail />;
             default:
               return <React.Fragment />;
           }

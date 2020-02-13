@@ -31,7 +31,10 @@ const useStyles = makeStyles((theme: Theme) =>
       filter: "drop-shadow(2px 2px 2px rgba(0,0,0,0.4))",
       border: 0,
       fontSize: 9,
-      margin: theme.spacing(1.0),
+      marginTop: theme.spacing(0.5),
+      marginBottom: theme.spacing(0.5),
+      marginLeft: theme.spacing(1.0),
+      textTransform: "none",
       "&:hover": {
         background: "#ffffff",
         color: "#888888",
@@ -40,7 +43,8 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     buttonDialogClose: {
       color: "#888888",
-      fontSize: 12
+      fontSize: 13,
+      textTransform: "none"
     }
   })
 );

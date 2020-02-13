@@ -5,13 +5,13 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 
-export default function EnergyWebServiceDetail() {
+export default function EnergyCloudDetail() {
   return (
     <React.Fragment>
       <DialogTitle>
         <Typography color="textSecondary">
           <Box fontSize="subtitle2.fontSize">
-            エネルギー会社ウェブサービス開発
+            エネルギー会社基幹業務クラウドシステム開発
           </Box>
         </Typography>
       </DialogTitle>
@@ -22,8 +22,7 @@ export default function EnergyWebServiceDetail() {
           </Typography>
           <Typography gutterBottom>
             <Box color="text.primary" fontSize="caption.fontSize">
-              エネルギー会社契約者向けアプリやウェブサービスのバックエンドの開発兼チームリーダーを担当。Python-FlaskによるAPI開発、OSSライブラリ導入(ReportLab)、ミドルウェア導入(Apache
-              Kafka)、ログローテーション機能実装、本番環境リリース作業、パフォーマンスチューニング(Nginx、uWSGI、MongoDB)。
+              エネルギー会社現行稼働している基幹業務システムバックエンドの開発を担当。Java-SpringによるAPI開発、ビジネスロジックの実装、AndroidアプリのIF改修、帳票フォーマット修正、WSHによる処理自動化ツール(VBScript)の作成、システム障害対応。
             </Box>
           </Typography>
           <Typography>
@@ -31,9 +30,9 @@ export default function EnergyWebServiceDetail() {
           </Typography>
           <Typography gutterBottom>
             <Box color="text.primary" fontSize="caption.fontSize">
-              バックエンド開発兼チームリーダー
+              バックエンド開発
               <br />
-              用件定義〜テスト
+              用件定義〜保守
             </Box>
           </Typography>
           <Typography>
@@ -43,16 +42,14 @@ export default function EnergyWebServiceDetail() {
           </Typography>
           <Typography gutterBottom>
             <Box color="text.primary" fontSize="caption.fontSize">
-              Python3.6(Flask1.0.2)
+              Java6(Spring3.1.1)、VBScript
               <br />
-              MySQL5.7、MongoDB3.4、Redis3.2
+              Oracle11g
               <br />
-              AWS(VPC/EC2/ELB/RDS/S3)
+              KCPS
               <br />
-              Linux(CentOS7)、Nginx、uWSGI、API Gateway(Konga)、Apache
-              Kafka、ReportLab、Pycharm、MongoDB Compass、Medis、A5:SQL
-              Mk-2、Postman、WinSCP、Tera
-              Term、Sourcetree、Github、Backlog、Symphony
+              Eclipse、Postman、A5:SQL
+              Mk-2、SVFX-Designer、SVN、JIRA、Slack、Backlog、Symphony
             </Box>
           </Typography>
           <Typography>
@@ -60,9 +57,9 @@ export default function EnergyWebServiceDetail() {
           </Typography>
           <Typography>
             <Box color="text.primary" fontSize="caption.fontSize">
-              Python(Flask)によるバックエンド開発は初体験であったが、これまでバックエンド開発の経験を生かして短期間でキャッチアップし、OSSライブラリやミドルウェアの技術調査・導入することにより知識も実践レベルで習得できた。
+              Java(Spring)によるバックエンド開発は初体験であったが、様々な情報を参考にしてこれまでプログラミングの経験を生かし素早くキャッチアップ。
               <br />
-              チームリーダーを勤めることにより、顧客や他チームとの調整、作業メンバーの進捗管理を経験することによってマネジメント能力を高めることができた。
+              要件定義を始め顧客とのコミニュケーションをとる機会が増えたため上流工程の経験を得ることができ、コミュニケーション力を高めることができた。
             </Box>
           </Typography>
         </DialogContentText>

@@ -5,13 +5,13 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 
-export default function EnergyWebServiceDetail() {
+export default function StockManagementDetail() {
   return (
     <React.Fragment>
       <DialogTitle>
         <Typography color="textSecondary">
           <Box fontSize="subtitle2.fontSize">
-            エネルギー会社ウェブサービス開発
+            iPhone用在庫管理アプリ開発(大学時代アルバイト)
           </Box>
         </Typography>
       </DialogTitle>
@@ -22,8 +22,7 @@ export default function EnergyWebServiceDetail() {
           </Typography>
           <Typography gutterBottom>
             <Box color="text.primary" fontSize="caption.fontSize">
-              エネルギー会社契約者向けアプリやウェブサービスのバックエンドの開発兼チームリーダーを担当。Python-FlaskによるAPI開発、OSSライブラリ導入(ReportLab)、ミドルウェア導入(Apache
-              Kafka)、ログローテーション機能実装、本番環境リリース作業、パフォーマンスチューニング(Nginx、uWSGI、MongoDB)。
+              iPhone用在庫管理アプリのインターフェースの開発を担当。現行稼働している組込システム(ハンディ)をiPhoneアプリにリプレイス。Objective-Cによる画面表示、画面遷移、項目の入出力を実装。
             </Box>
           </Typography>
           <Typography>
@@ -31,9 +30,9 @@ export default function EnergyWebServiceDetail() {
           </Typography>
           <Typography gutterBottom>
             <Box color="text.primary" fontSize="caption.fontSize">
-              バックエンド開発兼チームリーダー
+              インターフェース開発
               <br />
-              用件定義〜テスト
+              実装
             </Box>
           </Typography>
           <Typography>
@@ -43,16 +42,11 @@ export default function EnergyWebServiceDetail() {
           </Typography>
           <Typography gutterBottom>
             <Box color="text.primary" fontSize="caption.fontSize">
-              Python3.6(Flask1.0.2)
+              Objective-C
               <br />
-              MySQL5.7、MongoDB3.4、Redis3.2
+              SQLite
               <br />
-              AWS(VPC/EC2/ELB/RDS/S3)
-              <br />
-              Linux(CentOS7)、Nginx、uWSGI、API Gateway(Konga)、Apache
-              Kafka、ReportLab、Pycharm、MongoDB Compass、Medis、A5:SQL
-              Mk-2、Postman、WinSCP、Tera
-              Term、Sourcetree、Github、Backlog、Symphony
+              Xcode
             </Box>
           </Typography>
           <Typography>
@@ -60,9 +54,7 @@ export default function EnergyWebServiceDetail() {
           </Typography>
           <Typography>
             <Box color="text.primary" fontSize="caption.fontSize">
-              Python(Flask)によるバックエンド開発は初体験であったが、これまでバックエンド開発の経験を生かして短期間でキャッチアップし、OSSライブラリやミドルウェアの技術調査・導入することにより知識も実践レベルで習得できた。
-              <br />
-              チームリーダーを勤めることにより、顧客や他チームとの調整、作業メンバーの進捗管理を経験することによってマネジメント能力を高めることができた。
+              プログラミングは初体験であったが、参考書やネット情報を参考にしてObjective-Cによるプログラミングスキルを身に付けることができた。また、DBまわりは自社ライブラリを流用し(C言語)開発効率を上げられる手法が勉強になった。
             </Box>
           </Typography>
         </DialogContentText>

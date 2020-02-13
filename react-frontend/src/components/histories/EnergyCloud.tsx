@@ -24,7 +24,7 @@ export default function EnergyCloud() {
           "エネルギー会社現行稼働している業務システムのバックエンド開発"
         }
         process={["要件定義", "設計", "実装", "テスト", "保守"]}
-        skills={["Java", "Spring", "VBScript", "Oracle11g"]}
+        skills={["Java", "Spring", "VBScript", "Oracle"]}
         styles={classes}
       />
       <CardActions>

@@ -24,7 +24,7 @@ export default function FinanceCRM() {
           "証券会社向け顧客情報管理システムのフロントエンド及びバックエンド開発"
         }
         process={["設計", "実装", "テスト"]}
-        skills={["C#.NET", "JavaScript", "HTML5", "MySQL", "Oracle11g"]}
+        skills={["C#.NET", "JavaScript", "HTML5", "MySQL", "Oracle"]}
         styles={classes}
       />
       <CardActions>
