@@ -12,7 +12,7 @@ interface Props {
 }
 
 function GetChip(chipList: string[], styles: any) {
-  var list = [];
+  const list = [];
 
   for (const i in chipList) {
     list.push(

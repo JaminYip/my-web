@@ -9,7 +9,7 @@ const useStyles = makeStyles({
   }
 });
 
-export default function Types() {
+export default function About() {
   const classes = useStyles();
 
   return (

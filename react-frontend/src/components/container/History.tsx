@@ -4,12 +4,12 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import EnergyWebService from "../histories/EnergyWebService";
-import EnergyCloud from "../histories/EnergyCloud";
-import MembershipManagement from "../histories/MembershipManagement";
-import FinanceCRM from "../histories/FinanceCRM";
-import POS from "../histories/POS";
-import StockManagement from "../histories/StockManagement";
+import EnergyWebService from "../history/EnergyWebService";
+import EnergyCloud from "../history/EnergyCloud";
+import MembershipManagement from "../history/MembershipManagement";
+import FinanceCRM from "../history/FinanceCRM";
+import POS from "../history/POS";
+import StockManagement from "../history/StockManagement";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export default function HistoryPage() {
+export default function History() {
   const classes = useStyles();
 
   return (

@@ -5,30 +5,28 @@ import HistoryCommonCardHeader from "./common/HistoryCommonCardHeader";
 import HistoryCommonCardContent from "./common/HistoryCommonCardContent";
 import HistoryCommonDetail from "./common/HistoryCommonDetail";
 import HistoryCommonStyles from "./common/HistoryCommonStyles";
-import Constant from "./common/Constant";
+import HistoryConstant from "./common/HistoryConstant";
 
-export default function EnergyWebService() {
+export default function POS() {
   const classes = HistoryCommonStyles();
-  const constant = Constant();
+  const historyConstant = HistoryConstant();
 
   return (
     <Card variant="outlined" className={classes.card}>
       <HistoryCommonCardHeader
-        title={"エネルギー会社ウェブサービス開発"}
-        subheader={"February 2019 -"}
-        backgroundHex={"linear-gradient(45deg, #004a8d 30%, #585d6a 90%)"}
+        title={"iPad用POSアプリ開発(大学時代アルバイト)"}
+        subheader={"February 2013 - March 2013"}
+        backgroundHex={"linear-gradient(45deg, #460061 30%, #442e48 90%)"}
         styles={classes}
       />
       <HistoryCommonCardContent
-        overview={
-          "エネルギー会社契約者向けアプリやウェブサービスのバックエンド開発"
-        }
-        process={["要件定義", "設計", "実装", "テスト"]}
-        skills={["Python", "Flask", "Nginx", "MySQL", "NoSQL"]}
+        overview={"iPad版POSアプリの新規開発"}
+        process={["実装"]}
+        skills={["Objective-C", "SQLite"]}
         styles={classes}
       />
       <CardActions>
-        <HistoryCommonDetail history={constant.HistoryKey.energyWebService} />
+        <HistoryCommonDetail history={historyConstant.pos} />
       </CardActions>
     </Card>
   );

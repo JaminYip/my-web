@@ -5,30 +5,30 @@ import HistoryCommonCardHeader from "./common/HistoryCommonCardHeader";
 import HistoryCommonCardContent from "./common/HistoryCommonCardContent";
 import HistoryCommonDetail from "./common/HistoryCommonDetail";
 import HistoryCommonStyles from "./common/HistoryCommonStyles";
-import Constant from "./common/Constant";
+import HistoryConstant from "./common/HistoryConstant";
 
-export default function MembershipManagement() {
+export default function EnergyWebService() {
   const classes = HistoryCommonStyles();
-  const constant = Constant();
+  const historyConstant = HistoryConstant();
 
   return (
     <Card variant="outlined" className={classes.card}>
       <HistoryCommonCardHeader
-        title={"会員情報照会システム開発"}
-        subheader={"April 2016 - December 2016"}
-        backgroundHex={"linear-gradient(45deg, #21aca5 30%, #748882 90%)"}
+        title={"エネルギー会社ウェブサービス開発"}
+        subheader={"February 2019 -"}
+        backgroundHex={"linear-gradient(45deg, #004a8d 30%, #585d6a 90%)"}
         styles={classes}
       />
       <HistoryCommonCardContent
-        overview={"携帯キャリア向け会員情報照会システムのバックエンド開発"}
-        process={["設計", "実装", "テスト"]}
-        skills={["Java", "custom-framework", "PostgreSQL"]}
+        overview={
+          "エネルギー会社契約者向けアプリやウェブサービスのバックエンド開発"
+        }
+        process={["要件定義", "設計", "実装", "テスト"]}
+        skills={["Python", "Flask", "Nginx", "MySQL", "NoSQL"]}
         styles={classes}
       />
       <CardActions>
-        <HistoryCommonDetail
-          history={constant.HistoryKey.membershipManagement}
-        />
+        <HistoryCommonDetail history={historyConstant.energyWebService} />
       </CardActions>
     </Card>
   );

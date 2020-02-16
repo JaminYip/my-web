@@ -5,30 +5,28 @@ import HistoryCommonCardHeader from "./common/HistoryCommonCardHeader";
 import HistoryCommonCardContent from "./common/HistoryCommonCardContent";
 import HistoryCommonDetail from "./common/HistoryCommonDetail";
 import HistoryCommonStyles from "./common/HistoryCommonStyles";
-import Constant from "./common/Constant";
+import HistoryConstant from "./common/HistoryConstant";
 
-export default function FinanceCRM() {
+export default function MembershipManagement() {
   const classes = HistoryCommonStyles();
-  const constant = Constant();
+  const historyConstant = HistoryConstant();
 
   return (
     <Card variant="outlined" className={classes.card}>
       <HistoryCommonCardHeader
-        title={"金融向けCRMシステム開発"}
-        subheader={"July 2014 - March 2016"}
-        backgroundHex={"linear-gradient(45deg, #912d2a 30%, #885657 90%)"}
+        title={"会員情報照会システム開発"}
+        subheader={"April 2016 - December 2016"}
+        backgroundHex={"linear-gradient(45deg, #21aca5 30%, #748882 90%)"}
         styles={classes}
       />
       <HistoryCommonCardContent
-        overview={
-          "証券会社向け顧客情報管理システムのフロントエンド及びバックエンド開発"
-        }
+        overview={"携帯キャリア向け会員情報照会システムのバックエンド開発"}
         process={["設計", "実装", "テスト"]}
-        skills={["C#.NET", "JavaScript", "HTML5", "MySQL", "Oracle"]}
+        skills={["Java", "custom-framework", "PostgreSQL"]}
         styles={classes}
       />
       <CardActions>
-        <HistoryCommonDetail history={constant.HistoryKey.financeCRM} />
+        <HistoryCommonDetail history={historyConstant.membershipManagement} />
       </CardActions>
     </Card>
   );

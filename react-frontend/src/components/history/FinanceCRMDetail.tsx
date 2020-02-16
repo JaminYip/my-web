@@ -28,11 +28,11 @@ export default function FinanceCRMDetail() {
               <br />
               ②証券会社向け顧客情報管理システムのフロントエンド及びバックエンドの開発を担当。
               <br />
-              →WEB画面作成(JavaScript、HTML5、CSS)、非同期処理実装(Ajax)、ビジネスロジックの実装(C#.NET)、排他制御処理実装。
+              →WEB画面作成(JavaScript(jQuery)、HTML5、CSS)、非同期処理実装(Ajax)、ビジネスロジックの実装(C#.NET)、排他制御処理実装。
               <br />
               ③TMAP(金融向けCRMシステム)のフロンドエンド及びバックエンドの開発を担当
               <br />
-              →WEB画面作成(JavaScript、HTML5、CSS)、ビジネスロジックの実装(C#.NET)、外部API連携機能実装。
+              →WEB画面作成(JavaScript(jQuery)、HTML5、CSS)、ビジネスロジックの実装(C#.NET)、外部API連携機能実装。
               <br />
             </Box>
           </Typography>
@@ -57,12 +57,11 @@ export default function FinanceCRMDetail() {
           </Typography>
           <Typography gutterBottom>
             <Box color="text.primary" fontSize="caption.fontSize">
-              C#(.NET4.5)
+              C#(.NET4.5)、JavaScript(jQuery)
               <br />
               MySQL、Oracle11g
               <br />
-              Visual Studio、jQuery、MySQL Workbench、SI Object
-              Browser、Jmeter、SVN
+              Visual Studio、MySQL Workbench、SI Object Browser、Jmeter、SVN
             </Box>
           </Typography>
           <Typography>
@@ -70,7 +69,7 @@ export default function FinanceCRMDetail() {
           </Typography>
           <Typography>
             <Box color="text.primary" fontSize="caption.fontSize">
-              C#.NET、JavaScript、HTML5によるWebアプリケーション開発は初体験であったが、大量のコーデイングをこなすことによりプログラミングスキルが飛躍的に伸びることができ、クラスの概念を意識しつつオブジェクト指向プログラミングスキルの向上を図ることができた。また、機能設計～テストまでの工程を携わることができ、開発の流れを体得することができた。
+              C#.NET、JavaScript(jQuery)、HTML5によるWebアプリケーション開発は初体験であったが、大量のコーデイングをこなすことによりプログラミングスキルが飛躍的に伸びることができ、クラスの概念を意識しつつオブジェクト指向プログラミングスキルの向上を図ることができた。また、機能設計～テストまでの工程を携わることができ、開発の流れを体得することができた。
             </Box>
           </Typography>
         </DialogContentText>

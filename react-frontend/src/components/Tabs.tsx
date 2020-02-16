@@ -7,7 +7,7 @@ import SettingsOutlinedIcon from "@material-ui/icons/SettingsOutlined";
 import BookmarkBorderOutlined from "@material-ui/icons/BookmarkBorderOutlined";
 import FormatListBulletedOutlinedIcon from "@material-ui/icons/FormatListBulletedOutlined";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
-import GetPage from "./pages/GetPage";
+import Main from "./container/Main";
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -15,7 +15,7 @@ const useStyles = makeStyles(() =>
       position: "sticky",
       top: "0px",
       backgroundColor: "#fafafa",
-      zIndex: 1
+      zIndex: 10
     },
     tabsRoot: {
       boxShadow: "inset 0 1px 0 0 #efefef",
@@ -109,7 +109,7 @@ export default function CustomizedTabs() {
       </Container>
       <br />
       <br />
-      <GetPage pageIndex={tabIndex} />
+      <Main containerIndex={tabIndex} />
     </div>
   );
 }

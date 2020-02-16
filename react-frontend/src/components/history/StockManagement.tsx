@@ -5,11 +5,11 @@ import HistoryCommonCardHeader from "./common/HistoryCommonCardHeader";
 import HistoryCommonCardContent from "./common/HistoryCommonCardContent";
 import HistoryCommonDetail from "./common/HistoryCommonDetail";
 import HistoryCommonStyles from "./common/HistoryCommonStyles";
-import Constant from "./common/Constant";
+import HistoryConstant from "./common/HistoryConstant";
 
 export default function POS() {
   const classes = HistoryCommonStyles();
-  const constant = Constant();
+  const historyConstant = HistoryConstant();
 
   return (
     <Card variant="outlined" className={classes.card}>
@@ -28,7 +28,7 @@ export default function POS() {
         styles={classes}
       />
       <CardActions>
-        <HistoryCommonDetail history={constant.HistoryKey.stockManagement} />
+        <HistoryCommonDetail history={historyConstant.stockManagement} />
       </CardActions>
     </Card>
   );

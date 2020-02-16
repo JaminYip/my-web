@@ -3,12 +3,12 @@ import Container from "@material-ui/core/Container";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
-import AboutPage from "./AboutPage";
-import SkillsPage from "./SkillsPage";
-import HistoryPage from "./HistoryPage";
-import WorksPage from "./WorksPage";
+import About from "./About";
+import Skills from "./Skills";
+import History from "./History";
+import Works from "./Works";
 
-enum Page {
+enum ContainerIndex {
   About,
   Skills,
   History,
@@ -16,7 +16,7 @@ enum Page {
 }
 
 interface Props {
-  pageIndex: number;
+  containerIndex: number;
 }
 
 const useStyles = makeStyles(() =>
@@ -27,7 +27,7 @@ const useStyles = makeStyles(() =>
   })
 );
 
-export default function GetPage(props: Props) {
+export default function Main(props: Props) {
   const classes = useStyles();
 
   return (
@@ -39,15 +39,15 @@ export default function GetPage(props: Props) {
         className={classes.root}
       >
         {(function() {
-          switch (props.pageIndex) {
-            case Page.About:
-              return <AboutPage />;
-            case Page.Skills:
-              return <SkillsPage />;
-            case Page.History:
-              return <HistoryPage />;
-            case Page.Works:
-              return <WorksPage />;
+          switch (props.containerIndex) {
+            case ContainerIndex.About:
+              return <About />;
+            case ContainerIndex.Skills:
+              return <Skills />;
+            case ContainerIndex.History:
+              return <History />;
+            case ContainerIndex.Works:
+              return <Works />;
             default:
               return <React.Fragment />;
           }

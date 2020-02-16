@@ -10,7 +10,7 @@ import FinanceCRMDetail from "../FinanceCRMDetail";
 import POSDetail from "../POSDetail";
 import StockManagementDetail from "../StockManagementDetail";
 import MembershipManagementDetail from "../MembershipManagementDetail";
-import Constant from "./Constant";
+import HistoryConstant from "./HistoryConstant";
 
 interface Props {
   history: string;
@@ -20,7 +20,7 @@ export default function HistoryCommonDetail(prop: Props) {
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState<DialogProps["scroll"]>("paper");
   const classes = HistoryCommonStyles();
-  const constant = Constant();
+  const historyId = HistoryConstant();
 
   const handleClickOpen = (scrollType: DialogProps["scroll"]) => () => {
     setOpen(true);
@@ -51,17 +51,17 @@ export default function HistoryCommonDetail(prop: Props) {
       >
         {(function() {
           switch (prop.history) {
-            case constant.HistoryKey.energyWebService:
+            case historyId.energyWebService:
               return <EnergyWebServiceDetail />;
-            case constant.HistoryKey.energyCloud:
+            case historyId.energyCloud:
               return <EnergyCloudDetail />;
-            case constant.HistoryKey.membershipManagement:
+            case historyId.membershipManagement:
               return <MembershipManagementDetail />;
-            case constant.HistoryKey.financeCRM:
+            case historyId.financeCRM:
               return <FinanceCRMDetail />;
-            case constant.HistoryKey.pos:
+            case historyId.pos:
               return <POSDetail />;
-            case constant.HistoryKey.stockManagement:
+            case historyId.stockManagement:
               return <StockManagementDetail />;
             default:
               return <React.Fragment />;
