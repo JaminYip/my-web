@@ -2,7 +2,6 @@ import React from "react";
 import Container from "@material-ui/core/Container";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
-import { makeStyles, createStyles } from "@material-ui/core/styles";
 import About from "./About";
 import Skills from "./Skills";
 import History from "./History";
@@ -19,25 +18,11 @@ interface Props {
   containerIndex: number;
 }
 
-const useStyles = makeStyles(() =>
-  createStyles({
-    root: {
-      backgroundColor: "#ffffff"
-    }
-  })
-);
-
 export default function Main(props: Props) {
-  const classes = useStyles();
-
   return (
     <Container>
       <CssBaseline />
-      <Typography
-        component="div"
-        color="textSecondary"
-        className={classes.root}
-      >
+      <Typography color="textSecondary" style={{ backgroundColor: "#ffffff" }}>
         {(function() {
           switch (props.containerIndex) {
             case ContainerIndex.About:

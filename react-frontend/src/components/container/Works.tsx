@@ -1,12 +1,29 @@
 import React from "react";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
 
 export default function Works() {
   return (
     <Container>
-      <Typography variant="h6" gutterBottom style={{ height: "100vh" }}>
-        coming soon...
+      <Typography gutterBottom style={{ minHeight: "100vh" }}>
+        <Box
+          fontSize="h2.fontSize"
+          fontWeight="fontWeightLight"
+          letterSpacing={8}
+        >
+          Works
+        </Box>
+        <Box
+          fontSize="overline.fontSize"
+          fontWeight="fontWeightLight"
+          letterSpacing={2}
+        >
+          -コンテンツ-
+        </Box>
+        <Box fontSize="h6.fontSize" mt={3}>
+          coming soon..
+        </Box>
       </Typography>
     </Container>
   );

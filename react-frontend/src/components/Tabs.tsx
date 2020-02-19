@@ -14,18 +14,23 @@ const useStyles = makeStyles(() =>
     containerRoot: {
       position: "sticky",
       top: "0px",
-      backgroundColor: "#fafafa",
+      background: "#000000",
+      opacity: 0.7,
       zIndex: 10
     },
     tabsRoot: {
-      boxShadow: "inset 0 1px 0 0 #efefef",
-      overflow: "visible"
+      "&:hover": {
+        color: "#40a9ff",
+        opacity: 1
+      }
+      //boxShadow: "inset 0 1px 0 0 #efefef",
+      //overflow: "visible"
     },
     tabsFixed: {
-      overflow: "visible !important"
+      //overflow: "visible !important"
     },
     tabsIndicator: {
-      height: 1,
+      height: 0,
       transform: "translateY(-51px)",
       backgroundColor: "#d10073"
     },
@@ -37,7 +42,8 @@ const useStyles = makeStyles(() =>
     },
     tabItemsWrapper: {
       flexDirection: "row",
-      letterSpacing: "1px",
+      letterSpacing: "2px",
+      color: "#ffffff",
       textTransform: "uppercase",
       "& svg, .material-icons": {
         fontSize: 13,
@@ -51,14 +57,14 @@ const scrollToRef = (ref: any) =>
   window.scrollTo({ top: ref.current.offsetTop, left: 0, behavior: "smooth" });
 
 export default function CustomizedTabs() {
-  const [tabIndex, setTabIndex] = React.useState(0);
+  const [tabIndex, setTabIndex] = React.useState(1);
   const myRef = useRef(null);
   const executeScroll = () => scrollToRef(myRef);
   const classes = useStyles();
 
   return (
     <div ref={myRef}>
-      <Container className={classes.containerRoot}>
+      <Container className={classes.containerRoot} maxWidth="xl">
         <Tabs
           classes={{
             root: classes.tabsRoot,
@@ -107,7 +113,6 @@ export default function CustomizedTabs() {
           />
         </Tabs>
       </Container>
-      <br />
       <br />
       <Main containerIndex={tabIndex} />
     </div>

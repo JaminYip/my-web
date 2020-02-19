@@ -5,6 +5,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Slide from "@material-ui/core/Slide";
 import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
 import Avatar from "@material-ui/core/Avatar";
 import AvatarImage from "../images/avatar.jpg";
 import GitHubIcon from "@material-ui/icons/GitHub";
@@ -22,8 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     appBar: {
       borderBottom: `1px solid ${theme.palette.divider}`,
-      marginBottom: theme.spacing(1.0),
-      bottom: "70"
+      marginBottom: theme.spacing(1.0)
     },
     toolbar: {
       flexWrap: "wrap",
@@ -71,13 +71,20 @@ export default function CustomizedAppBar() {
           className={classes.appBar}
         >
           <Toolbar className={classes.toolbar}>
-            <Typography variant="overline" className={classes.toolbarTitle}>
+            <Typography className={classes.toolbarTitle}>
               <Avatar
                 alt="アバター"
                 src={AvatarImage}
                 className={classes.avatar}
               />
-              JaminYip's Portfolio
+              <Box
+                fontSize="subtitle2.fontSize"
+                fontWeight="fontWeightLight"
+                letterSpacing={3}
+                m={0.5}
+              >
+                JaminYip's Portfolio
+              </Box>
             </Typography>
             <nav>
               <a

@@ -176,30 +176,11 @@ export default function Skills() {
           -スキルセット-
         </Box>
         <Box component="fieldset" borderColor="transparent" mt={4}>
-          <ExpansionPanel defaultExpanded>
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography gutterBottom>
-                <Box
-                  fontSize="subtitle1.fontSize"
-                  fontWeight="fontWeightLight"
-                  letterSpacing={5}
-                >
-                  Front-end
-                </Box>
-              </Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Box
-                component="fieldset"
-                borderColor="transparent"
-                style={{ flexGrow: 1 }}
-              >
-                <Grid container spacing={3}>
-                  {frontendSkills}
-                </Grid>
-              </Box>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
+          <Box mb={2}>
+            <Paper component="div" elevation={1}>
+              {description}
+            </Paper>
+          </Box>
           <ExpansionPanel defaultExpanded>
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <Typography>
@@ -224,7 +205,31 @@ export default function Skills() {
               </Box>
             </ExpansionPanelDetails>
           </ExpansionPanel>
-          <ExpansionPanel defaultExpanded>
+          <ExpansionPanel>
+            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography>
+                <Box
+                  fontSize="subtitle1.fontSize"
+                  fontWeight="fontWeightLight"
+                  letterSpacing={5}
+                >
+                  Front-end
+                </Box>
+              </Typography>
+            </ExpansionPanelSummary>
+            <ExpansionPanelDetails>
+              <Box
+                component="fieldset"
+                borderColor="transparent"
+                style={{ flexGrow: 1 }}
+              >
+                <Grid container spacing={3}>
+                  {frontendSkills}
+                </Grid>
+              </Box>
+            </ExpansionPanelDetails>
+          </ExpansionPanel>
+          <ExpansionPanel>
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <Typography>
                 <Box
@@ -248,9 +253,6 @@ export default function Skills() {
               </Box>
             </ExpansionPanelDetails>
           </ExpansionPanel>
-          <Paper component="div" elevation={1}>
-            {description}
-          </Paper>
         </Box>
       </Typography>
     </Container>

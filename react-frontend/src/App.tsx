@@ -37,11 +37,11 @@ import Tabs from "./components/Tabs";
 
 const App: React.FC = () => {
   return (
-    <React.Fragment>
+    <div style={{ backgroundColor: "#fafafa" }}>
       <AppBar />
       <HomeImage />
       <Tabs />
-    </React.Fragment>
+    </div>
   );
 };
 
