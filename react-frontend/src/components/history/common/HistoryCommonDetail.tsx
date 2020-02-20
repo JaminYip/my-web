@@ -39,7 +39,7 @@ export default function HistoryCommonDetail(prop: Props) {
         onClick={handleClickOpen("paper")}
         disableFocusRipple
         className={classes.buttonDetail}
-        endIcon={<ExpandMoreIcon style={{ fontSize: 12 }} />}
+        endIcon={<ExpandMoreIcon style={{ fontSize: 13 }} />}
       >
         See More
       </Button>

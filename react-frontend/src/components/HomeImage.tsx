@@ -6,16 +6,22 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       top: "0",
-      height: "100%",
+      height: "30%",
       width: "100%",
-      position: "relative",
+      position: "absolute",
       objectFit: "cover",
       opacity: "1.0",
-      [theme.breakpoints.up("md")]: {
-        height: "81vh"
+      [theme.breakpoints.down("sm")]: {
+        height: "30.5vh"
+      },
+      [theme.breakpoints.only("md")]: {
+        height: "92.5vh"
+      },
+      [theme.breakpoints.only("lg")]: {
+        height: "92vh"
       },
       [theme.breakpoints.up("xl")]: {
-        height: "86vh"
+        height: "93.5vh"
       }
     }
   })

@@ -43,7 +43,7 @@ export default function History() {
         <br />
       </Typography>
       <Grid container spacing={3} justify="center">
-        <Grid item xs={12} lg={9}>
+        <Grid item xs={12} sm={9} md={9} lg={9} xl={9}>
           <Typography align="center">
             <Box
               fontSize="overline.fontSize"
@@ -54,11 +54,11 @@ export default function History() {
             </Box>
           </Typography>
         </Grid>
-        <Grid item xs lg={4}>
+        <Grid item xs sm={4} md={4} lg={4} xl={4}>
           <EnergyWebService />
         </Grid>
         <Typography className={classes.timeLine} />
-        <Grid item xs lg={4}>
+        <Grid item xs sm={4} md={4} lg={4} xl={4}>
           <Typography align="left">
             <Box fontSize={9}>
               <br />
@@ -66,12 +66,12 @@ export default function History() {
             </Box>
           </Typography>
         </Grid>
-        <Grid item xs={12} lg={9} />
-        <Grid item xs lg={4}>
+        <Grid item xs={12} sm={9} md={9} lg={9} xl={9} />
+        <Grid item xs sm={4} md={4} lg={4} xl={4}>
           <EnergyCloud />
         </Grid>
         <Typography className={classes.timeLine} />
-        <Grid item xs lg={4}>
+        <Grid item xs sm={4} md={4} lg={4} xl={4}>
           <Typography style={{ textAlign: "left" }}>
             <Box fontSize={9}>
               <br />
@@ -79,8 +79,8 @@ export default function History() {
             </Box>
           </Typography>
         </Grid>
-        <Grid item xs={12} lg={9} />
-        <Grid item xs lg={4}>
+        <Grid item xs={12} sm={9} md={9} lg={9} xl={9} />
+        <Grid item xs sm={4} md={4} lg={4} xl={4}>
           <Typography style={{ textAlign: "right" }}>
             <Box fontSize={9}>
               <br />
@@ -89,15 +89,15 @@ export default function History() {
           </Typography>
         </Grid>
         <Typography className={classes.timeLine} />
-        <Grid item xs lg={4}>
+        <Grid item xs sm={4} md={4} lg={4} xl={4}>
           <MembershipManagement />
         </Grid>
-        <Grid item xs={12} lg={9} />
-        <Grid item xs lg={4}>
+        <Grid item xs={12} sm={9} md={9} lg={9} xl={9} />
+        <Grid item xs sm={4} md={4} lg={4} xl={4}>
           <FinanceCRM />
         </Grid>
         <Typography className={classes.timeLine} />
-        <Grid item xs lg={4}>
+        <Grid item xs sm={4} md={4} lg={4} xl={4}>
           <Typography style={{ textAlign: "left" }}>
             <Box fontSize={9}>
               <br />
@@ -105,8 +105,8 @@ export default function History() {
             </Box>
           </Typography>
         </Grid>
-        <Grid item xs={12} lg={9} />
-        <Grid item xs lg={4}>
+        <Grid item xs={12} sm={9} md={9} lg={9} xl={9} />
+        <Grid item xs sm={4} md={4} lg={4} xl={4}>
           <Typography style={{ textAlign: "right" }}>
             <Box fontSize={9}>
               <br />
@@ -115,11 +115,11 @@ export default function History() {
           </Typography>
         </Grid>
         <Typography className={classes.timeLine} />
-        <Grid item xs lg={4}>
+        <Grid item xs sm={4} md={4} lg={4} xl={4}>
           <POS />
         </Grid>
-        <Grid item xs={12} lg={9} />
-        <Grid item xs lg={4}>
+        <Grid item xs={12} sm={9} md={9} lg={9} xl={9} />
+        <Grid item xs sm={4} md={4} lg={4} xl={4}>
           <Typography style={{ textAlign: "right" }}>
             <Box fontSize={9}>
               <br />
@@ -128,10 +128,10 @@ export default function History() {
           </Typography>
         </Grid>
         <Typography style={{ borderLeft: "thin solid #bbbbbb" }} />
-        <Grid item xs lg={4}>
+        <Grid item xs sm={4} md={4} lg={4} xl={4}>
           <StockManagement />
         </Grid>
-        <Grid item xs={12} lg={9}>
+        <Grid item xs={12} sm={9} md={9} lg={9} xl={9}>
           <Typography align="center">
             <Box
               fontSize="overline.fontSize"

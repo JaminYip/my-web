@@ -6,10 +6,10 @@ import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Slide from "@material-ui/core/Slide";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import Avatar from "@material-ui/core/Avatar";
-import AvatarImage from "../images/avatar.jpg";
+//import Avatar from "@material-ui/core/Avatar";
+//import AvatarImage from "../images/avatar.jpg";
 import GitHubIcon from "@material-ui/icons/GitHub";
-import FacebookIcon from "@material-ui/icons/Facebook";
+//import FacebookIcon from "@material-ui/icons/Facebook";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -22,17 +22,18 @@ const useStyles = makeStyles((theme: Theme) =>
       }
     },
     appBar: {
-      borderBottom: `1px solid ${theme.palette.divider}`,
-      marginBottom: theme.spacing(1.0)
+      borderBottom: `0px solid ${theme.palette.divider}`,
+      marginBottom: theme.spacing(0.0),
+      background: "rgba(255,255,255,0.0)"
     },
     toolbar: {
       flexWrap: "wrap",
-      marginBottom: theme.spacing(-0.5)
+      marginBottom: theme.spacing(0)
     },
     toolbarTitle: {
       flexGrow: 1,
       display: "flex",
-      color: "#000000"
+      color: "#ffffff"
     },
     link: {
       margin: theme.spacing(1, 1.0)
@@ -53,7 +54,7 @@ const linkAttr = {
 
 export default function CustomizedAppBar() {
   const classes = useStyles();
-  const trigger = useScrollTrigger({ disableHysteresis: true });
+  const trigger = useScrollTrigger({ disableHysteresis: true, threshold: 130 });
 
   return (
     <React.Fragment>
@@ -64,23 +65,19 @@ export default function CustomizedAppBar() {
         in={!trigger}
         timeout={{ enter: 400, exit: 400 }}
       >
-        <AppBar
-          position="sticky"
-          color="default"
-          elevation={5}
-          className={classes.appBar}
-        >
+        <AppBar position="sticky" elevation={0} className={classes.appBar}>
           <Toolbar className={classes.toolbar}>
             <Typography className={classes.toolbarTitle}>
-              <Avatar
-                alt="アバター"
-                src={AvatarImage}
-                className={classes.avatar}
-              />
+              {/* <Avatar */}
+              {/* alt="アバター" */}
+              {/* src={AvatarImage} */}
+              {/* className={classes.avatar} */}
+              {/* /> */}
               <Box
                 fontSize="subtitle2.fontSize"
                 fontWeight="fontWeightLight"
-                letterSpacing={3}
+                fontFamily="Ubuntu Mono"
+                letterSpacing={1}
                 m={0.5}
               >
                 JaminYip's Portfolio
@@ -92,15 +89,15 @@ export default function CustomizedAppBar() {
                 {...linkAttr}
                 className={classes.link}
               >
-                <GitHubIcon style={{ color: "#000000" }} />
+                <GitHubIcon style={{ color: "#ffffff" }} />
               </a>
-              <a
-                href="https://www.facebook.com/jamin.yip"
-                {...linkAttr}
-                className={classes.link}
-              >
-                <FacebookIcon style={{ color: "#3B5998" }} />
-              </a>
+              {/* <a */}
+              {/* href="https://www.facebook.com/jamin.yip" */}
+              {/* {...linkAttr} */}
+              {/* className={classes.link} */}
+              {/* > */}
+              {/* <FacebookIcon style={{ color: "#3B5998" }} /> */}
+              {/* </a> */}
             </nav>
           </Toolbar>
         </AppBar>
