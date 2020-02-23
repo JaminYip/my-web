@@ -28,24 +28,32 @@ function GetChip(chipList: string[], styles: any) {
   return list;
 }
 
-export default function HistoryCommonCard(prop: Props) {
+export default function HistoryCommonCardContent(prop: Props) {
   const processChip = GetChip(prop.process, prop.styles.chipProcess);
   const skillsChip = GetChip(prop.skills, prop.styles.chipSkills);
 
   return (
     <CardContent>
-      <Typography color="textSecondary">
-        <Box fontSize={11}>＜概要＞</Box>
+      <Typography>
+        <Box fontSize={11} color="text.secondary">
+          ＜概要＞
+        </Box>
       </Typography>
       <Typography gutterBottom>
-        <Box fontSize={10.5}>{prop.overview}</Box>
+        <Box fontSize={10.5} color="text.primary">
+          {prop.overview}
+        </Box>
       </Typography>
-      <Typography color="textSecondary">
-        <Box fontSize={11}>＜担当フェーズ＞</Box>
+      <Typography>
+        <Box fontSize={11} color="text.secondary">
+          ＜担当フェーズ＞
+        </Box>
       </Typography>
       <Typography gutterBottom>{processChip}</Typography>
-      <Typography color="textSecondary">
-        <Box fontSize={11}>＜経験技術＞</Box>
+      <Typography>
+        <Box fontSize={11} color="text.secondary">
+          ＜経験技術＞
+        </Box>
       </Typography>
       <Typography gutterBottom>{skillsChip}</Typography>
       <Typography className={prop.styles.footerTypography} />

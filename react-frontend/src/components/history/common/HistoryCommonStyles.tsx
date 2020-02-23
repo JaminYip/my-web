@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme: Theme) =>
       filter: "drop-shadow(5px 5px 5px rgba(0,0,0,0.5))"
     },
     cardHeaderText: {
-      color: "#ffffff"
+      color: "white"
     },
     chipProcess: {
       margin: theme.spacing(0.2),
@@ -26,8 +26,8 @@ const useStyles = makeStyles((theme: Theme) =>
       borderBottom: `1px solid ${theme.palette.divider}`
     },
     buttonDetail: {
-      background: "#888888",
-      color: "#ffffff",
+      background: "gray",
+      color: "white",
       filter: "drop-shadow(2px 2px 2px rgba(0,0,0,0.4))",
       border: 0,
       fontSize: 9,
@@ -36,13 +36,13 @@ const useStyles = makeStyles((theme: Theme) =>
       marginLeft: theme.spacing(1.0),
       textTransform: "none",
       "&:hover": {
-        background: "#ffffff",
-        color: "#888888",
+        background: "white",
+        color: "gray",
         opacity: 1
       }
     },
     buttonDialogClose: {
-      color: "#888888",
+      color: "gray",
       fontSize: 13,
       textTransform: "none"
     }

@@ -1,6 +1,5 @@
 import React from "react";
 import Container from "@material-ui/core/Container";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import About from "./About";
 import Skills from "./Skills";
@@ -20,9 +19,8 @@ interface Props {
 
 export default function Main(props: Props) {
   return (
-    <Container>
-      <CssBaseline />
-      <Typography color="textSecondary" style={{ backgroundColor: "#ffffff" }}>
+    <Container style={{ marginTop: 25 }}>
+      <Typography color="textSecondary" style={{ backgroundColor: "white" }}>
         {(function() {
           switch (props.containerIndex) {
             case ContainerIndex.About:

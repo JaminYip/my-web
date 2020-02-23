@@ -5,12 +5,33 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 
-export default function MembershipManagementDetail() {
+interface Props {
+  detailTitle: string;
+  detailWork: string;
+  detailRole: string;
+  detailSkills: string;
+  detailLearned: string;
+}
+
+function breakLine(text: string) {
+  var regex = /(¥n)/g;
+  return text.split(regex).map(function(line) {
+    if (line.match(regex)) {
+      return React.createElement("br");
+    } else {
+      return line;
+    }
+  });
+}
+
+export default function HistoryCommonCardDetail(prop: Props) {
   return (
     <React.Fragment>
       <DialogTitle>
-        <Typography color="textSecondary">
-          <Box fontSize="subtitle2.fontSize">会員情報照会システム開発</Box>
+        <Typography>
+          <Box color="text.secondary" fontSize="subtitle2.fontSize">
+            {prop.detailTitle}
+          </Box>
         </Typography>
       </DialogTitle>
       <DialogContent dividers>
@@ -20,7 +41,7 @@ export default function MembershipManagementDetail() {
           </Typography>
           <Typography gutterBottom>
             <Box color="text.primary" fontSize="caption.fontSize">
-              携帯キャリア向け会員情報照会システムのバックエンドの開発を担当。Java-独自フレームワークによるAPI開発、プッシュ通知(配信情報、配信制御)機能改修、テストコード作成、本番環境リリース作業。
+              {breakLine(prop.detailWork)}
             </Box>
           </Typography>
           <Typography>
@@ -28,9 +49,7 @@ export default function MembershipManagementDetail() {
           </Typography>
           <Typography gutterBottom>
             <Box color="text.primary" fontSize="caption.fontSize">
-              バックエンド開発
-              <br />
-              設計〜テスト
+              {breakLine(prop.detailRole)}
             </Box>
           </Typography>
           <Typography>
@@ -40,11 +59,7 @@ export default function MembershipManagementDetail() {
           </Typography>
           <Typography gutterBottom>
             <Box color="text.primary" fontSize="caption.fontSize">
-              Java(独自フレームワーク)
-              <br />
-              PostgreSQL
-              <br />
-              Eclipse、Junit、Jmeter、pgAdmin2、Tera Term、SVN、Redmine
+              {breakLine(prop.detailSkills)}
             </Box>
           </Typography>
           <Typography>
@@ -52,9 +67,7 @@ export default function MembershipManagementDetail() {
           </Typography>
           <Typography>
             <Box color="text.primary" fontSize="caption.fontSize">
-              Javaプログラミングは初体験であったが、これまでオブジェクト指向プログラミングの経験を生かして短期間でキャッチアップ。
-              <br />
-              また、Junitによるテストコード作成の知識も実践レベルで習得できた。
+              {breakLine(prop.detailLearned)}
             </Box>
           </Typography>
         </DialogContentText>

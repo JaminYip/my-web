@@ -1,8 +1,7 @@
 import React from "react";
 import "./App.css";
-import AppBar from "./components/AppBar";
-import HomeImage from "./components/HomeImage";
-import Tabs from "./components/Tabs";
+import Top from "./components/Top";
+import Menu from "./components/Menu";
 
 // const styles = {
 //     app: {
@@ -38,9 +37,8 @@ import Tabs from "./components/Tabs";
 const App: React.FC = () => {
   return (
     <div style={{ backgroundColor: "#fafafa" }}>
-      <AppBar />
-      <HomeImage />
-      <Tabs />
+      <Top />
+      <Menu />
     </div>
   );
 };
