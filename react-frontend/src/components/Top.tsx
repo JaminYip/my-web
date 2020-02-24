@@ -4,6 +4,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Fade from "@material-ui/core/Fade";
 import Slide from "@material-ui/core/Slide";
+import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 //import Avatar from "@material-ui/core/Avatar";
@@ -36,7 +37,7 @@ const useStyles = makeStyles((theme: Theme) =>
         height: "30vh"
       },
       [theme.breakpoints.up("md")]: {
-        height: "92.5vh"
+        height: "92vh"
       },
       background: "black"
     },
@@ -66,7 +67,7 @@ const useStyles = makeStyles((theme: Theme) =>
         height: "30vh"
       },
       [theme.breakpoints.up("md")]: {
-        height: "92.5vh"
+        height: "92vh"
       }
     }
   })
@@ -145,41 +146,47 @@ export default function Top() {
               {/* src={AvatarImage} */}
               {/* className={classes.avatar} */}
               {/* /> */}
-              <Box
-                fontSize="subtitle2.fontSize"
-                fontWeight="fontWeightLight"
-                fontFamily="Ubuntu Mono"
-                letterSpacing={1}
-                m={0.5}
-                mb={1}
-              >
-                JaminYip's Portfolio
-              </Box>
+              <Fade in timeout={{ enter: 4000, exit: 1500 }}>
+                <Box
+                  fontSize="h6.fontSize"
+                  fontWeight="fontWeightLight"
+                  fontFamily="Shadows Into Light"
+                  letterSpacing={1}
+                  m={0.5}
+                  mb={1}
+                >
+                  Jamin Yip
+                </Box>
+              </Fade>
             </Typography>
-            <a
-              href="https://github.com/JaminYip"
-              {...linkAttr}
-              className={classes.link}
-            >
-              <GitHubIcon style={{ color: "white" }} />
-            </a>
-            {/* <a */}
-            {/* href="https://www.facebook.com/jamin.yip" */}
-            {/* {...linkAttr} */}
-            {/* className={classes.link} */}
-            {/* > */}
-            {/* <FacebookIcon style={{ color: "#3B5998" }} /> */}
-            {/* </a> */}
+            <Fade in timeout={{ enter: 4000, exit: 1500 }}>
+              <a
+                href="https://github.com/JaminYip"
+                {...linkAttr}
+                className={classes.link}
+              >
+                <GitHubIcon style={{ color: "white" }} />
+              </a>
+              {/* <a */}
+              {/* href="https://www.facebook.com/jamin.yip" */}
+              {/* {...linkAttr} */}
+              {/* className={classes.link} */}
+              {/* > */}
+              {/* <FacebookIcon style={{ color: "#3B5998" }} /> */}
+              {/* </a> */}
+            </Fade>
           </Toolbar>
         </AppBar>
       </Slide>
-      <Fade in={fade} timeout={{ enter: 4500, exit: 1500 }}>
-        <img
-          className={classes.image}
-          src={images[imageIndex]}
-          alt="トップ画像"
-        />
-      </Fade>
+      <Container disableGutters maxWidth="xl">
+        <Fade in={fade} timeout={{ enter: 4000, exit: 1500 }}>
+          <img
+            className={classes.image}
+            src={images[imageIndex]}
+            alt="トップ画像"
+          />
+        </Fade>
+      </Container>
     </div>
   );
 }

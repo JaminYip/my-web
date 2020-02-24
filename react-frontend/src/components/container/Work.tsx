@@ -3,7 +3,7 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 
-export default function Works() {
+export default function Work() {
   return (
     <Container>
       <Typography gutterBottom style={{ minHeight: "100vh" }}>
@@ -12,7 +12,7 @@ export default function Works() {
           fontWeight="fontWeightLight"
           letterSpacing={8}
         >
-          Works
+          Work
         </Box>
         <Box
           fontSize="overline.fontSize"

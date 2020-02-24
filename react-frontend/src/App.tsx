@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import Loading from "./components/Loading";
 import Top from "./components/Top";
 import Menu from "./components/Menu";
 
@@ -34,12 +35,35 @@ import Menu from "./components/Menu";
 //     }
 // };
 
+const LoadingPage = () => (
+  <div style={{ backgroundColor: "black" }}>
+    <Loading />
+  </div>
+);
+
+const topPage = () => (
+  <div style={{ backgroundColor: "#fafafa" }}>
+    <Top />
+    <Menu />
+  </div>
+);
+
+const useDelay = (ms: number) => {
+  const [loading, setLoading] = React.useState(true);
+  React.useEffect(() => {
+    setTimeout(() => setLoading(false), ms);
+  });
+  return loading;
+};
+
 const App: React.FC = () => {
+  const loading = useDelay(4500);
+
   return (
-    <div style={{ backgroundColor: "#fafafa" }}>
-      <Top />
-      <Menu />
-    </div>
+    <React.Fragment>
+      {loading && LoadingPage()}
+      {!loading && topPage()}
+    </React.Fragment>
   );
 };
 

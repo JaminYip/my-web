@@ -4,13 +4,13 @@ import Typography from "@material-ui/core/Typography";
 import About from "./About";
 import Skills from "./Skills";
 import History from "./History";
-import Works from "./Works";
+import Work from "./Work";
 
 enum ContainerIndex {
   About,
   Skills,
   History,
-  Works
+  Work
 }
 
 interface Props {
@@ -29,8 +29,8 @@ export default function Main(props: Props) {
               return <Skills />;
             case ContainerIndex.History:
               return <History />;
-            case ContainerIndex.Works:
-              return <Works />;
+            case ContainerIndex.Work:
+              return <Work />;
             default:
               return <React.Fragment />;
           }

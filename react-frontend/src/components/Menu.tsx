@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import Container from "@material-ui/core/Container";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
+import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import SettingsOutlinedIcon from "@material-ui/icons/SettingsOutlined";
@@ -16,13 +17,14 @@ const useStyles = makeStyles((theme: Theme) =>
       position: "sticky",
       top: "0",
       marginTop: 1,
-      background: "black",
-      opacity: 0.7,
+      background: "#113336",
+      opacity: 0.8,
       zIndex: 10
     },
     tabsRoot: {
       "&:hover": {
-        color: "#40a9ff",
+        //color: "#511135",
+        color: "black",
         opacity: 1
       },
       //boxShadow: "inset 0 1px 0 0 #efefef",
@@ -142,7 +144,7 @@ export default function Menu() {
                 letterSpacing={0.5}
                 mb={0.5}
               >
-                Works
+                Work
               </Box>
             }
             icon={<FormatListBulletedOutlinedIcon />}
@@ -150,6 +152,17 @@ export default function Menu() {
         </Tabs>
       </Container>
       <Main containerIndex={tabIndex} />
+      <Container maxWidth="lg">
+        <Typography style={{ textAlign: "right" }}>
+          <Box
+            color="text.secondary"
+            fontSize="overline.fontSize"
+            fontFamily="Ubuntu Mono"
+          >
+            ©︎ 2020 Jamin Yip.
+          </Box>
+        </Typography>
+      </Container>
     </div>
   );
 }
