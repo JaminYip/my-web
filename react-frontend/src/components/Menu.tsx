@@ -22,11 +22,6 @@ const useStyles = makeStyles((theme: Theme) =>
       zIndex: 10
     },
     tabsRoot: {
-      "&:hover": {
-        //color: "#511135",
-        color: "black",
-        opacity: 1
-      },
       //boxShadow: "inset 0 1px 0 0 #efefef",
       overflow: "visible"
     },
@@ -41,7 +36,11 @@ const useStyles = makeStyles((theme: Theme) =>
     tabItemsRoot: {
       lineHeight: "inherit",
       minHeight: 53,
-      opacity: 0.4
+      opacity: 0.4,
+      transition: "0.5s",
+      "&:hover": {
+        transform: "scale(1.15,1.15)"
+      }
     },
     tabItemsWrapper: {
       flexDirection: "row",
@@ -59,7 +58,7 @@ const scrollToRef = (ref: any) =>
   window.scrollTo({ top: ref.current.offsetTop, left: 0, behavior: "smooth" });
 
 export default function Menu() {
-  const [tabIndex, setTabIndex] = React.useState(1);
+  const [tabIndex, setTabIndex] = React.useState(0);
   const myRef = useRef(null);
   const executeScroll = () => scrollToRef(myRef);
   const classes = useStyles();

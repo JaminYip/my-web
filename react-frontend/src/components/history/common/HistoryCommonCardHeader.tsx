@@ -7,7 +7,6 @@ interface Props {
   title: string;
   subheader: string;
   backgroundHex: string;
-  styles: any;
 }
 
 export default function HistoryCommonCardHeader(prop: Props) {
@@ -15,14 +14,14 @@ export default function HistoryCommonCardHeader(prop: Props) {
     <CardHeader
       title={
         <Typography>
-          <Box fontSize={13} className={prop.styles.cardHeaderText}>
+          <Box fontSize={12} color="white">
             {prop.title}
           </Box>
         </Typography>
       }
       subheader={
         <Typography>
-          <Box fontSize={8} className={prop.styles.cardHeaderText}>
+          <Box fontSize={8} color="white">
             {prop.subheader}
           </Box>
         </Typography>

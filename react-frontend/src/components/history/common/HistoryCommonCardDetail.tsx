@@ -29,7 +29,7 @@ export default function HistoryCommonCardDetail(prop: Props) {
     <React.Fragment>
       <DialogTitle>
         <Typography>
-          <Box color="text.secondary" fontSize="subtitle2.fontSize">
+          <Box color="text.secondary" fontSize={13} fontWeight="fontWeightBold">
             {prop.detailTitle}
           </Box>
         </Typography>
@@ -37,36 +37,34 @@ export default function HistoryCommonCardDetail(prop: Props) {
       <DialogContent dividers>
         <DialogContentText>
           <Typography>
-            <Box fontSize="overline.fontSize">【業務内容】</Box>
+            <Box fontSize={12}>【業務内容】</Box>
           </Typography>
-          <Typography gutterBottom>
-            <Box color="text.primary" fontSize="caption.fontSize">
+          <Typography paragraph>
+            <Box color="text.primary" fontSize={12}>
               {breakLine(prop.detailWork)}
             </Box>
           </Typography>
           <Typography>
-            <Box fontSize="overline.fontSize">【ロール/担当フェーズ】</Box>
+            <Box fontSize={12}>【ロール/担当フェーズ】</Box>
           </Typography>
-          <Typography gutterBottom>
-            <Box color="text.primary" fontSize="caption.fontSize">
+          <Typography paragraph>
+            <Box color="text.primary" fontSize={12}>
               {breakLine(prop.detailRole)}
             </Box>
           </Typography>
           <Typography>
-            <Box fontSize="overline.fontSize">
-              【言語(FW)/DB/インフラ/ツール,その他】
-            </Box>
+            <Box fontSize={12}>【言語(FW)/DB/インフラ/ツール,その他】</Box>
           </Typography>
-          <Typography gutterBottom>
-            <Box color="text.primary" fontSize="caption.fontSize">
+          <Typography paragraph>
+            <Box color="text.primary" fontSize={12}>
               {breakLine(prop.detailSkills)}
             </Box>
           </Typography>
           <Typography>
-            <Box fontSize="overline.fontSize">【習得技術】</Box>
+            <Box fontSize={12}>【習得技術】</Box>
           </Typography>
           <Typography>
-            <Box color="text.primary" fontSize="caption.fontSize">
+            <Box color="text.primary" fontSize={12}>
               {breakLine(prop.detailLearned)}
             </Box>
           </Typography>

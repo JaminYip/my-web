@@ -1,33 +1,28 @@
 import React from "react";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import HistoryCommonCardHeader from "./common/HistoryCommonCardHeader";
-import HistoryCommonCardContent from "./common/HistoryCommonCardContent";
-import HistoryCommonDetail from "./common/HistoryCommonDetail";
-import HistoryCommonStyles from "./common/HistoryCommonStyles";
-import HistoryConstant from "./common/HistoryConstant";
+import HistoryCommonCard from "./common/HistoryCommonCard";
 
 export default function MembershipManagement() {
-  const classes = HistoryCommonStyles();
-  const historyConstant = HistoryConstant();
-
   return (
-    <Card variant="outlined" className={classes.card}>
-      <HistoryCommonCardHeader
-        title={"会員情報照会システム開発"}
-        subheader={"April 2016 - December 2016"}
-        backgroundHex={"linear-gradient(45deg, #21aca5 30%, #748882 90%)"}
-        styles={classes}
-      />
-      <HistoryCommonCardContent
-        overview={"携帯キャリア向け会員情報照会システムのバックエンド開発"}
-        process={["設計", "実装", "テスト"]}
-        skills={["Java", "custom-framework", "PostgreSQL"]}
-        styles={classes}
-      />
-      <CardActions>
-        <HistoryCommonDetail history={historyConstant.membershipManagement} />
-      </CardActions>
-    </Card>
+    <HistoryCommonCard
+      title={"会員情報照会システム開発"}
+      subheader={"April 2016 - December 2016"}
+      backgroundHex={"linear-gradient(45deg, #a38500 30%, #8b774b 90%)"}
+      overview={"携帯キャリア向け会員情報照会システムのバックエンド開発"}
+      process={["設計", "実装", "テスト"]}
+      skills={["Java", "custom-framework", "PostgreSQL"]}
+      detailTitle={"会員情報照会システム開発"}
+      detailWork={
+        "携帯キャリア向け会員情報照会システムのバックエンドの開発を担当。Java-独自フレームワークによるAPI開発、" +
+        "プッシュ通知(配信情報、配信制御)機能改修、テストコード作成、本番環境リリース作業。"
+      }
+      detailRole={"バックエンド開発¥n設計〜テスト"}
+      detailSkills={
+        "Java(独自フレームワーク)¥nPostgreSQL¥nEclipse、Junit、Jmeter、pgAdmin2、Tera Term、SVN、Redmine"
+      }
+      detailLearned={
+        "Javaプログラミングは初体験であったが、これまでオブジェクト指向プログラミングの経験を生かして短期間でキャッチアップ。" +
+        "¥nまた、Junitによるテストコード作成の知識も実践レベルで習得できた。"
+      }
+    />
   );
 }
