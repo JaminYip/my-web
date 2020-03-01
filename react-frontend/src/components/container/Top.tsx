@@ -118,6 +118,9 @@ const useStyles = makeStyles((theme: Theme) =>
         transform: "scale(1.2)"
       }
     },
+    menuIcon: {
+      filter: "drop-shadow(1px 1px 1px rgba(0,0,0,0.8))"
+    },
     menuPopoverPaper: {
       background: "#9e9e9e",
       width: "100%",
@@ -135,7 +138,8 @@ const useStyles = makeStyles((theme: Theme) =>
     menuClose: {
       color: "#f4f5f7",
       userSelect: "none",
-      textDecoration: "none"
+      textDecoration: "none",
+      filter: "drop-shadow(1px 1px 1px rgba(0,0,0,0.8))"
     },
     menuSectionLinkDiv: {
       display: "flex",
@@ -380,6 +384,7 @@ export default function Top(prop: Props) {
               aria-haspopup
               aria-label="menu"
               onClick={handleClick}
+              className={classes.menuIcon}
             >
               <MenuIcon />
             </IconButton>
