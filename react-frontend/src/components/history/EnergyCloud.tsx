@@ -4,6 +4,7 @@ import HistoryCommonCard from "./common/HistoryCommonCard";
 export default function EnergyCloud() {
   return (
     <HistoryCommonCard
+      elementKey={"EC"}
       title={"エネルギー会社基幹業務クラウドシステム開発"}
       subheader={"January 2017 -"}
       backgroundHex={"linear-gradient(45deg, #5b4d45 30%, #4c403a 90%)"}

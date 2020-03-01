@@ -4,6 +4,7 @@ import HistoryCommonCard from "./common/HistoryCommonCard";
 export default function MembershipManagement() {
   return (
     <HistoryCommonCard
+      elementKey={"MM"}
       title={"会員情報照会システム開発"}
       subheader={"April 2016 - December 2016"}
       backgroundHex={"linear-gradient(45deg, #a38500 30%, #8b774b 90%)"}

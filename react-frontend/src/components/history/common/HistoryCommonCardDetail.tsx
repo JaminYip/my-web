@@ -1,11 +1,11 @@
 import React from "react";
+import Box from "@material-ui/core/Box";
+import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import Typography from "@material-ui/core/Typography";
-import Box from "@material-ui/core/Box";
 
 interface Props {
+  elementKey: string;
   detailTitle: string;
   detailWork: string;
   detailRole: string;
@@ -13,11 +13,15 @@ interface Props {
   detailLearned: string;
 }
 
-function breakLine(text: string) {
-  var regex = /(¥n)/g;
+let elementId = 0;
+function breakLine(text: string, elementKey: string) {
+  const regex = /(¥n)/g;
   return text.split(regex).map(function(line) {
     if (line.match(regex)) {
-      return React.createElement("br");
+      elementId++;
+      return React.createElement("br", {
+        key: elementKey + elementId.toString()
+      });
     } else {
       return line;
     }
@@ -28,46 +32,51 @@ export default function HistoryCommonCardDetail(prop: Props) {
   return (
     <React.Fragment>
       <DialogTitle>
-        <Typography>
-          <Box color="text.secondary" fontSize={13} fontWeight="fontWeightBold">
-            {prop.detailTitle}
-          </Box>
-        </Typography>
+        <Box
+          color="text.secondary"
+          fontSize={13}
+          fontWeight="fontWeightBold"
+          key={0}
+        >
+          {prop.detailTitle}
+        </Box>
       </DialogTitle>
       <DialogContent dividers>
         <DialogContentText>
-          <Typography>
-            <Box fontSize={12}>【業務内容】</Box>
-          </Typography>
-          <Typography paragraph>
-            <Box color="text.primary" fontSize={12}>
-              {breakLine(prop.detailWork)}
-            </Box>
-          </Typography>
-          <Typography>
-            <Box fontSize={12}>【ロール/担当フェーズ】</Box>
-          </Typography>
-          <Typography paragraph>
-            <Box color="text.primary" fontSize={12}>
-              {breakLine(prop.detailRole)}
-            </Box>
-          </Typography>
-          <Typography>
-            <Box fontSize={12}>【言語(FW)/DB/インフラ/ツール,その他】</Box>
-          </Typography>
-          <Typography paragraph>
-            <Box color="text.primary" fontSize={12}>
-              {breakLine(prop.detailSkills)}
-            </Box>
-          </Typography>
-          <Typography>
-            <Box fontSize={12}>【習得技術】</Box>
-          </Typography>
-          <Typography>
-            <Box color="text.primary" fontSize={12}>
-              {breakLine(prop.detailLearned)}
-            </Box>
-          </Typography>
+          <Box fontSize={12} component="span">
+            【業務内容】
+          </Box>
+          <br />
+          <Box color="text.primary" fontSize={12} component="span">
+            {breakLine(prop.detailWork, prop.elementKey)}
+          </Box>
+          <br />
+          <br />
+          <Box fontSize={12} component="span">
+            【ロール/担当フェーズ】
+          </Box>
+          <br />
+          <Box color="text.primary" fontSize={12} component="span">
+            {breakLine(prop.detailRole, prop.elementKey)}
+          </Box>
+          <br />
+          <br />
+          <Box fontSize={12} component="span">
+            【言語(FW)/DB/インフラ/ツール,その他】
+          </Box>
+          <br />
+          <Box color="text.primary" fontSize={12} component="span">
+            {breakLine(prop.detailSkills, prop.elementKey)}
+          </Box>
+          <br />
+          <br />
+          <Box fontSize={12} component="span">
+            【習得技術】
+          </Box>
+          <br />
+          <Box color="text.primary" fontSize={12} component="span">
+            {breakLine(prop.detailLearned, prop.elementKey)}
+          </Box>
         </DialogContentText>
       </DialogContent>
     </React.Fragment>

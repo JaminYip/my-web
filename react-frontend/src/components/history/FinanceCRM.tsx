@@ -4,6 +4,7 @@ import HistoryCommonCard from "./common/HistoryCommonCard";
 export default function FinanceCRM() {
   return (
     <HistoryCommonCard
+      elementKey={"FC"}
       title={"金融向けCRMシステム開発"}
       subheader={"July 2014 - March 2016"}
       backgroundHex={"linear-gradient(45deg, #6c2c2a 30%, #664b4c 90%)"}

@@ -4,6 +4,7 @@ import HistoryCommonCard from "./common/HistoryCommonCard";
 export default function StockManagement() {
   return (
     <HistoryCommonCard
+      elementKey={"SM"}
       title={"iPhone用在庫管理アプリ開発(大学時代アルバイト)"}
       subheader={"August 2012 - September 2012"}
       backgroundHex={"linear-gradient(45deg, #26444d 30%, #353f42 90%)"}

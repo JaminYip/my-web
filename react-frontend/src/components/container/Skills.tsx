@@ -1,14 +1,13 @@
 import React from "react";
-import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
+import Rating from "@material-ui/lab/Rating";
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import Rating from "@material-ui/lab/Rating";
-import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
 
 interface SkillMap {
   name: string;
@@ -21,7 +20,7 @@ interface descriptionMap {
   jpDescription: string;
 }
 
-const frontendSkillMap = [
+const frontendSkillMap: { name: string; level: number }[] = [
   { name: "JavaScript", level: 2.5 },
   { name: "HTML5/CSS", level: 2.5 },
   { name: "TypeScript", level: 1.0 },
@@ -29,7 +28,7 @@ const frontendSkillMap = [
   { name: "jQuery", level: 2.0 }
 ];
 
-const backendSkillMap = [
+const backendSkillMap: { name: string; level: number | null }[] = [
   { name: "＜プログラミング言語＞", level: null },
   { name: "Python", level: 3.0 },
   { name: "Java", level: 3.5 },
@@ -52,14 +51,18 @@ const backendSkillMap = [
   { name: "Apache Kafka", level: 2.0 }
 ];
 
-const devOpsSkillMap = [
+const devOpsSkillMap: { name: string; level: number }[] = [
   { name: "AWS", level: 2.0 },
   { name: "Linux", level: 2.0 },
   { name: "Git", level: 2.5 },
   { name: "SVN", level: 3.0 }
 ];
 
-const descriptionMap = [
+const descriptionMap: {
+  value: number;
+  egDescription: string;
+  jpDescription: string;
+}[] = [
   {
     value: 1,
     egDescription: "Beginner",
@@ -84,17 +87,17 @@ const descriptionMap = [
 ];
 
 function GetSkills(skillMap: SkillMap[]) {
-  const list = [];
+  const list: JSX.Element[] = [];
 
   for (const i in skillMap) {
     if (skillMap[i].level == null) {
       list.push(
-        <React.Fragment>
+        <React.Fragment key={i}>
           <Grid item xs={12}>
             <Box
               fontSize="caption.fontSize"
               fontWeight="fontWeightLight"
-              color="gray"
+              color="#9e9e9e"
             >
               {skillMap[i].name}
             </Box>
@@ -103,13 +106,13 @@ function GetSkills(skillMap: SkillMap[]) {
       );
     } else {
       list.push(
-        <React.Fragment>
-          <Grid item xs={6} md={2}>
+        <React.Fragment key={i}>
+          <Grid item xs={6} sm={3} md={2}>
             <Box fontSize="body2.fontSize" fontWeight="fontWeightLight">
               {skillMap[i].name}
             </Box>
           </Grid>
-          <Grid item xs={6} md={2}>
+          <Grid item xs={6} sm={3} md={2}>
             <Rating
               value={skillMap[i].level}
               precision={0.5}
@@ -126,26 +129,20 @@ function GetSkills(skillMap: SkillMap[]) {
 }
 
 function GetDescription(descriptionMap: descriptionMap[]) {
-  const list = [];
+  const list: JSX.Element[] = [];
 
   for (const i in descriptionMap) {
     list.push(
-      <React.Fragment>
-        <Box component="fieldset" borderColor="transparent">
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <Rating value={descriptionMap[i].value} size="small" readOnly />
-            <Box
-              ml={3}
-              fontSize="caption.fontSize"
-              fontWeight="fontWeightLight"
-            >
-              {descriptionMap[i].egDescription}
-              <br />
-              {descriptionMap[i].jpDescription}
-            </Box>
-          </div>
-        </Box>
-      </React.Fragment>
+      <Box component="fieldset" borderColor="transparent" key={i}>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <Rating value={descriptionMap[i].value} size="small" readOnly />
+          <Box ml={3} fontSize="caption.fontSize" fontWeight="fontWeightLight">
+            {descriptionMap[i].egDescription}
+            <br />
+            {descriptionMap[i].jpDescription}
+          </Box>
+        </div>
+      </Box>
     );
   }
 
@@ -153,108 +150,101 @@ function GetDescription(descriptionMap: descriptionMap[]) {
 }
 
 export default function Skills() {
-  const frontendSkills = GetSkills(frontendSkillMap);
-  const backendSkills = GetSkills(backendSkillMap);
-  const devOpsSkills = GetSkills(devOpsSkillMap);
-  const description = GetDescription(descriptionMap);
+  const frontendSkills: JSX.Element[] = GetSkills(frontendSkillMap);
+  const backendSkills: JSX.Element[] = GetSkills(backendSkillMap);
+  const devOpsSkills: JSX.Element[] = GetSkills(devOpsSkillMap);
+  const description: JSX.Element[] = GetDescription(descriptionMap);
 
   return (
-    <Container>
-      <Typography gutterBottom style={{ minHeight: "100vh" }}>
-        <Box
-          fontSize="h2.fontSize"
-          fontWeight="fontWeightLight"
-          letterSpacing={8}
-        >
-          Skills
+    <Typography component="span" color="textSecondary">
+      <Box
+        fontSize="h2.fontSize"
+        fontWeight="fontWeightLight"
+        letterSpacing={8}
+      >
+        Skills
+      </Box>
+      <Box
+        fontSize="overline.fontSize"
+        fontWeight="fontWeightLight"
+        letterSpacing={2}
+      >
+        -スキルセット-
+      </Box>
+      <Box component="fieldset" borderColor="transparent" mt={4}>
+        <Box mb={2}>
+          <Paper component="div" elevation={1}>
+            {description}
+          </Paper>
         </Box>
-        <Box
-          fontSize="overline.fontSize"
-          fontWeight="fontWeightLight"
-          letterSpacing={2}
-        >
-          -スキルセット-
-        </Box>
-        <Box component="fieldset" borderColor="transparent" mt={4}>
-          <Box mb={2}>
-            <Paper component="div" elevation={1}>
-              {description}
-            </Paper>
-          </Box>
-          <ExpansionPanel defaultExpanded>
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography>
-                <Box
-                  fontSize="subtitle1.fontSize"
-                  fontWeight="fontWeightLight"
-                  letterSpacing={5}
-                >
-                  Back-end
-                </Box>
-              </Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Box
-                component="fieldset"
-                borderColor="transparent"
-                style={{ flexGrow: 1 }}
-              >
-                <Grid container spacing={3}>
-                  {backendSkills}
-                </Grid>
-              </Box>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-          <ExpansionPanel>
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography>
-                <Box
-                  fontSize="subtitle1.fontSize"
-                  fontWeight="fontWeightLight"
-                  letterSpacing={5}
-                >
-                  Front-end
-                </Box>
-              </Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Box
-                component="fieldset"
-                borderColor="transparent"
-                style={{ flexGrow: 1 }}
-              >
-                <Grid container spacing={3}>
-                  {frontendSkills}
-                </Grid>
-              </Box>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-          <ExpansionPanel>
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography>
-                <Box
-                  fontSize="subtitle1.fontSize"
-                  fontWeight="fontWeightLight"
-                  letterSpacing={5}
-                >
-                  DevOps
-                </Box>
-              </Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Box
-                component="fieldset"
-                borderColor="transparent"
-                style={{ flexGrow: 1 }}
-              >
-                <Grid container spacing={3}>
-                  {devOpsSkills}
-                </Grid>
-              </Box>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-        </Box>
-      </Typography>
-    </Container>
+        <ExpansionPanel defaultExpanded>
+          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+            <Box
+              fontSize="subtitle1.fontSize"
+              fontWeight="fontWeightLight"
+              letterSpacing={5}
+            >
+              Back-end
+            </Box>
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            <Box
+              component="fieldset"
+              borderColor="transparent"
+              style={{ flexGrow: 1 }}
+            >
+              <Grid container spacing={3}>
+                {backendSkills}
+              </Grid>
+            </Box>
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
+        <ExpansionPanel>
+          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+            <Box
+              fontSize="subtitle1.fontSize"
+              fontWeight="fontWeightLight"
+              letterSpacing={5}
+            >
+              Front-end
+            </Box>
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            <Box
+              component="fieldset"
+              borderColor="transparent"
+              style={{ flexGrow: 1 }}
+            >
+              <Grid container spacing={3}>
+                {frontendSkills}
+              </Grid>
+            </Box>
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
+        <ExpansionPanel>
+          <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+            <Box
+              fontSize="subtitle1.fontSize"
+              fontWeight="fontWeightLight"
+              letterSpacing={5}
+            >
+              DevOps
+            </Box>
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            <Box
+              component="fieldset"
+              borderColor="transparent"
+              style={{ flexGrow: 1 }}
+            >
+              <Grid container spacing={3}>
+                {devOpsSkills}
+              </Grid>
+            </Box>
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
+      </Box>
+      <br />
+    </Typography>
   );
 }

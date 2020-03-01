@@ -1,15 +1,16 @@
 import React from "react";
+import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import Dialog, { DialogProps } from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
-import Button from "@material-ui/core/Button";
+import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import HistoryCommonCardHeader from "./HistoryCommonCardHeader";
 import HistoryCommonCardContent from "./HistoryCommonCardContent";
 import HistoryCommonCardDetail from "./HistoryCommonCardDetail";
-import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 
 interface Props {
+  elementKey: string;
   title: string;
   subheader: string;
   backgroundHex: string;
@@ -29,14 +30,12 @@ const useStyles = makeStyles((theme: Theme) =>
       filter: "drop-shadow(5px 5px 5px rgba(0,0,0,0.5))",
       transition: "0.5s",
       "&:hover": {
-        transform: "scale(1.03,1.03)",
-        opacity: 0.95
+        opacity: 0.9
       }
     },
-    button: {
-      color: "gray",
-      fontSize: 13,
-      textTransform: "none"
+    buttonClose: {
+      color: "#9e9e9e",
+      fontSize: 13
     }
   })
 );
@@ -76,6 +75,7 @@ export default function HistoryCommonCard(prop: Props) {
         transitionDuration={{ enter: 600, exit: 350 }}
       >
         <HistoryCommonCardDetail
+          elementKey={prop.elementKey}
           detailTitle={prop.detailTitle}
           detailWork={prop.detailWork}
           detailRole={prop.detailRole}
@@ -83,8 +83,8 @@ export default function HistoryCommonCard(prop: Props) {
           detailLearned={prop.detailLearned}
         />
         <DialogActions>
-          <Button onClick={handleClose} className={classes.button}>
-            Close
+          <Button onClick={handleClose} className={classes.buttonClose}>
+            CLOSE
           </Button>
         </DialogActions>
       </Dialog>

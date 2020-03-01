@@ -1,8 +1,8 @@
 import React from "react";
 import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
+import Grid from "@material-ui/core/Grid";
 import Skeleton from "@material-ui/lab/Skeleton";
 import Fade from "@material-ui/core/Fade";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
@@ -14,13 +14,13 @@ const useStyles = makeStyles((theme: Theme) =>
       position: "relative",
       width: "100vw",
       height: "100vh",
-      background: "black"
+      background: "#000000"
     },
     grid: {
-      [theme.breakpoints.down("sm")]: {
+      [theme.breakpoints.down("xs")]: {
         minHeight: "95vh"
       },
-      [theme.breakpoints.up("md")]: {
+      [theme.breakpoints.up("sm")]: {
         minHeight: "100vh"
       }
     },
@@ -33,9 +33,9 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function Loading() {
   const classes = useStyles();
   const [fade, setFade] = React.useState(true);
-
   React.useEffect(() => {
-    setTimeout(() => setFade(prev => !prev), 3500);
+    const timer = setTimeout(() => setFade(prev => !prev), 3500);
+    return () => clearTimeout(timer);
   });
 
   return (
@@ -47,10 +47,10 @@ export default function Loading() {
         className={classes.grid}
       >
         <Grid item>
-          <Typography className={classes.typography}>
+          <Typography component="span" className={classes.typography}>
             <Fade in={fade} timeout={{ enter: 2500, exit: 2000 }}>
               <Box
-                color="white"
+                color="#f4f5f7"
                 fontSize="h6.fontSize"
                 fontWeight="fontWeightLight"
                 fontFamily="Shadows Into Light"

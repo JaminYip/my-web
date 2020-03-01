@@ -4,6 +4,7 @@ import HistoryCommonCard from "./common/HistoryCommonCard";
 export default function EnergyWebService() {
   return (
     <HistoryCommonCard
+      elementKey={"EW"}
       title={"エネルギー会社ウェブサービス開発"}
       subheader={"February 2019 -"}
       backgroundHex={"linear-gradient(45deg, #023359 30%, #353941 90%)"}

@@ -4,6 +4,7 @@ import HistoryCommonCard from "./common/HistoryCommonCard";
 export default function POS() {
   return (
     <HistoryCommonCard
+      elementKey={"P"}
       title={"iPad用POSアプリ開発(大学時代アルバイト)"}
       subheader={"February 2013 - March 2013"}
       backgroundHex={"linear-gradient(45deg, #460061 30%, #442e48 90%)"}

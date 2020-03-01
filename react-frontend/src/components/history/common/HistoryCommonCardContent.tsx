@@ -1,7 +1,7 @@
 import React from "react";
-import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
+import CardContent from "@material-ui/core/CardContent";
 import Chip from "@material-ui/core/Chip";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
@@ -12,15 +12,21 @@ interface Props {
 }
 
 function GetChip(chipList: string[]) {
-  const list = [];
+  const list: JSX.Element[] = [];
 
   for (const i in chipList) {
     list.push(
       <Chip
+        key={i}
         variant="outlined"
         size="small"
         label={chipList[i]}
-        style={{ fontSize: 9, margin: 2, borderColor: "gray", color: "white" }}
+        style={{
+          fontSize: 9,
+          margin: 2,
+          borderColor: "#9e9e9e",
+          color: "#f4f5f7"
+        }}
       />
     );
   }
@@ -29,36 +35,34 @@ function GetChip(chipList: string[]) {
 }
 
 export default function HistoryCommonCardContent(prop: Props) {
-  const processChip = GetChip(prop.process);
-  const skillsChip = GetChip(prop.skills);
+  const processChip: JSX.Element[] = GetChip(prop.process);
+  const skillsChip: JSX.Element[] = GetChip(prop.skills);
 
   return (
     <div style={{ background: "#616161" }}>
       <CardContent>
-        <Typography>
-          <Box fontSize={11} color="lightGray">
+        <Typography component="div" gutterBottom>
+          <Box fontSize={11} color="#bdbdbd">
             ＜概要＞
           </Box>
-        </Typography>
-        <Typography gutterBottom>
-          <Box fontSize={10.5} color="white">
+          <Box fontSize={10.5} color="#f4f5f7">
             {prop.overview}
           </Box>
         </Typography>
-        <Typography>
-          <Box fontSize={11} color="lightGray">
+        <Typography component="div" gutterBottom>
+          <Box fontSize={11} color="#bdbdbd">
             ＜担当フェーズ＞
           </Box>
+          <Box>{processChip}</Box>
         </Typography>
-        <Typography gutterBottom>{processChip}</Typography>
-        <Typography>
-          <Box fontSize={11} color="lightGray">
+        <Typography component="div">
+          <Box fontSize={11} color="#bdbdbd">
             ＜経験技術＞
           </Box>
+          <Box>{skillsChip}</Box>
         </Typography>
-        <Typography>{skillsChip}</Typography>
       </CardContent>
-      <Typography style={{ display: "flex" }}>
+      <Typography component="span" style={{ display: "flex" }}>
         <Box ml={2} mb={1} color="#b2dfdb" fontSize={11}>
           SEE MORE
         </Box>
