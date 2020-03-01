@@ -17,6 +17,14 @@ window.addEventListener("scroll", () => {
   const skillsDiv: HTMLElement | null = document.getElementById("skillsDiv");
   const historyDiv: HTMLElement | null = document.getElementById("historyDiv");
   const workDiv: HTMLElement | null = document.getElementById("workDiv");
+  if (
+    aboutDiv === null ||
+    skillsDiv === null ||
+    historyDiv === null ||
+    workDiv === null
+  ) {
+    return;
+  }
   const aboutDivPositionY: number = aboutDiv!.getBoundingClientRect().top;
   const skillsDivPositionY: number = skillsDiv!.getBoundingClientRect().top;
   const historyDivPositionY: number = historyDiv!.getBoundingClientRect().top;
@@ -42,7 +50,7 @@ window.addEventListener("touchmove", () => {
   setScrollState(null);
 });
 
-let scrollState: boolean[] = [false, false, false, false];
+let scrollState: boolean[] = [false, false, false, false, false];
 const setScrollState = (scrollEventIndex: number | null) => {
   for (let i = 0; i < scrollState.length; i++) {
     if (i === scrollEventIndex) {
@@ -59,7 +67,9 @@ const scrollToRef = (
   targetPositionY: number,
   scrollEventIndex: number
 ) => {
-  if (targetPositionY === 0) {
+  if (ref === "top") {
+    targetPositionY = 0;
+  } else if (targetPositionY === 0) {
     targetPositionY = ref.current.offsetTop || 0;
   }
   if (targetPositionY !== clickPositionY) {
@@ -99,7 +109,7 @@ const scrollToRef = (
           }
         }
         window.scrollTo({ top: clickPositionY, left: 0 });
-        scrollToRef(null, clickPositionY, targetPositionY, scrollEventIndex);
+        scrollToRef(ref, clickPositionY, targetPositionY, scrollEventIndex);
       }, 1);
     }
   }
@@ -120,7 +130,7 @@ const useStyles = makeStyles((theme: Theme) =>
       [theme.breakpoints.down("sm")]: {
         marginTop: 65
       },
-      background: "rgba(6,10,11,0.0)"
+      background: "rgba(0,0,0,0.0)"
     },
     menuContainerCommon: {
       marginTop: 105,
@@ -137,6 +147,7 @@ export default function Home() {
   const skillsScrollEventIndex: number = 1;
   const historyScrollEventIndex: number = 2;
   const workScrollEventIndex: number = 3;
+  const topScrollEventIndex: number = 4;
   const aboutRef = useRef(null);
   const skillsRef = useRef(null);
   const historyRef = useRef(null);
@@ -170,6 +181,12 @@ export default function Home() {
     scrollToRef(workRef, window.pageYOffset, 0, workScrollEventIndex);
     setAnchorEl(null);
   };
+  const topExecuteScroll = (
+    event: React.MouseEvent<HTMLSpanElement, MouseEvent>
+  ) => {
+    setScrollState(topScrollEventIndex);
+    scrollToRef("top", window.pageYOffset, 0, topScrollEventIndex);
+  };
   const classes = useStyles();
 
   return (
@@ -184,7 +201,8 @@ export default function Home() {
           aboutExecuteScroll,
           skillsExecuteScroll,
           historyExecuteScroll,
-          workExecuteScroll
+          workExecuteScroll,
+          topExecuteScroll
         ]}
         anchorEl={[anchorEl, setAnchorEl]}
       />

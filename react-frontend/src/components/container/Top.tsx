@@ -1,4 +1,4 @@
-import React from "react";
+import React, { SetStateAction } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
@@ -10,6 +10,7 @@ import Fade from "@material-ui/core/Fade";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
+import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import TopImage1 from "../../images/top1.jpg";
 import TopImage2 from "../../images/top2.jpg";
 import TopImage3 from "../../images/top3.jpg";
@@ -89,7 +90,7 @@ const useStyles = makeStyles((theme: Theme) =>
       fontFamily: "Roboto",
       letterSpacing: theme.spacing(0.2),
       color: "#f4f5f7",
-      filter: "drop-shadow(1px 1px 1px rgba(6,10,11,0.8))",
+      filter: "drop-shadow(1px 1px 1px rgba(0,0,0,0.8))",
       userSelect: "none",
       display: "inline-block",
       cursor: "pointer",
@@ -110,7 +111,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     git: {
       color: "#f4f5f7",
-      filter: "drop-shadow(1px 1px 1px rgba(6,10,11,0.8))",
+      filter: "drop-shadow(1px 1px 1px rgba(0,0,0,0.8))",
       display: "inline-block",
       transition: "0.5s",
       "&:hover": {
@@ -159,7 +160,7 @@ const useStyles = makeStyles((theme: Theme) =>
     menuFooterGit: {
       color: "#f4f5f7",
       userSelect: "none",
-      filter: "drop-shadow(1px 1px 1px rgba(6,10,11,0.8))"
+      filter: "drop-shadow(1px 1px 1px rgba(0,0,0,0.8))"
     },
     menuFooterText: {
       color: "#f4f5f7",
@@ -168,6 +169,25 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: 12,
       fontWeight: 300,
       fontFamily: "Roboto"
+    },
+    footerBar: {
+      top: "auto",
+      bottom: 0,
+      background: "rgba(0,0,0,0.0)",
+      [theme.breakpoints.up("md")]: {
+        display: "none"
+      }
+    },
+    toTopDiv: {
+      display: "flex",
+      flexWrap: "wrap",
+      justifyContent: "flex-end",
+      marginTop: -35,
+      marginRight: 7
+    },
+    toTop: {
+      color: "#f4f5f7",
+      filter: "drop-shadow(1px 1px 1px rgba(0,0,0,0.8))"
     }
     //avatar: {
     //margin: theme.spacing(0.3),
@@ -210,7 +230,10 @@ interface Props {
   executeScroll: ((
     event: React.MouseEvent<HTMLSpanElement, MouseEvent>
   ) => void)[];
-  anchorEl: any;
+  anchorEl: [
+    Element | ((element: Element) => Element) | null | undefined,
+    React.Dispatch<SetStateAction<HTMLElement | null>>
+  ];
 }
 
 export default function Top(prop: Props) {
@@ -436,6 +459,15 @@ export default function Top(prop: Props) {
           />
         </Fade>
       </div>
+      <AppBar position="fixed" className={classes.footerBar}>
+        <Typography component="div" className={classes.toTopDiv}>
+          <Fade in timeout={{ enter: 4000, exit: 1500 }}>
+            <span onClick={prop.executeScroll[4]} className={classes.toTop}>
+              <KeyboardArrowUpIcon />
+            </span>
+          </Fade>
+        </Typography>
+      </AppBar>
     </React.Fragment>
   );
 }
