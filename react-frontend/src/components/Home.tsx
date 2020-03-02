@@ -224,12 +224,7 @@ export default function Home() {
       </Container>
       <Container maxWidth="xl">
         <Typography component="span" style={{ textAlign: "right" }}>
-          <Box
-            color="#f4f5f7"
-            fontSize={11}
-            fontWeight="fontWeightLight"
-            fontFamily="Roboto"
-          >
+          <Box color="#f4f5f7" fontSize={11} fontWeight="fontWeightLight">
             ©︎ 2020 Jamin Yip.
           </Box>
         </Typography>

@@ -5,6 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import Menu from "@material-ui/core/Menu";
 import Box from "@material-ui/core/Box";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
+import Tooltip from "@material-ui/core/Tooltip";
 import Slide from "@material-ui/core/Slide";
 import Fade from "@material-ui/core/Fade";
 import IconButton from "@material-ui/core/IconButton";
@@ -35,12 +36,7 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     navBar: {
-      top: 25,
-      minHeight: 100,
-      [theme.breakpoints.down("sm")]: {
-        top: 0,
-        minHeight: "9vmin"
-      },
+      top: 0,
       borderBottom: `0px solid ${theme.palette.divider}`,
       background: "rgba(255,255,255,0.0)"
     },
@@ -59,17 +55,19 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "flex"
     },
     imageDiv: {
-      top: "0",
+      top: 0,
+      marginTop: 20,
       position: "relative",
       height: "100vmin",
       [theme.breakpoints.down("sm")]: {
+        marginTop: 0,
         left: "0",
         width: "100%",
         height: "40vmax"
       }
     },
     image: {
-      top: "0",
+      top: 0,
       left: "9%",
       width: "90%",
       height: "100vmin",
@@ -85,9 +83,8 @@ const useStyles = makeStyles((theme: Theme) =>
       margin: theme.spacing(1.5)
     },
     sectionLink: {
-      fontSize: 11,
+      fontSize: 12,
       fontWeight: 300,
-      fontFamily: "Roboto",
       letterSpacing: theme.spacing(0.2),
       color: "#f4f5f7",
       filter: "drop-shadow(1px 1px 1px rgba(0,0,0,0.8))",
@@ -111,12 +108,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     git: {
       color: "#f4f5f7",
-      filter: "drop-shadow(1px 1px 1px rgba(0,0,0,0.8))",
-      display: "inline-block",
-      transition: "0.5s",
-      "&:hover": {
-        transform: "scale(1.2)"
-      }
+      filter: "drop-shadow(1px 1px 1px rgba(0,0,0,0.8))"
     },
     menuIcon: {
       filter: "drop-shadow(1px 1px 1px rgba(0,0,0,0.8))"
@@ -153,7 +145,6 @@ const useStyles = makeStyles((theme: Theme) =>
       textDecoration: "none",
       fontSize: 22,
       fontWeight: 300,
-      fontFamily: "Roboto",
       letterSpacing: theme.spacing(0.3)
     },
     menuFooterDiv: {
@@ -164,15 +155,15 @@ const useStyles = makeStyles((theme: Theme) =>
     menuFooterGit: {
       color: "#f4f5f7",
       userSelect: "none",
-      filter: "drop-shadow(1px 1px 1px rgba(0,0,0,0.8))"
+      filter: "drop-shadow(1px 1px 1px rgba(0,0,0,0.8))",
+      transform: "scale(0.8,0.8)"
     },
     menuFooterText: {
       color: "#f4f5f7",
       userSelect: "none",
       textDecoration: "none",
       fontSize: 12,
-      fontWeight: 300,
-      fontFamily: "Roboto"
+      fontWeight: 300
     },
     footerBar: {
       top: "auto",
@@ -296,6 +287,7 @@ export default function Top(prop: Props) {
                   color="#f4f5f7"
                   letterSpacing={1}
                   m={0.5}
+                  mt={4}
                 >
                   Jamin Yip
                 </Box>
@@ -303,55 +295,67 @@ export default function Top(prop: Props) {
             </Typography>
           </Slide>
           <Fade in timeout={{ enter: 4000, exit: 1500 }}>
-            <div className={classes.sectionLinkDiv}>
-              <span
-                className={classes.sectionLink}
-                onClick={prop.executeScroll[0]}
-              >
-                ABOUT
-              </span>
-            </div>
+            <Typography component="div" className={classes.sectionLinkDiv}>
+              <Box mt={4}>
+                <span
+                  className={classes.sectionLink}
+                  onClick={prop.executeScroll[0]}
+                >
+                  ABOUT
+                </span>
+              </Box>
+            </Typography>
           </Fade>
           <Fade in timeout={{ enter: 4000, exit: 1500 }}>
-            <div className={classes.sectionLinkDiv}>
-              <span
-                className={classes.sectionLink}
-                onClick={prop.executeScroll[1]}
-              >
-                SKILLS
-              </span>
-            </div>
+            <Typography component="div" className={classes.sectionLinkDiv}>
+              <Box mt={4}>
+                <span
+                  className={classes.sectionLink}
+                  onClick={prop.executeScroll[1]}
+                >
+                  SKILLS
+                </span>
+              </Box>
+            </Typography>
           </Fade>
           <Fade in timeout={{ enter: 4000, exit: 1500 }}>
-            <div className={classes.sectionLinkDiv}>
-              <span
-                className={classes.sectionLink}
-                onClick={prop.executeScroll[2]}
-              >
-                HISTORY
-              </span>
-            </div>
+            <Typography component="div" className={classes.sectionLinkDiv}>
+              <Box mt={4}>
+                <span
+                  className={classes.sectionLink}
+                  onClick={prop.executeScroll[2]}
+                >
+                  HISTORY
+                </span>
+              </Box>
+            </Typography>
           </Fade>
           <Fade in timeout={{ enter: 4000, exit: 1500 }}>
-            <div className={classes.sectionLinkDiv}>
-              <span
-                className={classes.sectionLink}
-                onClick={prop.executeScroll[3]}
-              >
-                WORK
-              </span>
-            </div>
+            <Typography component="div" className={classes.sectionLinkDiv}>
+              <Box mt={4}>
+                <span
+                  className={classes.sectionLink}
+                  onClick={prop.executeScroll[3]}
+                >
+                  WORK
+                </span>
+              </Box>
+            </Typography>
           </Fade>
           <Fade in timeout={{ enter: 4000, exit: 1500 }}>
-            <div className={classes.gitDiv}>
-              <a
-                href="https://github.com/JaminYip"
-                {...linkAttr}
-                className={classes.git}
-              >
-                <GitHubIcon />
-              </a>
-            </div>
+            <Typography component="div" className={classes.gitDiv}>
+              <Box mt={5}>
+                <a
+                  href="https://github.com/JaminYip"
+                  {...linkAttr}
+                  className={classes.git}
+                >
+                  <Tooltip title="Click to open the GitHub" arrow>
+                    <GitHubIcon />
+                  </Tooltip>
+                </a>
+              </Box>
+            </Typography>
             {/* <a */}
             {/* href="https://www.facebook.com/jamin.yip" */}
             {/* {...linkAttr} */}
@@ -393,7 +397,6 @@ export default function Top(prop: Props) {
             anchorEl={prop.anchorEl[0]}
             open={Boolean(prop.anchorEl[0])}
             onClose={handleClose}
-            //transitionDuration={{enter:500,exit:500}}
             TransitionComponent={Fade}
             PopoverClasses={{ paper: classes.menuPopoverPaper }}
             marginThreshold={0}

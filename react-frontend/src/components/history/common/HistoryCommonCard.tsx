@@ -4,6 +4,7 @@ import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import Dialog, { DialogProps } from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
+import Tooltip from "@material-ui/core/Tooltip";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import HistoryCommonCardHeader from "./HistoryCommonCardHeader";
 import HistoryCommonCardContent from "./HistoryCommonCardContent";
@@ -28,6 +29,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     card: {
       filter: "drop-shadow(5px 5px 5px rgba(0,0,0,0.5))",
+      transform: "translateZ(0)",
       transition: "0.5s",
       "&:hover": {
         opacity: 0.9
@@ -56,18 +58,20 @@ export default function HistoryCommonCard(prop: Props) {
 
   return (
     <Card variant="outlined" className={classes.card}>
-      <CardActionArea onClick={handleClickOpen("paper")}>
-        <HistoryCommonCardHeader
-          title={prop.title}
-          subheader={prop.subheader}
-          backgroundHex={prop.backgroundHex}
-        />
-        <HistoryCommonCardContent
-          overview={prop.overview}
-          process={prop.process}
-          skills={prop.skills}
-        />
-      </CardActionArea>
+      <Tooltip title="Click the CARD to see more information" arrow>
+        <CardActionArea onClick={handleClickOpen("paper")}>
+          <HistoryCommonCardHeader
+            title={prop.title}
+            subheader={prop.subheader}
+            backgroundHex={prop.backgroundHex}
+          />
+          <HistoryCommonCardContent
+            overview={prop.overview}
+            process={prop.process}
+            skills={prop.skills}
+          />
+        </CardActionArea>
+      </Tooltip>
       <Dialog
         open={open}
         onClose={handleClose}
