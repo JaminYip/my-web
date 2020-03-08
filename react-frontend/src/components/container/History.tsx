@@ -16,6 +16,9 @@ const useStyles = makeStyles((theme: Theme) =>
     timeLine: {
       borderLeft: "thin solid #bdbdbd",
       marginBottom: -30
+    },
+    timeLineLast: {
+      borderLeft: "thin solid #bdbdbd"
     }
   })
 );
@@ -24,156 +27,155 @@ export default function History() {
   const classes = useStyles();
 
   return (
-    <Typography component="span" color="textSecondary">
-      <Box
-        fontSize="h2.fontSize"
-        fontWeight="fontWeightLight"
-        letterSpacing={8}
-      >
-        History
-      </Box>
-      <Box
-        fontSize="overline.fontSize"
-        fontWeight="fontWeightLight"
-        letterSpacing={6}
-      >
-        -業務経歴-
-      </Box>
-      <br />
-      <Grid container spacing={3} justify="center">
-        <Grid item xs={12} sm={11} md={11} lg={11} xl={11}>
-          <Container>
-            <Typography component="span" align="center">
-              <Box
-                fontSize="overline.fontSize"
-                fontWeight="fontWeightLight"
-                letterSpacing={5}
-              >
-                future
-              </Box>
-            </Typography>
-          </Container>
-        </Grid>
-        <Grid item xs sm={5} md={5} lg={5} xl={5}>
-          <Container disableGutters>
-            <EnergyWebService />
-          </Container>
-        </Grid>
-        <Typography component="span" className={classes.timeLine} />
-        <Grid item xs sm={5} md={5} lg={5} xl={5}>
-          <Container disableGutters>
-            <Typography component="span" align="left">
-              <Box fontSize={9}>
-                <br />
-                2019/02 -
-              </Box>
-            </Typography>
-          </Container>
-        </Grid>
-        <Grid item xs={12} sm={11} md={11} lg={11} xl={11} />
-        <Grid item xs sm={5} md={5} lg={5} xl={5}>
-          <Container disableGutters>
-            <EnergyCloud />
-          </Container>
-        </Grid>
-        <Typography component="span" className={classes.timeLine} />
-        <Grid item xs sm={5} md={5} lg={5} xl={5}>
-          <Container disableGutters>
-            <Typography component="span" style={{ textAlign: "left" }}>
-              <Box fontSize={9}>
-                <br />
-                2017/01 -
-              </Box>
-            </Typography>
-          </Container>
-        </Grid>
-        <Grid item xs={12} sm={11} md={11} lg={11} xl={11} />
-        <Grid item xs sm={5} md={5} lg={5} xl={5}>
-          <Container disableGutters>
-            <Typography component="span" style={{ textAlign: "right" }}>
-              <Box fontSize={9}>
-                <br />
-                2016/04 - 2016/12
-              </Box>
-            </Typography>
-          </Container>
-        </Grid>
-        <Typography component="span" className={classes.timeLine} />
-        <Grid item xs sm={5} md={5} lg={5} xl={5}>
-          <Container disableGutters>
-            <MembershipManagement />
-          </Container>
-        </Grid>
-        <Grid item xs={12} sm={11} md={11} lg={11} xl={11} />
-        <Grid item xs sm={5} md={5} lg={5} xl={5}>
-          <Container disableGutters>
-            <FinanceCRM />
-          </Container>
-        </Grid>
-        <Typography component="span" className={classes.timeLine} />
-        <Grid item xs sm={5} md={5} lg={5} xl={5}>
-          <Container disableGutters>
-            <Typography component="span" style={{ textAlign: "left" }}>
-              <Box fontSize={9}>
-                <br />
-                2014/07 - 2016/03
-              </Box>
-            </Typography>
-          </Container>
-        </Grid>
-        <Grid item xs={12} sm={11} md={11} lg={11} xl={11} />
-        <Grid item xs sm={5} md={5} lg={5} xl={5}>
-          <Container disableGutters>
-            <Typography component="span" style={{ textAlign: "right" }}>
-              <Box fontSize={9}>
-                <br />
-                2013/02 - 2013/03
-              </Box>
-            </Typography>
-          </Container>
-        </Grid>
-        <Typography component="span" className={classes.timeLine} />
-        <Grid item xs sm={5} md={5} lg={5} xl={5}>
-          <Container disableGutters>
-            <POS />
-          </Container>
-        </Grid>
-        <Grid item xs={12} sm={11} md={11} lg={11} xl={11} />
-        <Grid item xs sm={5} md={5} lg={5} xl={5}>
-          <Container disableGutters>
-            <Typography component="span" style={{ textAlign: "right" }}>
-              <Box fontSize={9}>
-                <br />
-                2012/08 - 2012/09
-              </Box>
-            </Typography>
-          </Container>
-        </Grid>
-        <Typography
-          component="span"
-          style={{ borderLeft: "thin solid #bdbdbd" }}
-        />
-        <Grid item xs sm={5} md={5} lg={5} xl={5}>
-          <Container disableGutters>
-            <StockManagement />
-          </Container>
-        </Grid>
-        <Grid item xs={12} sm={11} md={11} lg={11} xl={11}>
-          <Container>
-            <Typography component="span" align="center">
-              <Box
-                fontSize="overline.fontSize"
-                fontWeight="fontWeightLight"
-                letterSpacing={5}
-              >
-                past
-              </Box>
-            </Typography>
-          </Container>
-        </Grid>
-      </Grid>
-      <Grid container spacing={0} />
-      <br />
-    </Typography>
+    <React.Fragment>
+      <Typography component="div" gutterBottom style={{ color: "#cfd8dc" }}>
+        <Box
+          fontSize="h6.fontSize"
+          fontWeight="fontWeightLight"
+          letterSpacing={4}
+        >
+          HISTORY
+        </Box>
+        <Box fontSize={10} fontWeight="fontWeightLight" letterSpacing={2}>
+          -業務経歴-
+        </Box>
+      </Typography>
+      <Container maxWidth="md" style={{ background: "#f4f5f7" }}>
+        <br />
+        <Typography component="div" color="textSecondary">
+          <Grid container spacing={3} justify="center">
+            <Grid item xs={12} sm={11} md={11} lg={11} xl={11}>
+              <Container>
+                <Typography component="div" align="center">
+                  <Box
+                    fontSize="overline.fontSize"
+                    fontWeight="fontWeightLight"
+                    letterSpacing={5}
+                  >
+                    future
+                  </Box>
+                </Typography>
+              </Container>
+            </Grid>
+            <Grid item xs sm={5} md={5} lg={5} xl={5}>
+              <Container disableGutters>
+                <EnergyWebService />
+              </Container>
+            </Grid>
+            <Typography component="div" className={classes.timeLine} />
+            <Grid item xs sm={5} md={5} lg={5} xl={5}>
+              <Container disableGutters>
+                <Typography component="div" align="left">
+                  <Box fontSize={9}>
+                    <br />
+                    2019/02 -
+                  </Box>
+                </Typography>
+              </Container>
+            </Grid>
+            <Grid item xs={12} sm={11} md={11} lg={11} xl={11} />
+            <Grid item xs sm={5} md={5} lg={5} xl={5}>
+              <Container disableGutters>
+                <EnergyCloud />
+              </Container>
+            </Grid>
+            <Typography component="div" className={classes.timeLine} />
+            <Grid item xs sm={5} md={5} lg={5} xl={5}>
+              <Container disableGutters>
+                <Typography component="div" style={{ textAlign: "left" }}>
+                  <Box fontSize={9}>
+                    <br />
+                    2017/01 -
+                  </Box>
+                </Typography>
+              </Container>
+            </Grid>
+            <Grid item xs={12} sm={11} md={11} lg={11} xl={11} />
+            <Grid item xs sm={5} md={5} lg={5} xl={5}>
+              <Container disableGutters>
+                <Typography component="div" style={{ textAlign: "right" }}>
+                  <Box fontSize={9}>
+                    <br />
+                    2016/04 - 2016/12
+                  </Box>
+                </Typography>
+              </Container>
+            </Grid>
+            <Typography component="div" className={classes.timeLine} />
+            <Grid item xs sm={5} md={5} lg={5} xl={5}>
+              <Container disableGutters>
+                <MembershipManagement />
+              </Container>
+            </Grid>
+            <Grid item xs={12} sm={11} md={11} lg={11} xl={11} />
+            <Grid item xs sm={5} md={5} lg={5} xl={5}>
+              <Container disableGutters>
+                <FinanceCRM />
+              </Container>
+            </Grid>
+            <Typography component="div" className={classes.timeLine} />
+            <Grid item xs sm={5} md={5} lg={5} xl={5}>
+              <Container disableGutters>
+                <Typography component="div" style={{ textAlign: "left" }}>
+                  <Box fontSize={9}>
+                    <br />
+                    2014/07 - 2016/03
+                  </Box>
+                </Typography>
+              </Container>
+            </Grid>
+            <Grid item xs={12} sm={11} md={11} lg={11} xl={11} />
+            <Grid item xs sm={5} md={5} lg={5} xl={5}>
+              <Container disableGutters>
+                <Typography component="div" style={{ textAlign: "right" }}>
+                  <Box fontSize={9}>
+                    <br />
+                    2013/02 - 2013/03
+                  </Box>
+                </Typography>
+              </Container>
+            </Grid>
+            <Typography component="div" className={classes.timeLine} />
+            <Grid item xs sm={5} md={5} lg={5} xl={5}>
+              <Container disableGutters>
+                <POS />
+              </Container>
+            </Grid>
+            <Grid item xs={12} sm={11} md={11} lg={11} xl={11} />
+            <Grid item xs sm={5} md={5} lg={5} xl={5}>
+              <Container disableGutters>
+                <Typography component="div" style={{ textAlign: "right" }}>
+                  <Box fontSize={9}>
+                    <br />
+                    2012/08 - 2012/09
+                  </Box>
+                </Typography>
+              </Container>
+            </Grid>
+            <Typography component="div" className={classes.timeLineLast} />
+            <Grid item xs sm={5} md={5} lg={5} xl={5}>
+              <Container disableGutters>
+                <StockManagement />
+              </Container>
+            </Grid>
+            <Grid item xs={12} sm={11} md={11} lg={11} xl={11}>
+              <Container>
+                <Typography component="div" align="center">
+                  <Box
+                    fontSize="overline.fontSize"
+                    fontWeight="fontWeightLight"
+                    letterSpacing={5}
+                  >
+                    past
+                  </Box>
+                </Typography>
+              </Container>
+            </Grid>
+          </Grid>
+          <Grid container spacing={0} />
+        </Typography>
+        <br />
+      </Container>
+    </React.Fragment>
   );
 }

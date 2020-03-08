@@ -1,120 +1,53 @@
 import React from "react";
+import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import Fade from "@material-ui/core/Fade";
 
 export default function About() {
   return (
-    <Typography
-      component="span"
-      style={{ minHeight: "100vh", color: "#b0bec5" }}
-    >
-      <Fade in timeout={{ enter: 4000, exit: 1500 }}>
+    <React.Fragment>
+      <Typography component="div" style={{ color: "#cfd8dc" }}>
         <Box
-          fontSize="h2.fontSize"
+          fontSize="h6.fontSize"
           fontWeight="fontWeightLight"
-          letterSpacing={8}
+          letterSpacing={4}
         >
-          About
+          ABOUT
         </Box>
-      </Fade>
-      <Fade in timeout={{ enter: 4000, exit: 1500 }}>
-        <Box
-          fontSize="overline.fontSize"
-          fontWeight="fontWeightLight"
-          letterSpacing={2}
-        >
-          -？？？？-
+        <Box fontSize={10} fontWeight="fontWeightLight" letterSpacing={2}>
+          -プロフィール-
         </Box>
-      </Fade>
-      <Typography component="span" variant="h1" gutterBottom>
-        <Fade in timeout={{ enter: 4000, exit: 1500 }}>
-          <Box>h1. Head</Box>
-        </Fade>
+        <Container maxWidth="md">
+          <br />
+          <Typography component="div" paragraph>
+            <Box fontSize={16}>Since 2006 I've been in Tokyo from China.</Box>
+            <Box fontSize={16}>
+              I write code, I play billiards, I go boxing and I love movies.
+            </Box>
+          </Typography>
+          <Typography component="div" paragraph>
+            <Box fontSize={14}>
+              I'm an Engineer with over 7 years of experience. Mostly involved
+              in backend web development.
+            </Box>
+            <Box fontSize={14}>
+              This page is my personal website for describe about my skills,
+              career and what I have created.
+            </Box>
+            <Box fontSize={14}>
+              Feel free to have a look around if you like.
+            </Box>
+          </Typography>
+          <Typography component="div">
+            <Box fontSize={12}>
+              これまでSIer企業に勤め、WEBアプリケーションをメインに要件定義から設計、開発、テスト、保守と一通り経験。
+            </Box>
+            <Box fontSize={12}>
+              バックエンドの設計、開発業務を中心に経験を積んでおり、その他フロンドエンドやDevOps、機械学習など幅広く学習しております。
+            </Box>
+          </Typography>
+        </Container>
       </Typography>
-      <Typography component="span" variant="h2" gutterBottom>
-        <Fade in timeout={{ enter: 4000, exit: 1500 }}>
-          <Box>h2. Heading</Box>
-        </Fade>
-      </Typography>
-      <Fade in timeout={{ enter: 4000, exit: 1500 }}>
-        <Typography component="span" variant="h3" gutterBottom>
-          h3. Heading
-        </Typography>
-      </Fade>
-      <Fade in timeout={{ enter: 4000, exit: 1500 }}>
-        <Typography component="span" variant="h4" gutterBottom>
-          h4. Heading
-        </Typography>
-      </Fade>
-      <Fade in timeout={{ enter: 4000, exit: 1500 }}>
-        <Typography component="span" variant="h5" gutterBottom>
-          h5. Heading
-        </Typography>
-      </Fade>
-      <Fade in timeout={{ enter: 4000, exit: 1500 }}>
-        <Typography component="span" variant="h6" gutterBottom>
-          h6. Heading
-        </Typography>
-      </Fade>
-      <Fade in timeout={{ enter: 4000, exit: 1500 }}>
-        <Typography component="span" variant="subtitle1" gutterBottom>
-          subtitle1. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Quos blanditiis tenetur
-        </Typography>
-      </Fade>
-      <Fade in timeout={{ enter: 4000, exit: 1500 }}>
-        <Typography component="span" variant="subtitle2" gutterBottom>
-          subtitle2. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Quos blanditiis tenetur
-        </Typography>
-      </Fade>
-      <Fade in timeout={{ enter: 4000, exit: 1500 }}>
-        <Typography component="span" variant="body1" gutterBottom>
-          body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-          blanditiis tenetur unde suscipit, quam beatae rerum inventore
-          consectetur, neque doloribus, cupiditate numquam dignissimos laborum
-          fugiat deleniti? Eum quasi quidem quibusdam.
-        </Typography>
-      </Fade>
-      <Fade in timeout={{ enter: 4000, exit: 1500 }}>
-        <Typography component="span" variant="body2" gutterBottom>
-          body2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-          blanditiis tenetur unde suscipit, quam beatae rerum inventore
-          consectetur, neque doloribus, cupiditate numquam dignissimos laborum
-          fugiat deleniti? Eum quasi quidem quibusdam.
-        </Typography>
-      </Fade>
-      <Fade in timeout={{ enter: 4000, exit: 1500 }}>
-        <Typography
-          component="span"
-          variant="button"
-          display="block"
-          gutterBottom
-        >
-          button text
-        </Typography>
-      </Fade>
-      <Fade in timeout={{ enter: 4000, exit: 1500 }}>
-        <Typography
-          component="span"
-          variant="caption"
-          display="block"
-          gutterBottom
-        >
-          caption text
-        </Typography>
-      </Fade>
-      <Fade in timeout={{ enter: 4000, exit: 1500 }}>
-        <Typography
-          component="span"
-          variant="overline"
-          display="block"
-          gutterBottom
-        >
-          overline text
-        </Typography>
-      </Fade>
-    </Typography>
+    </React.Fragment>
   );
 }

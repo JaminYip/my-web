@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
+import Fade from "@material-ui/core/Fade";
 import Top from "./container/Top";
 import About from "./container/About";
 import Skills from "./container/Skills";
@@ -10,35 +11,32 @@ import Work from "./container/Work";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 
 window.addEventListener("scroll", () => {
-  const homeContainer: HTMLElement | null = document.getElementById(
-    "homeContainer"
-  );
-  const aboutDiv: HTMLElement | null = document.getElementById("aboutDiv");
-  const skillsDiv: HTMLElement | null = document.getElementById("skillsDiv");
-  const historyDiv: HTMLElement | null = document.getElementById("historyDiv");
-  const workDiv: HTMLElement | null = document.getElementById("workDiv");
   if (
-    aboutDiv === null ||
-    skillsDiv === null ||
-    historyDiv === null ||
-    workDiv === null
+    document.getElementById("aboutDiv") === null ||
+    document.getElementById("skillsDiv") === null ||
+    document.getElementById("historyDiv") === null ||
+    document.getElementById("workDiv") === null ||
+    document.getElementById("homeContainer") === null
   ) {
     return;
   }
-  const aboutDivPositionY: number = aboutDiv!.getBoundingClientRect().top;
-  const skillsDivPositionY: number = skillsDiv!.getBoundingClientRect().top;
-  const historyDivPositionY: number = historyDiv!.getBoundingClientRect().top;
-  const workDivPositionY: number = workDiv!.getBoundingClientRect().top;
-  if (workDivPositionY <= 1) {
-    homeContainer!.style.backgroundColor = "#000000";
-  } else if (historyDivPositionY <= 1) {
-    homeContainer!.style.backgroundColor = "#3a3d20";
-  } else if (skillsDivPositionY <= 1) {
-    homeContainer!.style.backgroundColor = "#3d203a";
-  } else if (aboutDivPositionY <= 1) {
-    homeContainer!.style.backgroundColor = "#203a3d";
+
+  if (document.getElementById("workDiv")!.getBoundingClientRect().top <= 1) {
+    document.getElementById("homeContainer")!.style.backgroundColor = "#000000";
+  } else if (
+    document.getElementById("historyDiv")!.getBoundingClientRect().top <= 1
+  ) {
+    document.getElementById("homeContainer")!.style.backgroundColor = "#3a3d20";
+  } else if (
+    document.getElementById("skillsDiv")!.getBoundingClientRect().top <= 1
+  ) {
+    document.getElementById("homeContainer")!.style.backgroundColor = "#3d203a";
+  } else if (
+    document.getElementById("aboutDiv")!.getBoundingClientRect().top <= 1
+  ) {
+    document.getElementById("homeContainer")!.style.backgroundColor = "#203a3d";
   } else {
-    homeContainer!.style.backgroundColor = "#000000";
+    document.getElementById("homeContainer")!.style.backgroundColor = "#000000";
   }
 });
 
@@ -136,8 +134,18 @@ const useStyles = makeStyles((theme: Theme) =>
       marginTop: 105,
       [theme.breakpoints.down("sm")]: {
         marginTop: 65
-      },
-      background: "#f4f5f7"
+      }
+    },
+    footerOffset: {
+      height: 70,
+      [theme.breakpoints.up("xl")]: {
+        height: 260
+      }
+    },
+    footerDiv: {
+      [theme.breakpoints.down("sm")]: {
+        display: "none"
+      }
     }
   })
 );
@@ -207,28 +215,56 @@ export default function Home() {
         anchorEl={[anchorEl, setAnchorEl]}
       />
       <div id="aboutDiv" ref={aboutRef} />
-      <Container maxWidth="lg" className={classes.menuContainerAbout}>
-        <About />
-      </Container>
+      <Fade in timeout={{ enter: 4000, exit: 1500 }}>
+        <Container
+          maxWidth="md"
+          disableGutters
+          className={classes.menuContainerAbout}
+        >
+          <About />
+        </Container>
+      </Fade>
       <div id="skillsDiv" ref={skillsRef} />
-      <Container maxWidth="md" className={classes.menuContainerCommon}>
-        <Skills />
-      </Container>
+      <Fade in timeout={{ enter: 4000, exit: 1500 }}>
+        <Container
+          maxWidth="md"
+          disableGutters
+          className={classes.menuContainerCommon}
+        >
+          <Skills />
+        </Container>
+      </Fade>
       <div id="historyDiv" ref={historyRef} />
-      <Container maxWidth="md" className={classes.menuContainerCommon}>
-        <History />
-      </Container>
+      <Fade in timeout={{ enter: 4000, exit: 1500 }}>
+        <Container
+          maxWidth="md"
+          disableGutters
+          className={classes.menuContainerCommon}
+        >
+          <History />
+        </Container>
+      </Fade>
       <div id="workDiv" ref={workRef} />
-      <Container maxWidth="md" className={classes.menuContainerCommon}>
-        <Work />
-      </Container>
-      <Container maxWidth="xl">
-        <Typography component="span" style={{ textAlign: "right" }}>
-          <Box color="#f4f5f7" fontSize={11} fontWeight="fontWeightLight">
-            ©︎ 2020 Jamin Yip.
-          </Box>
-        </Typography>
-      </Container>
+      <Fade in timeout={{ enter: 4000, exit: 1500 }}>
+        <Container
+          maxWidth="md"
+          disableGutters
+          className={classes.menuContainerCommon}
+        >
+          <Work />
+        </Container>
+      </Fade>
+      <div className={classes.footerOffset} />
+      <Fade in timeout={{ enter: 4000, exit: 1500 }}>
+        <Container maxWidth="xl" className={classes.footerDiv}>
+          <Typography component="div" style={{ textAlign: "right" }}>
+            <Box color="#f4f5f7" fontSize={11} fontWeight="fontWeightLight">
+              ©︎ 2020 Jamin Yip.
+            </Box>
+          </Typography>
+        </Container>
+      </Fade>
+      <br />
     </Container>
   );
 }

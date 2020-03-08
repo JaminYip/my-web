@@ -15,14 +15,14 @@ export default function StockManagement() {
       skills={["Objective-C", "SQLite"]}
       detailTitle={"iPhone用在庫管理アプリ開発(大学時代アルバイト)"}
       detailWork={
-        "iPhone用在庫管理アプリのインターフェースの開発を担当。現行稼働している組込システム(ハンディ)をiPhoneアプリにリプレイス。" +
+        "iPhone用在庫管理アプリのインターフェース開発を担当。現行稼働している組込システム(ハンディ)をiPhoneアプリにリプレイス。" +
         "Objective-Cによる画面表示、画面遷移、項目の入出力を実装。"
       }
       detailRole={"インターフェース開発¥n実装"}
       detailSkills={"Objective-C¥nSQLite¥nXcode"}
       detailLearned={
-        "プログラミングは初体験であったが、参考書やネット情報を参考にしてObjective-Cによるプログラミングスキルを身に付けることができた。" +
-        "また、DBまわりは自社ライブラリを流用し(C言語)開発効率を上げられる手法が勉強になった。"
+        "プログラミングは初体験であったが、参考書やネット情報を参考にObjective-Cによるプログラミングスキルを身に付けることができた。" +
+        "また、DBまわりは自社ライブラリを流用し(C言語)開発効率を上げられる手法を習得。"
       }
     />
   );

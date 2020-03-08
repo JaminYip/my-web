@@ -62,7 +62,7 @@ export default function HistoryCommonCardContent(prop: Props) {
           <Box>{skillsChip}</Box>
         </Typography>
       </CardContent>
-      <Typography component="span" style={{ display: "flex" }}>
+      <Typography component="div" style={{ display: "flex" }}>
         <Box ml={2} mb={1} color="#b2dfdb" fontSize={11}>
           SEE MORE
         </Box>

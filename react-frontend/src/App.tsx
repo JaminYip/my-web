@@ -15,7 +15,7 @@ const useDelay = (ms: number) => {
 };
 
 const App: React.FC = () => {
-  const loading = useDelay(4500);
+  const loading = useDelay(3500);
 
   return (
     <React.Fragment>

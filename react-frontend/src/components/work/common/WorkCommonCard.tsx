@@ -43,7 +43,11 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     git: {
       color: "#000000",
-      transform: "scale(0.8,0.8)"
+      transform: "scale(0.8,0.8)",
+      transition: "0.5s",
+      "&:hover": {
+        opacity: 0.6
+      }
     }
   })
 );
@@ -101,7 +105,7 @@ export default function WorkCommonCard(prop: Props) {
           <Box fontSize={13} mt={1} mr={1}>
             See more on GitHub
           </Box>
-          <Box mt={0.8}>
+          <Box mt={0.6}>
             <a
               href={prop.gitHubRepositoryURL}
               {...linkAttr}

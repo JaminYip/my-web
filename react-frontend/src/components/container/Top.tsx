@@ -1,11 +1,11 @@
 import React, { SetStateAction } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
 import Menu from "@material-ui/core/Menu";
+import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Tooltip from "@material-ui/core/Tooltip";
+import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Slide from "@material-ui/core/Slide";
 import Fade from "@material-ui/core/Fade";
 import IconButton from "@material-ui/core/IconButton";
@@ -25,10 +25,8 @@ import TopImage10 from "../../images/top10.jpg";
 import TopImage11 from "../../images/top11.jpg";
 import TopImage12 from "../../images/top12.jpg";
 import TopImage13 from "../../images/top13.jpg";
-import TopImage14 from "../../images/top14.jpg";
-import TopImage15 from "../../images/top15.jpg";
 import GitHubIcon from "@material-ui/icons/GitHub";
-//import FacebookIcon from "@material-ui/icons/Facebook";
+import FacebookIcon from "@material-ui/icons/Facebook";
 //import Avatar from "@material-ui/core/Avatar";
 //import AvatarImage from "../images/avatar.jpg";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
@@ -57,27 +55,26 @@ const useStyles = makeStyles((theme: Theme) =>
     imageDiv: {
       top: 0,
       marginTop: 20,
-      position: "relative",
-      height: "100vmin",
+      marginRight: "2vmax",
+      display: "flex",
+      justifyContent: "flex-end",
       [theme.breakpoints.down("sm")]: {
         marginTop: 0,
-        left: "0",
-        width: "100%",
-        height: "40vmax"
+        marginRight: 0
       }
     },
     image: {
       top: 0,
-      left: "9%",
+      position: "relative",
+      objectFit: "cover",
       width: "90%",
-      height: "100vmin",
+      height: "100%",
       [theme.breakpoints.down("sm")]: {
-        left: "0",
-        width: "100%",
-        height: "40vmax"
+        width: "100%"
       },
-      position: "absolute",
-      objectFit: "cover"
+      [theme.breakpoints.only("md")]: {
+        width: "85%"
+      }
     },
     sectionLinkDiv: {
       margin: theme.spacing(1.5)
@@ -99,7 +96,6 @@ const useStyles = makeStyles((theme: Theme) =>
       }
     },
     gitDiv: {
-      marginRight: theme.spacing(5.0),
       marginLeft: theme.spacing(3.0),
       transform: "scale(0.8,0.8)",
       [theme.breakpoints.down("sm")]: {
@@ -108,7 +104,27 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     git: {
       color: "#f4f5f7",
-      filter: "drop-shadow(1px 1px 1px rgba(0,0,0,0.8))"
+      filter: "drop-shadow(1px 1px 1px rgba(0,0,0,0.8))",
+      transition: "0.5s",
+      "&:hover": {
+        opacity: 0.6
+      }
+    },
+    facebookDiv: {
+      marginRight: theme.spacing(5.0),
+      marginLeft: theme.spacing(2.0),
+      transform: "scale(0.8,0.8)",
+      [theme.breakpoints.down("sm")]: {
+        display: "none"
+      }
+    },
+    facebook: {
+      color: "#f4f5f7",
+      filter: "drop-shadow(1px 1px 1px rgba(0,0,0,0.8))",
+      transition: "0.5s",
+      "&:hover": {
+        opacity: 0.6
+      }
     },
     menuIcon: {
       filter: "drop-shadow(1px 1px 1px rgba(0,0,0,0.8))"
@@ -152,11 +168,12 @@ const useStyles = makeStyles((theme: Theme) =>
       flexWrap: "wrap",
       justifyContent: "center"
     },
-    menuFooterGit: {
+    menuFooterIcon: {
       color: "#f4f5f7",
       userSelect: "none",
       filter: "drop-shadow(1px 1px 1px rgba(0,0,0,0.8))",
-      transform: "scale(0.8,0.8)"
+      transform: "scale(0.8,0.8)",
+      margin: theme.spacing(1)
     },
     menuFooterText: {
       color: "#f4f5f7",
@@ -177,7 +194,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       flexWrap: "wrap",
       justifyContent: "flex-end",
-      marginTop: -35,
+      marginTop: -30,
       marginRight: 7
     },
     toTop: {
@@ -211,9 +228,7 @@ const images = [
   TopImage10,
   TopImage11,
   TopImage12,
-  TopImage13,
-  TopImage14,
-  TopImage15
+  TopImage13
 ];
 
 const lastIndex: number = images.length - 1;
@@ -233,7 +248,7 @@ interface Props {
 
 export default function Top(prop: Props) {
   const classes = useStyles();
-  const trigger = useScrollTrigger({ disableHysteresis: true, threshold: 700 });
+  const trigger = useScrollTrigger({ disableHysteresis: true, threshold: 500 });
   const [fade, setFade] = React.useState(true);
 
   React.useEffect(
@@ -271,17 +286,17 @@ export default function Top(prop: Props) {
   return (
     <React.Fragment>
       <AppBar position="sticky" elevation={0} className={classes.navBar}>
-        <Toolbar className={classes.toolbarWeb}>
-          <Slide
-            appear={false}
-            direction="down"
-            in={!trigger}
-            timeout={{ enter: 500, exit: 500 }}
-          >
-            <Typography component="span" className={classes.author}>
-              <Fade in timeout={{ enter: 4000, exit: 1500 }}>
+        <Fade in timeout={{ enter: 4000, exit: 1500 }}>
+          <Toolbar className={classes.toolbarWeb}>
+            <Slide
+              appear={false}
+              direction="down"
+              in={!trigger}
+              timeout={{ enter: 500, exit: 500 }}
+            >
+              <Typography component="span" className={classes.author}>
                 <Box
-                  fontSize="h5.fontSize"
+                  fontSize="h4.fontSize"
                   fontWeight="fontWeightLight"
                   fontFamily="Shadows Into Light"
                   color="#f4f5f7"
@@ -291,10 +306,8 @@ export default function Top(prop: Props) {
                 >
                   Jamin Yip
                 </Box>
-              </Fade>
-            </Typography>
-          </Slide>
-          <Fade in timeout={{ enter: 4000, exit: 1500 }}>
+              </Typography>
+            </Slide>
             <Typography component="div" className={classes.sectionLinkDiv}>
               <Box mt={4}>
                 <span
@@ -305,8 +318,6 @@ export default function Top(prop: Props) {
                 </span>
               </Box>
             </Typography>
-          </Fade>
-          <Fade in timeout={{ enter: 4000, exit: 1500 }}>
             <Typography component="div" className={classes.sectionLinkDiv}>
               <Box mt={4}>
                 <span
@@ -317,8 +328,6 @@ export default function Top(prop: Props) {
                 </span>
               </Box>
             </Typography>
-          </Fade>
-          <Fade in timeout={{ enter: 4000, exit: 1500 }}>
             <Typography component="div" className={classes.sectionLinkDiv}>
               <Box mt={4}>
                 <span
@@ -329,8 +338,6 @@ export default function Top(prop: Props) {
                 </span>
               </Box>
             </Typography>
-          </Fade>
-          <Fade in timeout={{ enter: 4000, exit: 1500 }}>
             <Typography component="div" className={classes.sectionLinkDiv}>
               <Box mt={4}>
                 <span
@@ -341,8 +348,6 @@ export default function Top(prop: Props) {
                 </span>
               </Box>
             </Typography>
-          </Fade>
-          <Fade in timeout={{ enter: 4000, exit: 1500 }}>
             <Typography component="div" className={classes.gitDiv}>
               <Box mt={5}>
                 <a
@@ -350,24 +355,30 @@ export default function Top(prop: Props) {
                   {...linkAttr}
                   className={classes.git}
                 >
-                  <Tooltip title="Click to open the GitHub" arrow>
+                  <Tooltip title="more info on GitHub" arrow>
                     <GitHubIcon />
                   </Tooltip>
                 </a>
               </Box>
             </Typography>
-            {/* <a */}
-            {/* href="https://www.facebook.com/jamin.yip" */}
-            {/* {...linkAttr} */}
-            {/* className={classes.link} */}
-            {/* > */}
-            {/* <FacebookIcon style={{ color: "#3B5998" }} /> */}
-            {/* </a> */}
-          </Fade>
-        </Toolbar>
-        <Toolbar className={classes.toolbarMobile}>
-          <Typography component="span" className={classes.author}>
-            <Fade in timeout={{ enter: 4000, exit: 1500 }}>
+            <Typography component="div" className={classes.facebookDiv}>
+              <Box mt={5}>
+                <a
+                  href="https://www.facebook.com/jamin.yip"
+                  {...linkAttr}
+                  className={classes.facebook}
+                >
+                  <Tooltip title="feel free to reach me on Facebook" arrow>
+                    <FacebookIcon />
+                  </Tooltip>
+                </a>
+              </Box>
+            </Typography>
+          </Toolbar>
+        </Fade>
+        <Fade in timeout={{ enter: 4000, exit: 1500 }}>
+          <Toolbar className={classes.toolbarMobile}>
+            <Typography component="span" className={classes.author}>
               <Box
                 fontSize="h5.fontSize"
                 fontWeight="fontWeightLight"
@@ -378,9 +389,7 @@ export default function Top(prop: Props) {
               >
                 Jamin Yip
               </Box>
-            </Fade>
-          </Typography>
-          <Fade in timeout={{ enter: 4000, exit: 1500 }}>
+            </Typography>
             <IconButton
               edge="end"
               size="small"
@@ -392,90 +401,115 @@ export default function Top(prop: Props) {
             >
               <MenuIcon />
             </IconButton>
-          </Fade>
-          <Menu
-            anchorEl={prop.anchorEl[0]}
-            open={Boolean(prop.anchorEl[0])}
-            onClose={handleClose}
-            TransitionComponent={Fade}
-            PopoverClasses={{ paper: classes.menuPopoverPaper }}
-            marginThreshold={0}
-          >
-            <div />
-            <Typography component="div" className={classes.menuCloseDiv}>
-              <span onClick={handleClose} className={classes.menuClose}>
-                <CloseIcon />
-              </span>
-            </Typography>
-            <br />
-            <br />
-            <Typography component="div" className={classes.menuSectionLinkDiv}>
-              <span
-                onClick={prop.executeScroll[0]}
-                className={classes.menuSectionLink}
+            <Menu
+              anchorEl={prop.anchorEl[0]}
+              open={Boolean(prop.anchorEl[0])}
+              onClose={handleClose}
+              TransitionComponent={Fade}
+              PopoverClasses={{ paper: classes.menuPopoverPaper }}
+              marginThreshold={0}
+            >
+              <div />
+              <Typography component="div" className={classes.menuCloseDiv}>
+                <span onClick={handleClose} className={classes.menuClose}>
+                  <CloseIcon />
+                </span>
+              </Typography>
+              <br />
+              <br />
+              <Typography
+                component="div"
+                className={classes.menuSectionLinkDiv}
               >
-                ABOUT
-              </span>
-            </Typography>
-            <Typography component="div" className={classes.menuSectionLinkDiv}>
-              <span
-                onClick={prop.executeScroll[1]}
-                className={classes.menuSectionLink}
+                <span
+                  onClick={prop.executeScroll[0]}
+                  className={classes.menuSectionLink}
+                >
+                  ABOUT
+                </span>
+              </Typography>
+              <Typography
+                component="div"
+                className={classes.menuSectionLinkDiv}
               >
-                SKILLS
-              </span>
-            </Typography>
-            <Typography component="div" className={classes.menuSectionLinkDiv}>
-              <span
-                onClick={prop.executeScroll[2]}
-                className={classes.menuSectionLink}
+                <span
+                  onClick={prop.executeScroll[1]}
+                  className={classes.menuSectionLink}
+                >
+                  SKILLS
+                </span>
+              </Typography>
+              <Typography
+                component="div"
+                className={classes.menuSectionLinkDiv}
               >
-                HISTORY
-              </span>
-            </Typography>
-            <Typography component="div" className={classes.menuSectionLinkDiv}>
-              <span
-                onClick={prop.executeScroll[3]}
-                className={classes.menuSectionLink}
+                <span
+                  onClick={prop.executeScroll[2]}
+                  className={classes.menuSectionLink}
+                >
+                  HISTORY
+                </span>
+              </Typography>
+              <Typography
+                component="div"
+                className={classes.menuSectionLinkDiv}
               >
-                WORK
-              </span>
-            </Typography>
-            <br />
-            <br />
-            <Typography component="div" className={classes.menuFooterDiv}>
-              <a
-                href="https://github.com/JaminYip"
-                {...linkAttr}
-                className={classes.menuFooterGit}
-              >
-                <GitHubIcon />
-              </a>
-            </Typography>
-            <Typography component="div" className={classes.menuFooterDiv}>
-              <span className={classes.menuFooterText}>©︎ 2020 Jamin Yip.</span>
-            </Typography>
-          </Menu>
-        </Toolbar>
+                <span
+                  onClick={prop.executeScroll[3]}
+                  className={classes.menuSectionLink}
+                >
+                  WORK
+                </span>
+              </Typography>
+              <br />
+              <br />
+              <Typography component="div" className={classes.menuFooterDiv}>
+                <Box>
+                  <a
+                    href="https://github.com/JaminYip"
+                    {...linkAttr}
+                    className={classes.menuFooterIcon}
+                  >
+                    <GitHubIcon />
+                  </a>
+                </Box>
+                <Box>
+                  <a
+                    href="https://www.facebook.com/jamin.yip"
+                    {...linkAttr}
+                    className={classes.menuFooterIcon}
+                  >
+                    <FacebookIcon />
+                  </a>
+                </Box>
+              </Typography>
+              <Typography component="div" className={classes.menuFooterDiv}>
+                <span className={classes.menuFooterText}>
+                  ©︎ 2020 Jamin Yip.
+                </span>
+              </Typography>
+            </Menu>
+          </Toolbar>
+        </Fade>
       </AppBar>
-      <div className={classes.imageDiv}>
-        <Fade in={fade} timeout={{ enter: 4000, exit: 1500 }}>
+      <Fade in={fade} timeout={{ enter: 4000, exit: 1500 }}>
+        <Typography component="div" className={classes.imageDiv}>
           <img
             className={classes.image}
             src={images[imageIndex]}
             alt="トップ画像"
           />
-        </Fade>
-      </div>
-      <AppBar position="fixed" className={classes.footerBar}>
-        <Typography component="div" className={classes.toTopDiv}>
-          <Fade in timeout={{ enter: 4000, exit: 1500 }}>
+        </Typography>
+      </Fade>
+      <Fade in timeout={{ enter: 4000, exit: 1500 }}>
+        <AppBar position="fixed" className={classes.footerBar}>
+          <Typography component="div" className={classes.toTopDiv}>
             <span onClick={prop.executeScroll[4]} className={classes.toTop}>
               <KeyboardArrowUpIcon />
             </span>
-          </Fade>
-        </Typography>
-      </AppBar>
+          </Typography>
+        </AppBar>
+      </Fade>
     </React.Fragment>
   );
 }

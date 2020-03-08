@@ -34,7 +34,7 @@ export default function Loading() {
   const classes = useStyles();
   const [fade, setFade] = React.useState(true);
   React.useEffect(() => {
-    const timer = setTimeout(() => setFade(prev => !prev), 3500);
+    const timer = setTimeout(() => setFade(prev => !prev), 2500);
     return () => clearTimeout(timer);
   });
 
@@ -48,7 +48,7 @@ export default function Loading() {
       >
         <Grid item>
           <Typography component="span" className={classes.typography}>
-            <Fade in={fade} timeout={{ enter: 2500, exit: 2000 }}>
+            <Fade in={fade} timeout={{ enter: 2000, exit: 1500 }}>
               <Box
                 color="#f4f5f7"
                 fontSize="h6.fontSize"
@@ -59,7 +59,7 @@ export default function Loading() {
                 Now Loading
               </Box>
             </Fade>
-            <Fade in={fade} timeout={{ enter: 2500, exit: 2000 }}>
+            <Fade in={fade} timeout={{ enter: 2000, exit: 1500 }}>
               <Skeleton
                 height={1}
                 width={120}

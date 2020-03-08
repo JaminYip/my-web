@@ -1,4 +1,5 @@
 import React from "react";
+import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Paper from "@material-ui/core/Paper";
@@ -157,113 +158,119 @@ export default function Skills() {
   const description: JSX.Element[] = GetDescription(descriptionMap);
 
   return (
-    <Typography component="span" color="textSecondary">
-      <Box
-        fontSize="h2.fontSize"
-        fontWeight="fontWeightLight"
-        letterSpacing={8}
-      >
-        Skills
-      </Box>
-      <Box
-        fontSize="overline.fontSize"
-        fontWeight="fontWeightLight"
-        letterSpacing={2}
-      >
-        -スキルセット-
-      </Box>
-      <br />
-      <Box component="fieldset" borderColor="transparent">
-        <Box mb={2}>
-          <Tooltip title="Description of the skill level" arrow placement="top">
-            <Paper component="div" elevation={1}>
-              {description}
-            </Paper>
-          </Tooltip>
+    <React.Fragment>
+      <Typography component="div" gutterBottom style={{ color: "#cfd8dc" }}>
+        <Box
+          fontSize="h6.fontSize"
+          fontWeight="fontWeightLight"
+          letterSpacing={4}
+        >
+          SKILLS
         </Box>
-        <Tooltip
-          title="Click the ExpansionPanel to show and hide the content"
-          arrow
-        >
-          <ExpansionPanel defaultExpanded>
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-              <Box
-                fontSize="subtitle1.fontSize"
-                fontWeight="fontWeightLight"
-                letterSpacing={5}
+        <Box fontSize={10} fontWeight="fontWeightLight" letterSpacing={2}>
+          -スキルセット-
+        </Box>
+      </Typography>
+      <Container maxWidth="md" disableGutters style={{ background: "#f4f5f7" }}>
+        <br />
+        <Typography component="div" color="textSecondary">
+          <Box component="fieldset" borderColor="transparent">
+            <Box mb={2}>
+              <Tooltip
+                title="Description of the skill level"
+                arrow
+                placement="top"
               >
-                Back-end
-              </Box>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Box
-                component="fieldset"
-                borderColor="transparent"
-                style={{ flexGrow: 1 }}
-              >
-                <Grid container spacing={3}>
-                  {backendSkills}
-                </Grid>
-              </Box>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-        </Tooltip>
-        <Tooltip
-          title="Click the ExpansionPanel to show and hide the content"
-          arrow
-        >
-          <ExpansionPanel>
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-              <Box
-                fontSize="subtitle1.fontSize"
-                fontWeight="fontWeightLight"
-                letterSpacing={5}
-              >
-                Front-end
-              </Box>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Box
-                component="fieldset"
-                borderColor="transparent"
-                style={{ flexGrow: 1 }}
-              >
-                <Grid container spacing={3}>
-                  {frontendSkills}
-                </Grid>
-              </Box>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-        </Tooltip>
-        <Tooltip
-          title="Click the ExpansionPanel to show and hide the content"
-          arrow
-        >
-          <ExpansionPanel>
-            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-              <Box
-                fontSize="subtitle1.fontSize"
-                fontWeight="fontWeightLight"
-                letterSpacing={5}
-              >
-                DevOps
-              </Box>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Box
-                component="fieldset"
-                borderColor="transparent"
-                style={{ flexGrow: 1 }}
-              >
-                <Grid container spacing={3}>
-                  {devOpsSkills}
-                </Grid>
-              </Box>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-        </Tooltip>
-      </Box>
-      <br />
-    </Typography>
+                <Paper component="div" elevation={1}>
+                  {description}
+                </Paper>
+              </Tooltip>
+            </Box>
+            <Tooltip
+              title="Click the ExpansionPanel to show and hide the content"
+              arrow
+            >
+              <ExpansionPanel defaultExpanded>
+                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                  <Box
+                    fontSize="subtitle1.fontSize"
+                    fontWeight="fontWeightLight"
+                    letterSpacing={5}
+                  >
+                    Back-end
+                  </Box>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <Box
+                    component="fieldset"
+                    borderColor="transparent"
+                    style={{ flexGrow: 1 }}
+                  >
+                    <Grid container spacing={3}>
+                      {backendSkills}
+                    </Grid>
+                  </Box>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+            </Tooltip>
+            <Tooltip
+              title="Click the ExpansionPanel to show and hide the content"
+              arrow
+            >
+              <ExpansionPanel>
+                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                  <Box
+                    fontSize="subtitle1.fontSize"
+                    fontWeight="fontWeightLight"
+                    letterSpacing={5}
+                  >
+                    Front-end
+                  </Box>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <Box
+                    component="fieldset"
+                    borderColor="transparent"
+                    style={{ flexGrow: 1 }}
+                  >
+                    <Grid container spacing={3}>
+                      {frontendSkills}
+                    </Grid>
+                  </Box>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+            </Tooltip>
+            <Tooltip
+              title="Click the ExpansionPanel to show and hide the content"
+              arrow
+            >
+              <ExpansionPanel>
+                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                  <Box
+                    fontSize="subtitle1.fontSize"
+                    fontWeight="fontWeightLight"
+                    letterSpacing={5}
+                  >
+                    DevOps
+                  </Box>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <Box
+                    component="fieldset"
+                    borderColor="transparent"
+                    style={{ flexGrow: 1 }}
+                  >
+                    <Grid container spacing={3}>
+                      {devOpsSkills}
+                    </Grid>
+                  </Box>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+            </Tooltip>
+          </Box>
+        </Typography>
+        <br />
+      </Container>
+    </React.Fragment>
   );
 }

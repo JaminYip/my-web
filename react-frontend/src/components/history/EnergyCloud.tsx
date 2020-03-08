@@ -13,7 +13,7 @@ export default function EnergyCloud() {
       skills={["Java", "Spring", "VBScript", "Oracle"]}
       detailTitle={"エネルギー会社基幹業務クラウドシステム開発"}
       detailWork={
-        "エネルギー会社現行稼働している基幹業務システムバックエンドの開発を担当。Java-SpringによるAPI開発、" +
+        "エネルギー会社の現行稼働している基幹業務システムのバックエンド開発を担当。Java-SpringによるAPI開発、" +
         "ビジネスロジックの実装、AndroidアプリのIF改修、帳票フォーマット修正、WSHによる処理自動化ツール(VBScript)の作成、システム障害対応。"
       }
       detailRole={"バックエンド開発¥n用件定義〜保守"}
@@ -21,8 +21,8 @@ export default function EnergyCloud() {
         "Java6(Spring3.1.1)、VBScript¥nOracle11g¥nKCPS¥nEclipse、Postman、A5:SQL Mk-2、SVFX-Designer、SVN、JIRA、Slack、Backlog、Symphony"
       }
       detailLearned={
-        "Java(Spring)によるバックエンド開発は初体験であったが、様々な情報を参考にしてこれまでプログラミングの経験を生かし素早くキャッチアップ。" +
-        "¥n要件定義を始め顧客とのコミニュケーションをとる機会が増えたため上流工程の経験を得ることができ、コミュニケーション力を高めることができた。"
+        "Java(Spring)によるバックエンド開発は初体験であったが、様々な情報を参考にこれまでのプログラミング経験を生かし素早くキャッチアップ。" +
+        "¥n要件定義を始め顧客とのコミニュケーションをとる機会が増え、上流工程の経験を得ることができた。"
       }
     />
   );

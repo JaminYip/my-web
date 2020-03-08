@@ -13,12 +13,12 @@ export default function POS() {
       skills={["Objective-C", "SQLite"]}
       detailTitle={"iPad用POSアプリ開発(大学時代アルバイト)"}
       detailWork={
-        "iPad用POSアプリのインターフェースの開発を担当。Objective-Cによる画面表示、画面遷移、項目の入出力、カスタムキーボード、グリッド描画機能を実装。"
+        "iPad用POSアプリのインターフェース開発を担当。Objective-Cによる画面表示、画面遷移、項目の入出力、カスタムキーボード、グリッド描画機能を実装。"
       }
       detailRole={"インターフェース開発¥n実装"}
       detailSkills={"Objective-C¥nSQLite¥nXcode"}
       detailLearned={
-        "Objective-Cによるプログラミングスキルの向上を図ることができた。可変グリッドレイアウトの描画、" +
+        "Objective-Cによるプログラミングスキル向上を図ることができた。可変グリッドレイアウトの描画、" +
         "カスタムキーボード機能の実装はネット情報のリサーチにより実現できたため、自走力を鍛えることができた。"
       }
     />

@@ -8,32 +8,29 @@ import NewApp from "../work/NewApp";
 
 export default function Work() {
   return (
-    <Typography
-      component="div"
-      color="textSecondary"
-      style={{ minHeight: "180vmin" }}
-    >
-      <Box
-        fontSize="h2.fontSize"
-        fontWeight="fontWeightLight"
-        letterSpacing={8}
-      >
-        Work
-      </Box>
-      <Box
-        fontSize="overline.fontSize"
-        fontWeight="fontWeightLight"
-        letterSpacing={2}
-      >
-        -コンテンツ-
-      </Box>
-      <br />
-      <Container>
-        <Grid container spacing={3} justify="center">
-          <Portfolio />
-          <NewApp />
-        </Grid>
+    <React.Fragment>
+      <Typography component="div" gutterBottom style={{ color: "#cfd8dc" }}>
+        <Box
+          fontSize="h6.fontSize"
+          fontWeight="fontWeightLight"
+          letterSpacing={4}
+        >
+          WORK
+        </Box>
+        <Box fontSize={10} fontWeight="fontWeightLight" letterSpacing={2}>
+          -個人制作-
+        </Box>
+      </Typography>
+      <Container maxWidth="md" style={{ background: "#f4f5f7" }}>
+        <br />
+        <Typography component="div" color="textSecondary">
+          <Grid container spacing={3} justify="center">
+            <Portfolio />
+            <NewApp />
+          </Grid>
+        </Typography>
+        <br />
       </Container>
-    </Typography>
+    </React.Fragment>
   );
 }
