@@ -6,13 +6,13 @@ export default function Portfolio() {
   return (
     <WorkCommonCard
       image={Image}
-      contentURL={"https://jaminyip.github.io/my-web/"}
+      contentURL={"https://jaminyip.github.io/portfolio"}
       title={"JaminYip's Portfolio"}
       description={
         "プロフィール、スキルセット、業務経歴及び個人制作のコンテンツを記載したサイト"
       }
       chip={["React", "TypeScript", "Material-UI"]}
-      gitHubRepositoryURL={"https://github.com/JaminYip/my-web"}
+      gitHubRepositoryURL={"https://github.com/JaminYip/portfolio"}
     />
   );
 }

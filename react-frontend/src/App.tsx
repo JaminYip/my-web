@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import Loading from "./components/Loading";
 import Home from "./components/Home";
 
