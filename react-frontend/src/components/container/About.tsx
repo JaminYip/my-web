@@ -46,6 +46,7 @@ export default function About() {
               バックエンドの設計、開発業務を中心に経験を積んでおり、その他フロンドエンドやDevOps、機械学習など幅広く学習しております。
             </Box>
           </Typography>
+          <br />
         </Container>
       </Typography>
     </React.Fragment>

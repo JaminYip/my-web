@@ -15,28 +15,27 @@ window.addEventListener("scroll", () => {
     document.getElementById("aboutDiv") === null ||
     document.getElementById("skillsDiv") === null ||
     document.getElementById("historyDiv") === null ||
-    document.getElementById("workDiv") === null ||
-    document.getElementById("homeContainer") === null
+    document.getElementById("workDiv") === null
   ) {
     return;
   }
-
+  document.body.style.transition = "1s";
   if (document.getElementById("workDiv")!.getBoundingClientRect().top <= 1) {
-    document.getElementById("homeContainer")!.style.backgroundColor = "#000000";
+    document.body.style.backgroundColor = "#000000";
   } else if (
     document.getElementById("historyDiv")!.getBoundingClientRect().top <= 1
   ) {
-    document.getElementById("homeContainer")!.style.backgroundColor = "#3a3d20";
+    document.body.style.backgroundColor = "#3a3d20";
   } else if (
     document.getElementById("skillsDiv")!.getBoundingClientRect().top <= 1
   ) {
-    document.getElementById("homeContainer")!.style.backgroundColor = "#3d203a";
+    document.body.style.backgroundColor = "#3d203a";
   } else if (
     document.getElementById("aboutDiv")!.getBoundingClientRect().top <= 1
   ) {
-    document.getElementById("homeContainer")!.style.backgroundColor = "#203a3d";
+    document.body.style.backgroundColor = "#203a3d";
   } else {
-    document.getElementById("homeContainer")!.style.backgroundColor = "#000000";
+    document.body.style.backgroundColor = "#000000";
   }
 });
 
@@ -116,12 +115,8 @@ const scrollToRef = (
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
-      background: "#000000",
-      transition: "1.0s",
-      [theme.breakpoints.down("sm")]: {
-        paddingLeft: "3vmin",
-        paddingRight: "3vmin"
-      }
+      paddingLeft: "3vmin",
+      paddingRight: "3vmin"
     },
     menuContainerAbout: {
       marginTop: 105,
@@ -137,7 +132,7 @@ const useStyles = makeStyles((theme: Theme) =>
       }
     },
     footerOffset: {
-      height: 70,
+      height: 100,
       [theme.breakpoints.up("xl")]: {
         height: 260
       }
@@ -198,12 +193,7 @@ export default function Home() {
   const classes = useStyles();
 
   return (
-    <Container
-      id="homeContainer"
-      disableGutters
-      maxWidth="xl"
-      className={classes.root}
-    >
+    <Container disableGutters maxWidth="xl" className={classes.root}>
       <Top
         executeScroll={[
           aboutExecuteScroll,

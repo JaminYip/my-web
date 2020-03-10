@@ -55,7 +55,6 @@ const useStyles = makeStyles((theme: Theme) =>
     imageDiv: {
       top: 0,
       marginTop: 20,
-      marginRight: "2vmax",
       display: "flex",
       justifyContent: "flex-end",
       [theme.breakpoints.down("sm")]: {
@@ -111,7 +110,7 @@ const useStyles = makeStyles((theme: Theme) =>
       }
     },
     facebookDiv: {
-      marginRight: theme.spacing(5.0),
+      marginRight: theme.spacing(4.0),
       marginLeft: theme.spacing(2.0),
       transform: "scale(0.8,0.8)",
       [theme.breakpoints.down("sm")]: {
@@ -296,12 +295,11 @@ export default function Top(prop: Props) {
             >
               <Typography component="span" className={classes.author}>
                 <Box
-                  fontSize="h4.fontSize"
+                  fontSize={26}
                   fontWeight="fontWeightLight"
                   fontFamily="Shadows Into Light"
                   color="#f4f5f7"
-                  letterSpacing={1}
-                  m={0.5}
+                  letterSpacing={2}
                   mt={4}
                 >
                   Jamin Yip
@@ -380,14 +378,12 @@ export default function Top(prop: Props) {
           <Toolbar className={classes.toolbarMobile}>
             <Typography component="span" className={classes.author}>
               <Box
-                fontSize="h5.fontSize"
+                fontSize={15}
                 fontWeight="fontWeightLight"
-                fontFamily="Shadows Into Light"
                 color="#f4f5f7"
                 letterSpacing={1}
-                m={0.5}
               >
-                Jamin Yip
+                JAMIN YIP
               </Box>
             </Typography>
             <IconButton
@@ -510,6 +506,7 @@ export default function Top(prop: Props) {
           </Typography>
         </AppBar>
       </Fade>
+      <br />
     </React.Fragment>
   );
 }
