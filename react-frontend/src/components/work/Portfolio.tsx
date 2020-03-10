@@ -6,7 +6,7 @@ export default function Portfolio() {
   return (
     <WorkCommonCard
       image={Image}
-      contentURL={"https://jaminyip.github.io/portfolio"}
+      contentURL={"https://jaminyip.github.io/portfolio/"}
       title={"JaminYip's Portfolio"}
       description={
         "プロフィール、スキルセット、業務経歴及び個人制作のコンテンツを記載したサイト"

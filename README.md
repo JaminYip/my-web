@@ -7,7 +7,7 @@
 [![TYPESCRIPT](https://img.shields.io/badge/typescript-3.8.3-827717)](https://www.typescriptlang.org/)
 
 This is a personal portfolio website for describe about my skills, career and what I have created.<br>
-Please visit [https://jaminyip.github.io/portfolio](https://jaminyip.github.io/portfolio/)
+Please visit [https://jaminyip.github.io/portfolio/](https://jaminyip.github.io/portfolio/)
 
 ## Usage
 
