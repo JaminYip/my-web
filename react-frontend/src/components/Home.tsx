@@ -19,7 +19,8 @@ window.addEventListener("scroll", () => {
   ) {
     return;
   }
-  document.body.style.transition = "1s";
+
+  document.body.style.transition = "background-color 1.0s";
   if (document.getElementById("workDiv")!.getBoundingClientRect().top <= 1) {
     document.body.style.backgroundColor = "#000000";
   } else if (
@@ -123,18 +124,25 @@ const useStyles = makeStyles((theme: Theme) =>
       [theme.breakpoints.down("sm")]: {
         marginTop: 65
       },
+      [theme.breakpoints.only("md")]: {
+        paddingLeft: "7vmin"
+      },
       background: "rgba(0,0,0,0.0)"
     },
     menuContainerCommon: {
       marginTop: 105,
       [theme.breakpoints.down("sm")]: {
         marginTop: 65
+      },
+      [theme.breakpoints.only("md")]: {
+        paddingLeft: "7vmin",
+        paddingRight: "7vmin"
       }
     },
     footerOffset: {
-      height: 100,
+      height: 105,
       [theme.breakpoints.up("xl")]: {
-        height: 260
+        height: 265
       }
     },
     footerDiv: {
@@ -145,12 +153,15 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
+export enum ScrollEventIndex {
+  About,
+  Skills,
+  History,
+  Work,
+  Top
+}
+
 export default function Home() {
-  const aboutScrollEventIndex: number = 0;
-  const skillsScrollEventIndex: number = 1;
-  const historyScrollEventIndex: number = 2;
-  const workScrollEventIndex: number = 3;
-  const topScrollEventIndex: number = 4;
   const aboutRef = useRef(null);
   const skillsRef = useRef(null);
   const historyRef = useRef(null);
@@ -159,36 +170,36 @@ export default function Home() {
   const aboutExecuteScroll = (
     event: React.MouseEvent<HTMLSpanElement, MouseEvent>
   ) => {
-    setScrollState(aboutScrollEventIndex);
-    scrollToRef(aboutRef, window.pageYOffset, 0, aboutScrollEventIndex);
+    setScrollState(ScrollEventIndex.About);
+    scrollToRef(aboutRef, window.pageYOffset, 0, ScrollEventIndex.About);
     setAnchorEl(null);
   };
   const skillsExecuteScroll = (
     event: React.MouseEvent<HTMLSpanElement, MouseEvent>
   ) => {
-    setScrollState(skillsScrollEventIndex);
-    scrollToRef(skillsRef, window.pageYOffset, 0, skillsScrollEventIndex);
+    setScrollState(ScrollEventIndex.Skills);
+    scrollToRef(skillsRef, window.pageYOffset, 0, ScrollEventIndex.Skills);
     setAnchorEl(null);
   };
   const historyExecuteScroll = (
     event: React.MouseEvent<HTMLSpanElement, MouseEvent>
   ) => {
-    setScrollState(historyScrollEventIndex);
-    scrollToRef(historyRef, window.pageYOffset, 0, historyScrollEventIndex);
+    setScrollState(ScrollEventIndex.History);
+    scrollToRef(historyRef, window.pageYOffset, 0, ScrollEventIndex.History);
     setAnchorEl(null);
   };
   const workExecuteScroll = (
     event: React.MouseEvent<HTMLSpanElement, MouseEvent>
   ) => {
-    setScrollState(workScrollEventIndex);
-    scrollToRef(workRef, window.pageYOffset, 0, workScrollEventIndex);
+    setScrollState(ScrollEventIndex.Work);
+    scrollToRef(workRef, window.pageYOffset, 0, ScrollEventIndex.Work);
     setAnchorEl(null);
   };
   const topExecuteScroll = (
     event: React.MouseEvent<HTMLSpanElement, MouseEvent>
   ) => {
-    setScrollState(topScrollEventIndex);
-    scrollToRef("top", window.pageYOffset, 0, topScrollEventIndex);
+    setScrollState(ScrollEventIndex.Top);
+    scrollToRef("top", window.pageYOffset, 0, ScrollEventIndex.Top);
   };
   const classes = useStyles();
 
@@ -202,8 +213,10 @@ export default function Home() {
           workExecuteScroll,
           topExecuteScroll
         ]}
+        scrollEventIndex={ScrollEventIndex}
         anchorEl={[anchorEl, setAnchorEl]}
       />
+      <div style={{ height: 5 }} />
       <div id="aboutDiv" ref={aboutRef} />
       <Fade in timeout={{ enter: 4000, exit: 1500 }}>
         <Container
@@ -214,6 +227,7 @@ export default function Home() {
           <About />
         </Container>
       </Fade>
+      <div style={{ height: 5 }} />
       <div id="skillsDiv" ref={skillsRef} />
       <Fade in timeout={{ enter: 4000, exit: 1500 }}>
         <Container
@@ -224,6 +238,7 @@ export default function Home() {
           <Skills />
         </Container>
       </Fade>
+      <div style={{ height: 5 }} />
       <div id="historyDiv" ref={historyRef} />
       <Fade in timeout={{ enter: 4000, exit: 1500 }}>
         <Container
@@ -234,6 +249,7 @@ export default function Home() {
           <History />
         </Container>
       </Fade>
+      <div style={{ height: 5 }} />
       <div id="workDiv" ref={workRef} />
       <Fade in timeout={{ enter: 4000, exit: 1500 }}>
         <Container
@@ -254,6 +270,7 @@ export default function Home() {
           </Typography>
         </Container>
       </Fade>
+      <br />
       <br />
     </Container>
   );

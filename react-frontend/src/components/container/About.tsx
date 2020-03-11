@@ -2,21 +2,28 @@ import React from "react";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
+import { useStyles } from "./History";
 
 export default function About() {
+  const classes = useStyles();
+
   return (
     <React.Fragment>
-      <Typography component="div" style={{ color: "#cfd8dc" }}>
-        <Box
-          fontSize="h6.fontSize"
-          fontWeight="fontWeightLight"
-          letterSpacing={4}
-        >
-          ABOUT
-        </Box>
-        <Box fontSize={10} fontWeight="fontWeightLight" letterSpacing={2}>
-          -プロフィール-
-        </Box>
+      <Typography component="div" className={classes.topDiv}>
+        <Typography component="div" className={classes.headerDiv}>
+          <Box
+            fontSize="h6.fontSize"
+            fontWeight="fontWeightLight"
+            letterSpacing={4}
+          >
+            ABOUT
+          </Box>
+        </Typography>
+        <Typography component="div" className={classes.headerDiv}>
+          <Box fontSize={10} fontWeight="fontWeightLight" letterSpacing={1}>
+            -プロフィール-
+          </Box>
+        </Typography>
         <Container maxWidth="md">
           <br />
           <Typography component="div" paragraph>

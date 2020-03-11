@@ -10,6 +10,7 @@ import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { useStyles } from "./History";
 
 interface SkillMap {
   name: string;
@@ -156,20 +157,25 @@ export default function Skills() {
   const backendSkills: JSX.Element[] = GetSkills(backendSkillMap);
   const devOpsSkills: JSX.Element[] = GetSkills(devOpsSkillMap);
   const description: JSX.Element[] = GetDescription(descriptionMap);
+  const classes = useStyles();
 
   return (
     <React.Fragment>
-      <Typography component="div" gutterBottom style={{ color: "#cfd8dc" }}>
-        <Box
-          fontSize="h6.fontSize"
-          fontWeight="fontWeightLight"
-          letterSpacing={4}
-        >
-          SKILLS
-        </Box>
-        <Box fontSize={10} fontWeight="fontWeightLight" letterSpacing={2}>
-          -スキルセット-
-        </Box>
+      <Typography component="div" paragraph className={classes.topDiv}>
+        <Typography component="div" className={classes.headerDiv}>
+          <Box
+            fontSize="h6.fontSize"
+            fontWeight="fontWeightLight"
+            letterSpacing={4}
+          >
+            SKILLS
+          </Box>
+        </Typography>
+        <Typography component="div" className={classes.headerDiv}>
+          <Box fontSize={10} fontWeight="fontWeightLight" letterSpacing={1}>
+            -スキルセット-
+          </Box>
+        </Typography>
       </Typography>
       <Container maxWidth="md" disableGutters style={{ background: "#f4f5f7" }}>
         <br />

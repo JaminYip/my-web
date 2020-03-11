@@ -11,8 +11,17 @@ import FinanceCRM from "../history/FinanceCRM";
 import POS from "../history/POS";
 import StockManagement from "../history/StockManagement";
 
-const useStyles = makeStyles((theme: Theme) =>
+export const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    topDiv: {
+      color: "#cfd8dc"
+    },
+    headerDiv: {
+      [theme.breakpoints.down("sm")]: {
+        display: "flex",
+        justifyContent: "center"
+      }
+    },
     timeLine: {
       borderLeft: "thin solid #bdbdbd",
       marginBottom: -30
@@ -28,17 +37,21 @@ export default function History() {
 
   return (
     <React.Fragment>
-      <Typography component="div" gutterBottom style={{ color: "#cfd8dc" }}>
-        <Box
-          fontSize="h6.fontSize"
-          fontWeight="fontWeightLight"
-          letterSpacing={4}
-        >
-          HISTORY
-        </Box>
-        <Box fontSize={10} fontWeight="fontWeightLight" letterSpacing={2}>
-          -業務経歴-
-        </Box>
+      <Typography component="div" paragraph className={classes.topDiv}>
+        <Typography component="div" className={classes.headerDiv}>
+          <Box
+            fontSize="h6.fontSize"
+            fontWeight="fontWeightLight"
+            letterSpacing={4}
+          >
+            HISTORY
+          </Box>
+        </Typography>
+        <Typography component="div" className={classes.headerDiv}>
+          <Box fontSize={10} fontWeight="fontWeightLight" letterSpacing={2}>
+            -業務経歴-
+          </Box>
+        </Typography>
       </Typography>
       <Container maxWidth="md" style={{ background: "#f4f5f7" }}>
         <br />
