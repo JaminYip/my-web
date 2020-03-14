@@ -82,7 +82,8 @@ const useStyles = makeStyles((theme: Theme) =>
       position: "relative",
       objectFit: "cover",
       width: "100%",
-      height: "100%"
+      height: "100%",
+      color: "#f4f5f7"
     },
     sectionLinkDiv: {
       margin: theme.spacing(1.5)

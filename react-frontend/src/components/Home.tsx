@@ -10,6 +10,22 @@ import History from "./container/History";
 import Work from "./container/Work";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 
+window.addEventListener("load", () => {
+  document.body.style.transition = "background-color 1.0s";
+});
+
+window.addEventListener("wheel", () => {
+  setScrollState(null);
+});
+
+window.addEventListener("touchmove", () => {
+  setScrollState(null);
+});
+
+const defaultBackgroundColor = "#000000";
+const aboutSectionBackgroundColor = "#203a3d";
+const skillsSectionBackgroundColor = "#3d203a";
+const historySectionBackgroundColor = "#3a3d20";
 window.addEventListener("scroll", () => {
   if (
     document.getElementById("aboutDiv") === null ||
@@ -20,32 +36,31 @@ window.addEventListener("scroll", () => {
     return;
   }
 
-  document.body.style.transition = "background-color 1.0s";
-  if (document.getElementById("workDiv")!.getBoundingClientRect().top <= 1) {
-    document.body.style.backgroundColor = "#000000";
-  } else if (
-    document.getElementById("historyDiv")!.getBoundingClientRect().top <= 1
+  if (
+    document.getElementById("workDiv")!.getBoundingClientRect().top <= 1 &&
+    document.body.style.backgroundColor !== defaultBackgroundColor
   ) {
-    document.body.style.backgroundColor = "#3a3d20";
+    document.body.style.backgroundColor = defaultBackgroundColor;
   } else if (
-    document.getElementById("skillsDiv")!.getBoundingClientRect().top <= 1
+    document.getElementById("historyDiv")!.getBoundingClientRect().top <= 1 &&
+    document.body.style.backgroundColor !== historySectionBackgroundColor
   ) {
-    document.body.style.backgroundColor = "#3d203a";
+    document.body.style.backgroundColor = historySectionBackgroundColor;
   } else if (
-    document.getElementById("aboutDiv")!.getBoundingClientRect().top <= 1
+    document.getElementById("skillsDiv")!.getBoundingClientRect().top <= 1 &&
+    document.body.style.backgroundColor !== skillsSectionBackgroundColor
   ) {
-    document.body.style.backgroundColor = "#203a3d";
+    document.body.style.backgroundColor = skillsSectionBackgroundColor;
+  } else if (
+    document.getElementById("aboutDiv")!.getBoundingClientRect().top <= 1 &&
+    document.body.style.backgroundColor !== aboutSectionBackgroundColor
+  ) {
+    document.body.style.backgroundColor = aboutSectionBackgroundColor;
   } else {
-    document.body.style.backgroundColor = "#000000";
+    if (document.body.style.backgroundColor !== defaultBackgroundColor) {
+      document.body.style.backgroundColor = defaultBackgroundColor;
+    }
   }
-});
-
-window.addEventListener("wheel", () => {
-  setScrollState(null);
-});
-
-window.addEventListener("touchmove", () => {
-  setScrollState(null);
 });
 
 let scrollState: boolean[] = [false, false, false, false, false];
