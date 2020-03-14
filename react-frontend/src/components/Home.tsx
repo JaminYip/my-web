@@ -77,14 +77,9 @@ const setScrollState = (scrollEventIndex: number | null) => {
 const scrollToRef = (
   ref: any | null,
   clickPositionY: number,
-  targetPositionY: number,
   scrollEventIndex: number
 ) => {
-  if (ref === "top") {
-    targetPositionY = 0;
-  } else if (targetPositionY === 0) {
-    targetPositionY = ref.current.offsetTop || 0;
-  }
+  const targetPositionY: number = ref.current.offsetTop;
   if (targetPositionY !== clickPositionY) {
     if (scrollState[scrollEventIndex]) {
       setTimeout(() => {
@@ -122,7 +117,7 @@ const scrollToRef = (
           }
         }
         window.scrollTo({ top: clickPositionY, left: 0 });
-        scrollToRef(ref, clickPositionY, targetPositionY, scrollEventIndex);
+        scrollToRef(ref, clickPositionY, scrollEventIndex);
       }, 1);
     }
   }
@@ -169,64 +164,66 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export enum ScrollEventIndex {
+  Top,
   About,
   Skills,
   History,
-  Work,
-  Top
+  Work
 }
 
 export default function Home() {
+  const topRef = useRef(null);
   const aboutRef = useRef(null);
   const skillsRef = useRef(null);
   const historyRef = useRef(null);
   const workRef = useRef(null);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const topExecuteScroll = (
+    event: React.MouseEvent<HTMLSpanElement, MouseEvent>
+  ) => {
+    setScrollState(ScrollEventIndex.Top);
+    scrollToRef(topRef, window.pageYOffset, ScrollEventIndex.Top);
+  };
   const aboutExecuteScroll = (
     event: React.MouseEvent<HTMLSpanElement, MouseEvent>
   ) => {
     setScrollState(ScrollEventIndex.About);
-    scrollToRef(aboutRef, window.pageYOffset, 0, ScrollEventIndex.About);
+    scrollToRef(aboutRef, window.pageYOffset, ScrollEventIndex.About);
     setAnchorEl(null);
   };
   const skillsExecuteScroll = (
     event: React.MouseEvent<HTMLSpanElement, MouseEvent>
   ) => {
     setScrollState(ScrollEventIndex.Skills);
-    scrollToRef(skillsRef, window.pageYOffset, 0, ScrollEventIndex.Skills);
+    scrollToRef(skillsRef, window.pageYOffset, ScrollEventIndex.Skills);
     setAnchorEl(null);
   };
   const historyExecuteScroll = (
     event: React.MouseEvent<HTMLSpanElement, MouseEvent>
   ) => {
     setScrollState(ScrollEventIndex.History);
-    scrollToRef(historyRef, window.pageYOffset, 0, ScrollEventIndex.History);
+    scrollToRef(historyRef, window.pageYOffset, ScrollEventIndex.History);
     setAnchorEl(null);
   };
   const workExecuteScroll = (
     event: React.MouseEvent<HTMLSpanElement, MouseEvent>
   ) => {
     setScrollState(ScrollEventIndex.Work);
-    scrollToRef(workRef, window.pageYOffset, 0, ScrollEventIndex.Work);
+    scrollToRef(workRef, window.pageYOffset, ScrollEventIndex.Work);
     setAnchorEl(null);
-  };
-  const topExecuteScroll = (
-    event: React.MouseEvent<HTMLSpanElement, MouseEvent>
-  ) => {
-    setScrollState(ScrollEventIndex.Top);
-    scrollToRef("top", window.pageYOffset, 0, ScrollEventIndex.Top);
   };
   const classes = useStyles();
 
   return (
     <Container disableGutters maxWidth="xl" className={classes.root}>
+      <div id="topDiv" ref={topRef} />
       <Top
         executeScroll={[
+          topExecuteScroll,
           aboutExecuteScroll,
           skillsExecuteScroll,
           historyExecuteScroll,
-          workExecuteScroll,
-          topExecuteScroll
+          workExecuteScroll
         ]}
         scrollEventIndex={ScrollEventIndex}
         anchorEl={[anchorEl, setAnchorEl]}
