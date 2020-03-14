@@ -1,6 +1,6 @@
 # JaminYip's Portfolio
 
-<img src="https://user-images.githubusercontent.com/34822285/76682651-29e4f680-6641-11ea-9914-ffeb4e5f32ef.jpg" /><br>
+<img src="https://user-images.githubusercontent.com/34822285/76684088-55211300-664c-11ea-9ba4-08952d32b5fb.jpg" /><br>
 
 [![REACT](https://img.shields.io/badge/react-16.13.0-01579b)](https://ja.reactjs.org/)
 [![MATERIAL-UI](https://img.shields.io/badge/material--ui-v4.9.5-bf360c)](https://material-ui.com/)
