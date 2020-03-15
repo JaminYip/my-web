@@ -83,44 +83,58 @@ const scrollToRef = (
   if (targetPositionY !== clickPositionY) {
     if (scrollState[scrollEventIndex]) {
       setTimeout(() => {
+        let arriveTargetOffset: number;
+        let isDownDirection: boolean;
         if (targetPositionY - clickPositionY > 0) {
-          const arriveTargetOffset: number = targetPositionY - clickPositionY;
-          const calcOffset: number = Number(
-            (arriveTargetOffset / 10).toFixed(1)
-          );
-          if (calcOffset > 10) {
-            clickPositionY += Number((arriveTargetOffset / 45).toFixed(1));
-          } else if (calcOffset > 5) {
-            clickPositionY += Number((arriveTargetOffset / 50).toFixed(1));
-          } else if (calcOffset > 1) {
-            clickPositionY += Number((arriveTargetOffset / 55).toFixed(2));
-          } else if (calcOffset > 0) {
-            clickPositionY += 0.1;
-          } else {
-            clickPositionY = targetPositionY;
-          }
+          arriveTargetOffset = targetPositionY - clickPositionY;
+          isDownDirection = true;
         } else {
-          const arriveTargetOffset: number = clickPositionY - targetPositionY;
-          const calcOffset: number = Number(
-            (arriveTargetOffset / 10).toFixed(1)
+          arriveTargetOffset = clickPositionY - targetPositionY;
+          isDownDirection = false;
+        }
+        const calcOffset: number = Number((arriveTargetOffset / 10).toFixed(1));
+        if (calcOffset > 10) {
+          clickPositionY += scrollOffset(
+            isDownDirection,
+            arriveTargetOffset,
+            45,
+            1
           );
-          if (calcOffset > 10) {
-            clickPositionY -= Number((arriveTargetOffset / 45).toFixed(1));
-          } else if (calcOffset > 5) {
-            clickPositionY -= Number((arriveTargetOffset / 50).toFixed(1));
-          } else if (calcOffset > 1) {
-            clickPositionY -= Number((arriveTargetOffset / 55).toFixed(2));
-          } else if (calcOffset > 0) {
-            clickPositionY -= 0.1;
-          } else {
-            clickPositionY = targetPositionY;
-          }
+        } else if (calcOffset > 5) {
+          clickPositionY += scrollOffset(
+            isDownDirection,
+            arriveTargetOffset,
+            50,
+            1
+          );
+        } else if (calcOffset > 1) {
+          clickPositionY += scrollOffset(
+            isDownDirection,
+            arriveTargetOffset,
+            55,
+            2
+          );
+        } else if (calcOffset > 0) {
+          clickPositionY += isDownDirection ? +0.1 : -0.1;
+        } else {
+          clickPositionY = targetPositionY;
         }
         window.scrollTo({ top: clickPositionY, left: 0 });
         scrollToRef(ref, clickPositionY, scrollEventIndex);
       }, 1);
     }
   }
+};
+
+const scrollOffset = (
+  isDownDirection: boolean,
+  arriveTargetOffset: number,
+  distanceCoefficient: number,
+  decimalDigit: number
+) => {
+  return isDownDirection
+    ? +Number((arriveTargetOffset / distanceCoefficient).toFixed(decimalDigit))
+    : -Number((arriveTargetOffset / distanceCoefficient).toFixed(decimalDigit));
 };
 
 const useStyles = makeStyles((theme: Theme) =>
